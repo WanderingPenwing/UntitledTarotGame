@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy3dgmw7b5ler"]
+
+[ext_resource type="Script" uid="uid://c3xnmcs1c2v8w" path="res://scripts/menu/game_ui.gd" id="1_i2he4"]
+
+[node name="game_ui" type="CanvasLayer" node_paths=PackedStringArray("blindness", "draw_tarot_label", "start_label", "win_label")]
+script = ExtResource("1_i2he4")
+blindness = NodePath("control_node/blind")
+draw_tarot_label = NodePath("control_node/b_to_draw_tarot")
+start_label = NodePath("control_node/a_to_start")
+win_label = NodePath("control_node/win")
+
+[node name="control_node" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 144.0
+
+[node name="blind" type="ColorRect" parent="control_node"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="b_to_draw_tarot" type="Label" parent="control_node"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 14.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "press B to draw the cards"
+horizontal_alignment = 1
+
+[node name="a_to_start" type="Label" parent="control_node"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -14.0
+offset_right = 47.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "press A to start"
+horizontal_alignment = 1
+
+[node name="win" type="Label" parent="control_node"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -7.0
+offset_right = 47.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "you won !"
+horizontal_alignment = 1

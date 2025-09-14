@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://j3x6c35llf7x"]
+
+[ext_resource type="Script" uid="uid://c6g2rubnnuemg" path="res://scripts/menu/tarot_select.gd" id="1_veub5"]
+[ext_resource type="Texture2D" uid="uid://bup46ku8occ6p" path="res://images/cards/flip.png" id="2_6x06e"]
+[ext_resource type="Texture2D" uid="uid://cbdctlg68iof4" path="res://images/cards/blind.png" id="3_lidgh"]
+[ext_resource type="Texture2D" uid="uid://bul1wfruqnun5" path="res://images/cards/freeze.png" id="4_v6i3f"]
+[ext_resource type="Texture2D" uid="uid://om0p6b52h3gp" path="res://images/menu/backgroud.png" id="5_ogts6"]
+[ext_resource type="Texture2D" uid="uid://dkd0fkxbhcerk" path="res://images/menu/selector.png" id="6_t6qfn"]
+[ext_resource type="Texture2D" uid="uid://ddrjn3uwd2dmt" path="res://images/menu/continue.png" id="7_y54el"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0c1d3"]
+viewport_path = NodePath("view")
+
+[node name="tarot_select" type="CanvasLayer" node_paths=PackedStringArray("ContinueLabel")]
+process_mode = 3
+script = ExtResource("1_veub5")
+cards = Array[Texture2D]([ExtResource("2_6x06e"), ExtResource("3_lidgh"), ExtResource("4_v6i3f")])
+ContinueLabel = NodePath("view/continue")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_0c1d3")
+
+[node name="view" type="SubViewport" parent="."]
+size = Vector2i(160, 144)
+
+[node name="background" type="Sprite2D" parent="view"]
+position = Vector2(80, 72)
+texture = ExtResource("5_ogts6")
+
+[node name="selector" type="Sprite2D" parent="view"]
+z_index = 1
+position = Vector2(30, 54)
+texture = ExtResource("6_t6qfn")
+
+[node name="continue" type="Sprite2D" parent="view"]
+visible = false
+position = Vector2(80, 121)
+texture = ExtResource("7_y54el")

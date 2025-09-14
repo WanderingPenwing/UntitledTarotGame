@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://of0fyn6wt7wn"]
+
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="1_5l5bb"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+script = ExtResource("1_5l5bb")
