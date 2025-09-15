@@ -1,23 +1,20 @@
 extends Node
 
-# Pour eviter d'avoir a les retenir, 
-# comme ca je peux utiliser (status == GameState.STATUS_BLINND) 
-const STATUS_NORMAL: int = -1
-const STATUS_FLIPPED: int = 0
-const STATUS_BLIND: int = 1
-const STATUS_FROZEN: int = 2
+enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN}
 
 const LEVELS = [
-	preload("res://levels/level_0.tscn")
+	preload("res://levels/level_0.tscn"),
+	preload("res://levels/level_0b.tscn")
 ]
 
 # status par defauts
 # en fonction de l'evolution du jeu faudra ptet rendre ca plus extensible q
-var player_status = STATUS_NORMAL
-var mob_status = STATUS_NORMAL
-var world_status = STATUS_NORMAL
+var player_status = STATUS.NORMAL
+var mob_status = STATUS.NORMAL
+var world_status = STATUS.NORMAL
 
-var current_level = 0
+
+var level_index = 0
 
 func _ready() -> void:
 	get_tree().paused = true
@@ -35,10 +32,20 @@ func _process(_delta: float) -> void:
 	# Pour lancer le niveau
 	if Input.is_action_just_pressed("A") and not TarotSelect.visible and GameUi.start_label.visible :
 		get_tree().paused = false
+		
+	if Input.is_action_just_pressed("A") and GameUi.win_label.visible :
+		level_index = (level_index + 1) % len(LEVELS)
+		reset_level()
+		player_status = STATUS.NORMAL
+		mob_status = STATUS.NORMAL
+		world_status = STATUS.NORMAL
+		var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween.tween_callback(TarotSelect.reset)
 	
 
 func reset_level() :
-	get_tree().change_scene_to_packed(LEVELS[current_level])
+	get_tree().change_scene_to_packed(LEVELS[level_index])
+	get_tree().paused = true
 	GameUi.win_label.hide()
 
 

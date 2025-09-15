@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1pq2u7pm5qsi"]
+
+[ext_resource type="Texture2D" uid="uid://bul1wfruqnun5" path="res://images/cards/freeze.png" id="1_gaaj5"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_osdh4"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_gaaj5")
+script = ExtResource("2_osdh4")
+status_index = 3

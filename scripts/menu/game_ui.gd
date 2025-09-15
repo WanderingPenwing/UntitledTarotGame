@@ -8,4 +8,4 @@ extends CanvasLayer
 
 
 func _process(_delta: float) -> void:
-	blindness.visible = (GameState.player_status == GameState.STATUS_BLIND)
+	blindness.visible = (GameState.player_status == GameState.STATUS.BLIND)

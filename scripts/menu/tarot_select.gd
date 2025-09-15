@@ -1,8 +1,5 @@
 extends CanvasLayer
 
-const CARD = preload("res://prefabs/menu/tarot_card.tscn")
-
-@export var cards: Array[Texture2D] = []
 @export var ContinueLabel : Sprite2D
 
 var slots : Array[Array] = [[null, null, null], [null, null, null]]
@@ -96,10 +93,10 @@ func reset() :
 	for card in get_tree().get_nodes_in_group("card") :
 		card.queue_free()
 	slots = [[null, null, null], [null, null, null]]
+	var Level: Node2D = get_tree().get_first_node_in_group("level")
+	var cards = [Level.tarot_card_1, Level.tarot_card_2, Level.tarot_card_3]
 	for i in range(3) :
-		var Card = CARD.instantiate()
-		Card.texture = cards[i]
-		Card.status_index = i
+		var Card = cards[i].instantiate()
 		move_card(Card, Vector2i(i, 1))
 		$view.add_child(Card)
 		slots[1][i] = Card
