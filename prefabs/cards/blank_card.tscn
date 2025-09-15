@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://4cpbjhwvee7e"]
+
+[ext_resource type="Texture2D" uid="uid://butj3gfrgvlx4" path="res://images/cards/blank.png" id="1_fcaeg"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_whwup"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_fcaeg")
+script = ExtResource("2_whwup")

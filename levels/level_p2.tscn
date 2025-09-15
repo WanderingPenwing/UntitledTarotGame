@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=4 uid="uid://6g0mtbgbb1ra"]
+
+[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_ogko2"]
+[ext_resource type="PackedScene" uid="uid://d1pq2u7pm5qsi" path="res://prefabs/cards/20-justice.tscn" id="2_rln3n"]
+[ext_resource type="PackedScene" uid="uid://bwndkhtggejxu" path="res://prefabs/cards/21-the_world.tscn" id="3_206pa"]
+[ext_resource type="Texture2D" uid="uid://df8vkqerjyd1k" path="res://images/env/map.png" id="3_rln3n"]
+[ext_resource type="PackedScene" uid="uid://4cpbjhwvee7e" path="res://prefabs/cards/blank_card.tscn" id="4_5bxxk"]
+[ext_resource type="Script" uid="uid://c42nn8tguuhle" path="res://scripts/entities/world.gd" id="4_206pa"]
+[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="5_5bxxk"]
+[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="6_jx2v2"]
+[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="7_t4cqi"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
+viewport_path = NodePath("view")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
+texture = ExtResource("3_rln3n")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gee14"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_u5sy4")
+
+[node name="level 0" type="Node2D" groups=["level"]]
+script = ExtResource("1_ogko2")
+tarot_card_1 = ExtResource("2_rln3n")
+tarot_card_2 = ExtResource("3_206pa")
+tarot_card_3 = ExtResource("4_5bxxk")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_p57ef")
+
+[node name="view" type="SubViewport" parent="."]
+size = Vector2i(160, 144)
+
+[node name="world" type="TileMapLayer" parent="view"]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAJAAgAAAACAAAAAAAIAAgAAAACAAAAAAAHAAgAAAACAAAAAAAGAAgAAAACAAAAAAAFAAgAAAACAAAAAAAEAAgAAAACAAAAAAADAAgAAAACAAAAAAACAAgAAAACAAAAAAABAAgAAAACAAAAAAAJAAEAAAACAAAAAAAJAAIAAAACAAAAAAAJAAMAAAACAAAAAAAJAAQAAAACAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAAAAAAJAAcAAAACAAAAAAABAAQAAAADAAAAAAACAAQAAAADAAAAAAADAAQAAAADAAAAAAAEAAQAAAADAAAAAAAEAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAADAAIAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAABAAEAAAABAAAAAAACAAIAAAABAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAADAAAAAAAGAAQAAAADAAAAAAAHAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAEAAAABAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAIAAEAAAABAAAAAAAIAAIAAAABAAAAAAAIAAMAAAABAAAAAAAIAAQAAAADAAAAAAAIAAUAAAABAAAAAAAIAAYAAAABAAAAAAAIAAcAAAABAAAAAAAHAAcAAAABAAAAAAAGAAcAAAABAAAAAAAFAAcAAAABAAAAAAAEAAcAAAABAAAAAAADAAcAAAABAAAAAAACAAcAAAABAAAAAAABAAcAAAABAAAAAAABAAYAAAABAAAAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAHAAQAAAADAAAAAAAHAAYAAAABAAAAAAAGAAYAAAABAAAAAAAFAAYAAAABAAAAAAAEAAYAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_gee14")
+script = ExtResource("4_206pa")
+
+[node name="player" parent="view" instance=ExtResource("5_5bxxk")]
+position = Vector2(80, 40)
+
+[node name="mob" parent="view" instance=ExtResource("6_jx2v2")]
+position = Vector2(40, 104)
+
+[node name="flag" parent="view" instance=ExtResource("7_t4cqi")]
+position = Vector2(120, 104)

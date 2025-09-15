@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://be5db7bunm61"]
+
+[ext_resource type="Texture2D" uid="uid://boxu2iw54ucrr" path="res://images/cards/chariot.png" id="1_2laxe"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_0jygj"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_2laxe")
+script = ExtResource("2_0jygj")
+status_index = 4

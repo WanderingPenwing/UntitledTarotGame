@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxxg1x26nuwdt"]
+
+[ext_resource type="Texture2D" uid="uid://04ftlwgemnoo" path="res://images/menu/start_bg.png" id="1_78x17"]
+[ext_resource type="Script" uid="uid://c4qb0c2gjeden" path="res://scripts/menu/start_menu.gd" id="1_rgc7e"]
+[ext_resource type="Texture2D" uid="uid://co0vx2yc22qm2" path="res://images/menu/credits.png" id="2_rgc7e"]
+[ext_resource type="Texture2D" uid="uid://dakgu5i2b3udp" path="res://images/menu/options.png" id="3_xu787"]
+[ext_resource type="Texture2D" uid="uid://bn1604pi3xb4q" path="res://images/menu/start_card.png" id="4_od3bf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rgc7e"]
+viewport_path = NodePath("view")
+
+[node name="start_menu" type="Node2D" node_paths=PackedStringArray("StartCard", "OptionsCard", "CreditsCard")]
+process_mode = 3
+script = ExtResource("1_rgc7e")
+StartCard = NodePath("view/StartCard")
+OptionsCard = NodePath("view/Options")
+CreditsCard = NodePath("view/Credits")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_rgc7e")
+
+[node name="view" type="SubViewport" parent="."]
+size = Vector2i(160, 144)
+
+[node name="StartBg" type="Sprite2D" parent="view"]
+position = Vector2(80, 72)
+texture = ExtResource("1_78x17")
+
+[node name="Credits" type="Sprite2D" parent="view"]
+position = Vector2(128, 124)
+texture = ExtResource("2_rgc7e")
+
+[node name="Options" type="Sprite2D" parent="view"]
+position = Vector2(57, 88)
+texture = ExtResource("3_xu787")
+
+[node name="StartCard" type="Sprite2D" parent="view"]
+position = Vector2(76, 100)
+texture = ExtResource("4_od3bf")

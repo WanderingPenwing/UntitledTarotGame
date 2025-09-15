@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs2xtrp8r1c5h"]
+[gd_scene load_steps=5 format=3 uid="uid://cs2xtrp8r1c5h"]
 
 [ext_resource type="Script" uid="uid://d4jt75f6lgje0" path="res://scripts/entities/mob.gd" id="1_l4ws6"]
 [ext_resource type="Texture2D" uid="uid://bx5cbyhryhkdd" path="res://images/entities/enemy.png" id="2_8mnx0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4ws6"]
+radius = 9.0
 
 [node name="mob" type="CharacterBody2D" groups=["mob"]]
 script = ExtResource("1_l4ws6")
@@ -14,3 +17,10 @@ texture = ExtResource("2_8mnx0")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1rtib")
+
+[node name="detect" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="detect"]
+shape = SubResource("CircleShape2D_l4ws6")
+
+[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]

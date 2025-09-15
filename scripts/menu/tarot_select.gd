@@ -94,6 +94,8 @@ func reset() :
 		card.queue_free()
 	slots = [[null, null, null], [null, null, null]]
 	var Level: Node2D = get_tree().get_first_node_in_group("level")
+	if not Level :
+		return
 	var cards = [Level.tarot_card_1, Level.tarot_card_2, Level.tarot_card_3]
 	for i in range(3) :
 		var Card = cards[i].instantiate()

@@ -28,9 +28,18 @@ func _process(_delta: float) -> void:
 		target = Player.position
 	
 	var dir = (target - position).normalized()
+	# Inversion des controls
+	if GameState.mob_status == GameState.STATUS.FLIPPED :
+		dir = -dir
 	
 	# pour gerer l'effet glace
 	var friction = 0.01 if GameState.world_status == GameState.STATUS.FROZEN else 0.98
 	velocity = lerp(velocity, dir*SPEED, friction)
 	
 	move_and_slide()
+
+
+func _on_detect_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") :
+		get_tree().paused = true
+		GameState.call_deferred("reset_level")
