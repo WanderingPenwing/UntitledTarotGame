@@ -9,6 +9,15 @@ const SPEED: float = 10
 var target: Vector2 = Vector2(randi_range(0,160), randi_range(0,144))
 
 
+func _ready() -> void:
+	if GameState.mob_status == GameState.STATUS_FROZEN :
+		modulate = Color.PALE_TURQUOISE
+	elif GameState.mob_status == GameState.STATUS_BLIND :
+		modulate = Color.BLACK 
+	if GameState.mob_status == GameState.STATUS_FLIPPED :
+		scale.y = -1
+
+
 func _process(_delta: float) -> void:
 	# si le mob est freeze
 	if GameState.mob_status == GameState.STATUS_FROZEN :

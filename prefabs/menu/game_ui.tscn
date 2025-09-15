@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c3xnmcs1c2v8w" path="res://scripts/menu/game_ui.gd" id="1_i2he4"]
 
 [node name="game_ui" type="CanvasLayer" node_paths=PackedStringArray("blindness", "draw_tarot_label", "start_label", "win_label")]
+process_mode = 3
 script = ExtResource("1_i2he4")
 blindness = NodePath("control_node/blind")
 draw_tarot_label = NodePath("control_node/b_to_draw_tarot")

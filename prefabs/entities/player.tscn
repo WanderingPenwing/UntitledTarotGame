@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brh1ungyth2n1"]
 
 [ext_resource type="Script" uid="uid://ddeknh0g2sqj3" path="res://scripts/entities/player.gd" id="1_n42l2"]
-[ext_resource type="Texture2D" uid="uid://830ig4p4wd2c" path="res://images/entities/chat_1.png" id="2_ebhuq"]
+[ext_resource type="Texture2D" uid="uid://btty5qph7itrr" path="res://images/entities/Tarot_Knight1.png" id="2_n42l2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 8.0
@@ -10,7 +10,7 @@ radius = 8.0
 script = ExtResource("1_n42l2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ebhuq")
+texture = ExtResource("2_n42l2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1rtib")
