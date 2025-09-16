@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ywgrjpiitbdy"]
+[gd_scene load_steps=9 format=3 uid="uid://ywgrjpiitbdy"]
 
 [ext_resource type="Script" uid="uid://dxiwqg7pwj02t" path="res://scripts/system/sound_manager.gd" id="1_ehc1w"]
 [ext_resource type="AudioStream" uid="uid://bahj6c45qgkq8" path="res://audio/music/Tarot P1.mp3" id="2_w0yrt"]
 [ext_resource type="AudioStream" uid="uid://dhxq6qt3d78qo" path="res://audio/music/Tarot P2.mp3" id="3_3jg6j"]
+[ext_resource type="Script" uid="uid://cfplj28ks60yg" path="res://scripts/system/sound_player.gd" id="3_ihmda"]
 [ext_resource type="AudioStream" uid="uid://dl81g5gyi8cpp" path="res://audio/music/Tarot P6.mp3" id="4_o2jf1"]
 [ext_resource type="AudioStream" uid="uid://dpvc2fnbmlyy4" path="res://audio/music/Tarot P3.mp3" id="4_u60ch"]
 [ext_resource type="AudioStream" uid="uid://c3uuuqtbr5wfc" path="res://audio/music/Tarot P4.mp3" id="5_ihmda"]
@@ -17,39 +18,39 @@ stream = ExtResource("2_w0yrt")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+script = ExtResource("3_ihmda")
 
 [node name="music_p2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3jg6j")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+script = ExtResource("3_ihmda")
 
 [node name="music_p3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_u60ch")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+script = ExtResource("3_ihmda")
 
 [node name="music_p4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ihmda")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+script = ExtResource("3_ihmda")
 
 [node name="music_p5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1w3i5")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+script = ExtResource("3_ihmda")
 
 [node name="music_p6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_o2jf1")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+script = ExtResource("3_ihmda")
