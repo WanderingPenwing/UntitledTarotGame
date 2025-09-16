@@ -3,6 +3,7 @@ extends Node2D
 @export var StartCard: Sprite2D
 @export var OptionsCard: Sprite2D
 @export var CreditsCard: Sprite2D
+@export var OptionsMenu: Node2D
 
 var selected: int = 0
 var anims: Array[String] =  ["start", "options", "credits"]
@@ -11,6 +12,9 @@ func _ready() -> void:
 	move(anims[0], true)
 
 func _process(_delta: float) -> void:
+	if OptionsMenu.visible :
+		return
+	
 	var dir: int = 0
 	if Input.is_action_just_pressed("ui_left") :
 		dir -= 1
@@ -23,8 +27,11 @@ func _process(_delta: float) -> void:
 		move(anims[last_selected], false)
 		move(anims[selected], true)
 	
-	if Input.is_action_just_pressed("A") and selected == 0 :
-		GameState.start_level()
+	if Input.is_action_just_pressed("A") :
+		if selected == 0 :
+			GameState.start_level()
+		if selected == 1 :
+			OptionsMenu.open()
 
 
 func move(card: String, up: bool) -> void :

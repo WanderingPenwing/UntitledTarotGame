@@ -101,7 +101,7 @@ func reset() :
 	for i in range(3) :
 		var Card = cards[i].instantiate()
 		move_card(Card, Vector2i(i, 1))
-		$view.add_child(Card)
+		$view_t.add_child(Card)
 		slots[1][i] = Card
 	cursor = Vector2i(0, 1)
 	backup()
@@ -131,7 +131,7 @@ func restore() :
 func select(vec: Vector2i) -> void :
 	# deplace le curseur, et si une carte est en mouvement, ca la deplace avec
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.tween_property($view/selector, 'position', Vector2(30 + 50 * (vec.x), 54 + 55 * (vec.y) - (10 if holding else 0)), 0.1)
+	tween.tween_property($view_t/selector, 'position', Vector2(30 + 50 * (vec.x), 54 + 55 * (vec.y) - (10 if holding else 0)), 0.1)
 	if holding :
 		move_card(holding, vec)
 

@@ -3,6 +3,8 @@ extends Node
 # Global Node to handle the sounds
 const SOUND_PLAYER : Resource = preload('res://prefabs/system/default_sound_player.tscn')
 
+func _ready() -> void:
+	set_music(1)
 
 func play_sound(audio : AudioStream, randomize_sound: bool = false, volume : float = 1.0) -> void :
 	var stream : Node = SOUND_PLAYER.instantiate()
@@ -26,8 +28,8 @@ func update_music() -> void :
 
 func set_music(music_index: int) -> void :
 	for child_index in get_child_count() :
-		var volume = 0.3 if music_index == child_index + 1 else 0.0
+		var volume = 0.8 if music_index == child_index + 1 else 0.0
 		if volume == get_child(child_index).volume_linear :
 			continue
 		var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-		tween.tween_property(get_child(child_index), 'volume_linear', volume, 0.5)
+		tween.tween_property(get_child(child_index), 'volume_linear', volume, 0.3)

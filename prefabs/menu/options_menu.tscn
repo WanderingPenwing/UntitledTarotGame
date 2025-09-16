@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://b64asvl1iitne"]
+
+[ext_resource type="Script" uid="uid://c7hsjpqvh5lkf" path="res://scripts/menu/options_menu.gd" id="1_i4gbo"]
+[ext_resource type="Texture2D" uid="uid://d4bx1abvhqcm3" path="res://images/menu/options/options_menu.png" id="1_ng84d"]
+[ext_resource type="Texture2D" uid="uid://ca055tdv7s3m7" path="res://images/menu/options/music_dec.png" id="2_i4gbo"]
+[ext_resource type="Texture2D" uid="uid://bb1yfhpl16c0f" path="res://images/menu/options/music_inc.png" id="3_amiy5"]
+[ext_resource type="Texture2D" uid="uid://c8j7tykrj5mr1" path="res://images/menu/options/sfx_dec.png" id="4_jnajs"]
+[ext_resource type="Texture2D" uid="uid://uy6l6r1vwo1r" path="res://images/menu/options/sfx_inc.png" id="5_qa35v"]
+[ext_resource type="Texture2D" uid="uid://bmhtlgq8cfowb" path="res://images/menu/options/back.png" id="6_ohcub"]
+[ext_resource type="Texture2D" uid="uid://jeegg2h0q81m" path="res://images/menu/bar.png" id="8_amiy5"]
+
+[node name="options_menu" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_i4gbo")
+
+[node name="OptionsMenu" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("1_ng84d")
+
+[node name="MusicDec" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("2_i4gbo")
+
+[node name="MusicInc" type="Sprite2D" parent="."]
+position = Vector2(110, 72)
+texture = ExtResource("3_amiy5")
+
+[node name="SfxDec" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("4_jnajs")
+
+[node name="SfxInc" type="Sprite2D" parent="."]
+position = Vector2(110, 72)
+texture = ExtResource("5_qa35v")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("6_ohcub")
+
+[node name="MusicVolume" type="TextureProgressBar" parent="."]
+modulate = Color(0.729412, 0.313726, 0.266667, 1)
+offset_left = 77.0
+offset_top = 93.0
+offset_right = 117.0
+offset_bottom = 97.0
+step = 2.5
+value = 50.0
+texture_progress = ExtResource("8_amiy5")
+
+[node name="SfxVolume" type="TextureProgressBar" parent="."]
+modulate = Color(0.729412, 0.313726, 0.266667, 1)
+offset_left = 77.0
+offset_top = 115.0
+offset_right = 117.0
+offset_bottom = 119.0
+step = 2.5
+value = 50.0
+texture_progress = ExtResource("8_amiy5")
