@@ -10,6 +10,11 @@ const LEVELS = [
 	preload("res://levels/level_p4.tscn")
 ]
 
+const CUTSCENES = [
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_1.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_2.tscn")
+]
+
 @onready var master_bus : int = AudioServer.get_bus_index("Master")
 @onready var sfx_bus : int = AudioServer.get_bus_index("Sfx")
 @onready var music_bus : int = AudioServer.get_bus_index("Music")
@@ -28,6 +33,8 @@ var world_status = STATUS.NORMAL
 #Sers a définir le niveau actuel/si ingame ou pas
 var level_index = 0
 var in_game = false
+
+var cutscene_index = 0
 
 func _ready() -> void:
 	get_tree().paused = true
@@ -51,7 +58,9 @@ func _process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed("A") and GameUi.win_label.visible :
 		level_index = (level_index + 1) % len(LEVELS)
-		start_level()
+		cutscene_index = (cutscene_index + 1) % len(CUTSCENES)
+		GameUi.win_label.hide()
+		start_cutscene()
 	
 
 func reset_level() -> void :
@@ -72,6 +81,9 @@ func start_level() -> void :
 	in_game = true
 	SoundManager.update_music()
 
+func start_cutscene() -> void :
+	get_tree().change_scene_to_packed(CUTSCENES[cutscene_index])
+	get_tree().paused = true
 
 func win() -> void :
 	get_tree().paused = true

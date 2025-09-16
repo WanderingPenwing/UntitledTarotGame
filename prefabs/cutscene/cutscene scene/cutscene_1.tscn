@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://7rhiyggbw5vm"]
+
+[ext_resource type="Script" uid="uid://4usrok421y4o" path="res://scripts/cutscene/cutscene.gd" id="1_7aw01"]
+[ext_resource type="Resource" uid="uid://ci8yy2x6qsng6" path="res://prefabs/cutscene/cutscene scripts/cutscene1.tres" id="2_1y1ce"]
+[ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="3_fegiq"]
+[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="4_bk1fw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6gy54"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ryyh0"]
+size = Vector2(160, 144)
+
+[node name="cutscene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_7aw01")
+dialogue = ExtResource("2_1y1ce")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_6gy54")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(160, 144)
+
+[node name="Background" type="Sprite2D" parent="SubViewport"]
+position = Vector2(79, 72)
+texture = SubResource("PlaceholderTexture2D_ryyh0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SubViewport"]
+offset_left = 5.22
+offset_top = 85.0
+offset_right = 155.22
+offset_bottom = 139.0
+size_flags_horizontal = 3
+texture = ExtResource("3_fegiq")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="SubViewport"]
+offset_left = 6.0
+offset_top = 69.0
+offset_right = 48.0
+offset_bottom = 85.0
+size_flags_horizontal = 3
+texture = ExtResource("3_fegiq")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Text" type="Label" parent="SubViewport"]
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 153.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("4_bk1fw")
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Char" type="Label" parent="SubViewport"]
+offset_left = 10.05
+offset_top = 67.795
+offset_right = 45.05
+offset_bottom = 82.795
+theme_override_fonts/font = ExtResource("4_bk1fw")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3

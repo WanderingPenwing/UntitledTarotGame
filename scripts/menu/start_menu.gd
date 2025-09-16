@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("A") :
 		if selected == 0 :
-			GameState.start_level()
+			GameState.start_cutscene()
 		if selected == 1 :
 			OptionsMenu.open()
 
