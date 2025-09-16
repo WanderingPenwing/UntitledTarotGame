@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://rav1wjp17sc0"]
+
+[ext_resource type="Texture2D" uid="uid://2ctepjyr4fe8" path="res://images/cards/fool.png" id="1_5ntin"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_v550f"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_5ntin")
+script = ExtResource("2_v550f")
+status_index = 5

@@ -1,8 +1,10 @@
 extends Area2D
 
+const WIN_SOUND : Resource = preload("res://audio/sfx/win.wav")
+
 func _on_body_entered(body: Node2D) -> void:
-	if not body.is_in_group("player") :
+	if not body.is_in_group("player") or body.position.distance_to(position) > 16 :
 		return
 	# si le joueur touche le drapeau on a gagneeeee
 	GameState.win()
-	
+	SoundManager.play_sound(WIN_SOUND, true)

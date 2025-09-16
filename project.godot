@@ -17,6 +17,7 @@ config/icon="uid://cbdctlg68iof4"
 
 [autoload]
 
+SoundManager="*res://prefabs/system/sound_manager.tscn"
 GameState="*res://prefabs/game_state.tscn"
 GameUi="*res://prefabs/menu/game_ui.tscn"
 TarotSelect="*res://prefabs/menu/tarot_select.tscn"

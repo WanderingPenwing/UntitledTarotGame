@@ -14,5 +14,6 @@ texture = ExtResource("2_j2cfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1rtib")
+debug_color = Color(0.764825, 0.447841, 0.0697612, 0.42)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

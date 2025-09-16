@@ -1,6 +1,6 @@
 extends Node
 
-enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN}
+enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN, CHARIOT, FOOL}
 
 const LEVELS = [
 	preload("res://levels/level_p1.tscn"),
@@ -59,6 +59,7 @@ func start_level() -> void :
 	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_callback(TarotSelect.reset)
 	in_game = true
+	SoundManager.update_music()
 
 func win() -> void :
 	get_tree().paused = true

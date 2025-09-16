@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btty5qph7itrr" path="res://images/entities/Tarot_Knight1.png" id="2_n42l2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
-radius = 8.0
+radius = 7.5
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_n42l2")

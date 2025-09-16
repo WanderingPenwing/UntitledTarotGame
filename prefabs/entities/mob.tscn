@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bx5cbyhryhkdd" path="res://images/entities/enemy.png" id="2_8mnx0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
-radius = 8.0
+radius = 7.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l4ws6"]
-radius = 9.0
 
 [node name="mob" type="CharacterBody2D" groups=["mob"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_l4ws6")
 
 [node name="sprite" type="Sprite2D" parent="."]
@@ -17,10 +18,14 @@ texture = ExtResource("2_8mnx0")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1rtib")
+debug_color = Color(0.948992, 0.189822, 0.322724, 0.42)
 
 [node name="detect" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="collision" type="CollisionShape2D" parent="detect"]
 shape = SubResource("CircleShape2D_l4ws6")
+debug_color = Color(0.885015, 0.317972, 0.258857, 0.42)
 
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]

@@ -6,30 +6,31 @@
 [ext_resource type="Texture2D" uid="uid://ddrjn3uwd2dmt" path="res://images/menu/continue.png" id="7_y54el"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0c1d3"]
-viewport_path = NodePath("view")
+viewport_path = NodePath("view_t")
 
 [node name="tarot_select" type="CanvasLayer" node_paths=PackedStringArray("ContinueLabel")]
 process_mode = 3
 script = ExtResource("1_veub5")
-ContinueLabel = NodePath("view/continue")
+ContinueLabel = NodePath("view_t/continue")
 
 [node name="view_sprite" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
 texture = SubResource("ViewportTexture_0c1d3")
 
-[node name="view" type="SubViewport" parent="."]
+[node name="view_t" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
 size = Vector2i(160, 144)
 
-[node name="background" type="Sprite2D" parent="view"]
+[node name="background" type="Sprite2D" parent="view_t"]
 position = Vector2(80, 72)
 texture = ExtResource("5_ogts6")
 
-[node name="selector" type="Sprite2D" parent="view"]
+[node name="selector" type="Sprite2D" parent="view_t"]
 z_index = 1
 position = Vector2(30, 54)
 texture = ExtResource("6_t6qfn")
 
-[node name="continue" type="Sprite2D" parent="view"]
+[node name="continue" type="Sprite2D" parent="view_t"]
 visible = false
 position = Vector2(80, 121)
 texture = ExtResource("7_y54el")

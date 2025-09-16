@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+const TAROT_CHECK_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
 @export var ContinueLabel : Sprite2D
 
 var slots : Array[Array] = [[null, null, null], [null, null, null]]
@@ -149,6 +150,7 @@ func update_continue_label(visibility: bool) -> void :
 		ContinueLabel.show()
 		ContinueLabel.position.y = 121
 		tween.tween_property(ContinueLabel, "position", Vector2(80,72), 0.1)
+		SoundManager.play_sound(TAROT_CHECK_SOUND, true)
 	else :
 		ContinueLabel.position.y = 72
 		tween.tween_property(ContinueLabel, "position", Vector2(80,121), 0.1)
