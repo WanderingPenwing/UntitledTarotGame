@@ -49,14 +49,17 @@ func _process(_delta: float) -> void:
 	update_buttons()
 	update_bars()
 
+
 func update_buttons() -> void:
 	for y in range(len(buttons)) :
 		for x in range(len(buttons[y])) : 
 			buttons[y][x].visible = (Vector2i(x, y) == selected)
 
+
 func update_bars() -> void :
 	$MusicVolume.value = GameState.volume["music"]
 	$SfxVolume.value = GameState.volume["sfx"]
+
 
 func open() -> void:
 	show()
@@ -64,6 +67,7 @@ func open() -> void:
 	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(self, "position", Vector2(0, 0), 0.1)
 	selected = Vector2i(0,0)
+
 
 func close() -> void:
 	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
