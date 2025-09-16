@@ -18,6 +18,9 @@ func _process(delta: float) -> void:
 			get_tree().paused = true
 			GameState.call_deferred("reset_level")
 			SoundManager.play_sound(DEATH_SOUND, true)
+		if body.is_in_group("mob") :
+			SoundManager.play_sound(DEATH_SOUND, true)
+			GameState.win()
 
 func toggled(state: bool) -> void :
 	$on.visible = state
