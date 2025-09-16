@@ -25,6 +25,7 @@ var player_status = STATUS.NORMAL
 var mob_status = STATUS.NORMAL
 var world_status = STATUS.NORMAL
 
+#Sers a définir le niveau actuel/si ingame ou pas
 var level_index = 0
 var in_game = false
 

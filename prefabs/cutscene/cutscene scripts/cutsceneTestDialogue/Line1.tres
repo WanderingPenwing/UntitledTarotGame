@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://b2a230ut87g6l"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_tmx4t"]
+
+[resource]
+script = ExtResource("1_tmx4t")
+line = [null]
+char = [""]
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
