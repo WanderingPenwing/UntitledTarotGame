@@ -32,6 +32,7 @@ func _ready() -> void:
 	get_tree().paused = true
 	GameUi.draw_tarot_label.show()
 	load_state()
+	update_volume()
 
 
 func _process(_delta: float) -> void:
@@ -112,4 +113,3 @@ func load_state() -> void :
 	# If you need to add other variable to a save, load them here, but make a save with the variable before
 	# trying to load
 	volume = state_data["volume"]
-	update_volume()
