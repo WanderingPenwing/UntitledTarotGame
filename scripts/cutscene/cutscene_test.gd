@@ -89,13 +89,9 @@ func show_textbox():
 func display_text():
 	var next_text: String = text_queue.pop_front()
 	var next_char: String = char_queue.pop_front()
-	var written: int = 0
 	for i in range(len(TextBox)) :
-		TextBox[i].text = next_text.right(
-			min(len(next_text)-written, (len(TextBox)-i-1)*30)
-		).left(30)
+		TextBox[i].text = get_line(next_text, i)
 		TextBox[i].visible_characters = 0
-		written += len(TextBox[i].text)
 	charbox.text = next_char
 	change_state(State.READING)
 	show_textbox()
@@ -106,6 +102,23 @@ func display_text():
 		tween.tween_property(TextBox[i], "visible_characters", len(TextBox[i].text), len(TextBox[i].text)*CHAR_READ_RATE)
 
 	tween.connect("finished", on_tween_finished)
+
+func get_line(text: String, line:int) -> String :
+	const LINE_LENGTH = 32
+	var offsets = [0]
+	
+	for index_line in range(line+1) :
+		var last_space = -1
+		if len(text) - offsets[-1] - 1 < LINE_LENGTH :
+			offsets.append(len(text))
+			continue
+		for index_char in range(LINE_LENGTH) :
+			if text.substr(offsets[-1]+index_char, 1) == " " :
+				last_space = index_char
+		if last_space == -1 : last_space = LINE_LENGTH
+		offsets.append(offsets[-1] + last_space + 1)
+		
+	return text.substr(offsets[-2], offsets[-1]-offsets[-2])
 
 func sprite_change():
 	var next_sprite = visual_queue.pop_front()
