@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=13 format=3 uid="uid://b7g2n6wirve1v"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_n3sgp"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_06s7o"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_n3sgp")
+line = "So ? Tell me woman !"
+char = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_n3sgp"]
+script = ExtResource("1_n3sgp")
+line = "Temper yourself my lord..."
+char = "Seer"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_06s7o"]
+script = ExtResource("1_n3sgp")
+line = "Tell me !"
+char = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_taqyq"]
+script = ExtResource("1_n3sgp")
+line = "Fine."
+char = "Seer"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_kkeqc"]
+script = ExtResource("1_n3sgp")
+line = "You will, indeed, have a son as your heir."
+char = "Seer"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_gyrei"]
+script = ExtResource("1_n3sgp")
+line = "He shall inherit everything you own, and all your values."
+char = "Seer"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_rou3h"]
+script = ExtResource("1_n3sgp")
+line = "You will love him, and he will love you in return."
+char = "Seer"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_bgsee"]
+script = ExtResource("1_n3sgp")
+line = "I knew it."
+char = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_chtx5"]
+script = ExtResource("1_n3sgp")
+line = "You shall be rewarded, Seer."
+char = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xp147"]
+script = ExtResource("1_n3sgp")
+line = "I must leave now. There is something I must rightfully claim as mine."
+char = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_06s7o")
+dialogue = Array[ExtResource("1_n3sgp")]([SubResource("Resource_8gjvx"), SubResource("Resource_n3sgp"), SubResource("Resource_06s7o"), SubResource("Resource_taqyq"), SubResource("Resource_kkeqc"), SubResource("Resource_gyrei"), SubResource("Resource_rou3h"), SubResource("Resource_bgsee"), SubResource("Resource_chtx5"), SubResource("Resource_xp147")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

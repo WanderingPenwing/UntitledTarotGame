@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_1lecq"]
 [ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_xttj4"]
 
-[sub_resource type="Resource" id="Resource_k55st"]
+[sub_resource type="Resource" id="Resource_8gjvx"]
 script = ExtResource("1_1lecq")
-line = "A brave soul enters my tent in search of his fate."
-char = "Seer"
+line = "This is an empty cutscene"
+char = "Test"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [resource]
 script = ExtResource("2_xttj4")
-dialogue = Array[ExtResource("1_1lecq")]([SubResource("Resource_k55st")])
+dialogue = Array[ExtResource("1_1lecq")]([SubResource("Resource_8gjvx")])
 metadata/_custom_type_script = "uid://dir0e5spbtkgm"

@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=14 format=3 uid="uid://bkkoht3qs7j61"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_jfx44"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_uiw0q"]
+
+[sub_resource type="Resource" id="Resource_k55st"]
+script = ExtResource("1_jfx44")
+line = "Your second card is Justice..."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_1lecq"]
+script = ExtResource("1_jfx44")
+line = "Does that mean I'll be a kind and benevolent king ?"
+char = "King"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xttj4"]
+script = ExtResource("1_jfx44")
+line = "If you wish."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_8a4j7"]
+script = ExtResource("1_jfx44")
+line = "Because what this card symbolizes is balance and truth. And you shall represent them."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_tqt1x"]
+script = ExtResource("1_jfx44")
+line = "The law will be your command. Your will shall be order."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_fhn5r"]
+script = ExtResource("1_jfx44")
+line = "After all, who would say no to the King ?"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_bu0mc"]
+script = ExtResource("1_jfx44")
+line = "Yes... Oh yes, that is true."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_8vq3k"]
+script = ExtResource("1_jfx44")
+line = "I will rule with fairness... But with strength if needed too."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_aqgin"]
+script = ExtResource("1_jfx44")
+line = "And I already know I'll need a lot of strength. In fact..."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_x3e86"]
+script = ExtResource("1_jfx44")
+line = "I am looking forward to it !"
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_jfx44")
+line = "Yes, my lord. Now, onto your next card..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_uiw0q")
+dialogue = Array[ExtResource("1_jfx44")]([SubResource("Resource_k55st"), SubResource("Resource_1lecq"), SubResource("Resource_xttj4"), SubResource("Resource_8a4j7"), SubResource("Resource_tqt1x"), SubResource("Resource_fhn5r"), SubResource("Resource_bu0mc"), SubResource("Resource_8vq3k"), SubResource("Resource_aqgin"), SubResource("Resource_x3e86"), SubResource("Resource_8gjvx")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

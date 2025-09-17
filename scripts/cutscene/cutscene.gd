@@ -1,5 +1,5 @@
 extends Node2D
-class_name Textbox
+class_name TextboxOld
 
 const CHAR_READ_RATE  = 0.05
 

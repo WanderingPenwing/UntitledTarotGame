@@ -7,7 +7,11 @@ const CHAR_READ_RATE  = 0.05
 @export var TextBox: Array[Label]
 @onready var charbox = $SubViewport/Char
 @onready var view = $Sprite2D
+@onready var charSprite = $SubViewport/CharacterSprite
 @export var dialogue : CutsceneScript
+@export var KingSprite : CompressedTexture2D
+@export var QueenSprite : CompressedTexture2D
+@export var JackSprite : CompressedTexture2D
 
 enum State {
 	READY,
@@ -17,15 +21,26 @@ enum State {
 	OVER
 }
 
+enum Sprite {
+	NONE,
+	KING,
+	QUEEN,
+	JACK
+}
+
 @onready var current_state = State.READY
+@onready var current_sprite = Sprite.NONE
 @onready var text_queue : Array 
 @onready var char_queue : Array
+@onready var visual_queue : Array
 
 func _ready() -> void:
 	for i in dialogue.dialogue:
 		text_queue.append(i.line)
 	for i in dialogue.dialogue:
 		char_queue.append(i.char)
+	for i in dialogue.dialogue:
+		visual_queue.append(i.visual)
 
 
 func _process(delta: float) -> void:
@@ -42,12 +57,24 @@ func _process(delta: float) -> void:
 				change_state(State.FINISHED)
 		State.FINISHED:
 			if Input.is_action_just_pressed("A") and text_queue.is_empty():
+				sprite_change()
 				change_state(State.OVER)
 				fade_out()
 			elif Input.is_action_just_pressed("A") and !text_queue.is_empty():
+				sprite_change()
 				change_state(State.READY)
 		State.OVER:
 			GameState.start_level()
+	
+	match current_sprite:
+		Sprite.NONE:
+			charSprite.texture = null
+		Sprite.KING:
+			charSprite.texture = KingSprite
+		Sprite.QUEEN:
+			charSprite.texture = QueenSprite
+		Sprite.JACK:
+			charSprite.texture = JackSprite
 
 func hide_textbox():
 	for line in TextBox :
@@ -80,6 +107,18 @@ func display_text():
 
 	tween.connect("finished", on_tween_finished)
 
+func sprite_change():
+	var next_sprite = visual_queue.pop_front()
+	if next_sprite :
+		if next_sprite == "King":
+			change_sprite(Sprite.KING)
+		elif next_sprite == "Queen":
+			change_sprite(Sprite.QUEEN)
+		elif next_sprite == "Jack":
+			change_sprite(Sprite.JACK)
+		elif next_sprite == "void":
+			change_sprite(Sprite.NONE)
+
 func on_tween_finished():
 	change_state(State.FINISHED)
 
@@ -97,3 +136,6 @@ func fade_out():
 
 func change_state(next_state):
 	current_state = next_state
+
+func change_sprite(next_state):
+	current_sprite = next_state

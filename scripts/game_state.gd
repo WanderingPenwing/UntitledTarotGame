@@ -4,17 +4,17 @@ enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN, CHARIOT, FOOL}
 
 const SAVE_FILE : String = "user://state.save"
 const LEVELS = [
-	preload("res://levels/level_test.tscn"),
-	#preload("res://levels/level_p1.tscn"),
-	#preload("res://levels/level_p2.tscn"),
-	#preload("res://levels/level_p3.tscn"),
-	#preload("res://levels/level_p4.tscn")
+	preload("res://levels/level_k1.tscn"),
+	preload("res://levels/level_k2.tscn"),
+	preload("res://levels/level_k3.tscn"),
+	preload("res://levels/level_k4.tscn")
 ]
 
 const CUTSCENES = [
-	preload("res://prefabs/cutscene/cutscene scene/cutscene_empty.tscn"),
-	#preload("res://prefabs/cutscene/cutscene scene/cutscene_1.tscn"),
-	#preload("res://prefabs/cutscene/cutscene scene/cutscene_2.tscn")
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_1.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_2.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_3.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_4.tscn")
 ]
 
 @onready var master_bus : int = AudioServer.get_bus_index("Master")
