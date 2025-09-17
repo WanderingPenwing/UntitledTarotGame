@@ -46,7 +46,13 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	GameUi.start_label.visible = TarotSelect.ContinueLabel.visible and get_tree().paused
+	GameUi.start_label.visible = TarotSelect.ContinueLabel.visible and get_tree().paused and in_game
+	
+	if Input.is_action_just_pressed("A") and GameUi.win_label.visible :
+		level_index = (level_index + 1) % len(LEVELS)
+		cutscene_index = (cutscene_index + 1) % len(CUTSCENES)
+		GameUi.win_label.hide()
+		start_cutscene()
 	
 	if not in_game : return
 	
@@ -59,11 +65,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("A") and not TarotSelect.visible and GameUi.start_label.visible :
 		get_tree().paused = false
 		
-	if Input.is_action_just_pressed("A") and GameUi.win_label.visible :
-		level_index = (level_index + 1) % len(LEVELS)
-		cutscene_index = (cutscene_index + 1) % len(CUTSCENES)
-		GameUi.win_label.hide()
-		start_cutscene()
 	
 
 func reset_level() -> void :
@@ -91,6 +92,7 @@ func start_cutscene() -> void :
 func win() -> void :
 	get_tree().paused = true
 	GameUi.win_label.show()
+	in_game = false
 	# a completer avec transition vers les autres niveaux
 
 
