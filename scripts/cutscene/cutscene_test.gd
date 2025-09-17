@@ -104,21 +104,40 @@ func display_text():
 	tween.connect("finished", on_tween_finished)
 
 func get_line(text: String, line:int) -> String :
-	const LINE_LENGTH = 32
+	# justification
+	const LINE_LENGTH = 140
 	var offsets = [0]
 	
+	# On va compter les lignes jusqu a celle que l'on veut, puis on prend la derniere
 	for index_line in range(line+1) :
+		# on stocke le dernier espace vu, pour decouper a cet endroit
 		var last_space = -1
-		if len(text) - offsets[-1] - 1 < LINE_LENGTH :
-			offsets.append(len(text))
-			continue
-		for index_char in range(LINE_LENGTH) :
-			if text.substr(offsets[-1]+index_char, 1) == " " :
+		var length_px = 0
+		var index_char = 0
+		# on continue a lire le texte tant que la ligne est pas trop longue
+		# ou qu on est a la fin du texte
+		while length_px < LINE_LENGTH and offsets[-1]+index_char < len(text):
+			var char = text.substr(offsets[-1]+index_char, 1)
+			# tous les caracteres ne font pas la meme taille en pixels
+			if char == " " :
 				last_space = index_char
-		if last_space == -1 : last_space = LINE_LENGTH
-		offsets.append(offsets[-1] + last_space + 1)
+				length_px += 5
+			elif char in "lj" :
+				length_px += 3
+			elif char in "i.,:;!" :
+				length_px += 2
+			elif char in "mMwW" :
+				length_px += 6
+			else :
+				length_px += 4
+			index_char += 1
 		
-	return text.substr(offsets[-2], offsets[-1]-offsets[-2])
+		# si on a trouve aucun espace ou que la ligne est pas finie on coupe a la fin
+		if last_space == -1 or length_px < LINE_LENGTH : last_space = index_char - 1
+		# offset contient les fin de lignes successives
+		offsets.append(offsets[-1] + last_space + 1)
+	#on renvoie le texte entre la fin de la derniere ligne trouve et l'avant derniere
+	return text.substr(offsets[-2], offsets[-1] - offsets[-2])
 
 func sprite_change():
 	var next_sprite = visual_queue.pop_front()
