@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://0agy07uxsusa"]
+
+[ext_resource type="Texture2D" uid="uid://dphjuksr1212o" path="res://images/menu/level_select/placeholder.png" id="1_bwanp"]
+
+[node name="level_placeholder" type="Sprite2D"]
+texture = ExtResource("1_bwanp")
+region_enabled = true
+region_rect = Rect2(0, 0, 18, 18)
