@@ -3,7 +3,7 @@ class_name Textbox
 
 const CHAR_READ_RATE  = 0.05
 
-@onready var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+@onready var tween = get_tree().create_tween()
 @export var TextBox: Array[Label]
 @onready var charbox = $SubViewport/Char
 @onready var view = $Sprite2D
@@ -41,9 +41,11 @@ func _ready() -> void:
 		char_queue.append(i.char)
 	for i in dialogue.dialogue:
 		visual_queue.append(i.visual)
+	# pour virer l'erreur de la console
+	tween.tween_callback(print)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match current_state:
 		State.READY:
 			if !text_queue.is_empty():
@@ -117,16 +119,16 @@ func get_line(text: String, line:int) -> String :
 		# on continue a lire le texte tant que la ligne est pas trop longue
 		# ou qu on est a la fin du texte
 		while length_px < LINE_LENGTH and offsets[-1]+index_char < len(text):
-			var char = text.substr(offsets[-1]+index_char, 1)
+			var c = text.substr(offsets[-1]+index_char, 1)
 			# tous les caracteres ne font pas la meme taille en pixels
-			if char == " " :
+			if c == " " :
 				last_space = index_char
 				length_px += 5
-			elif char in "lj" :
+			elif c in "lj" :
 				length_px += 3
-			elif char in "i.,:;!" :
+			elif c in "i.,:;!" :
 				length_px += 2
-			elif char in "mMwW" :
+			elif c in "mMwW" :
 				length_px += 6
 			else :
 				length_px += 4

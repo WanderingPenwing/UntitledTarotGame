@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxxg1x26nuwdt"]
+[gd_scene load_steps=9 format=3 uid="uid://cxxg1x26nuwdt"]
 
 [ext_resource type="Texture2D" uid="uid://04ftlwgemnoo" path="res://images/menu/start_bg.png" id="1_78x17"]
 [ext_resource type="Script" uid="uid://c4qb0c2gjeden" path="res://scripts/menu/start_menu.gd" id="1_rgc7e"]
@@ -6,17 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://dakgu5i2b3udp" path="res://images/menu/options.png" id="3_xu787"]
 [ext_resource type="Texture2D" uid="uid://bn1604pi3xb4q" path="res://images/menu/start_card.png" id="4_od3bf"]
 [ext_resource type="PackedScene" uid="uid://b64asvl1iitne" path="res://prefabs/menu/options_menu.tscn" id="6_xu787"]
+[ext_resource type="PackedScene" uid="uid://jsdsf8eupcd5" path="res://prefabs/menu/credits_menu.tscn" id="7_od3bf"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rgc7e"]
 viewport_path = NodePath("view")
 
-[node name="start_menu" type="Node2D" node_paths=PackedStringArray("StartCard", "OptionsCard", "CreditsCard", "OptionsMenu") groups=["start_menu"]]
+[node name="start_menu" type="Node2D" node_paths=PackedStringArray("StartCard", "OptionsCard", "CreditsCard", "OptionsMenu", "CreditsMenu") groups=["start_menu"]]
 process_mode = 3
 script = ExtResource("1_rgc7e")
 StartCard = NodePath("view/StartCard")
 OptionsCard = NodePath("view/Options")
 CreditsCard = NodePath("view/Credits")
 OptionsMenu = NodePath("view/options_menu")
+CreditsMenu = NodePath("view/credits_menu")
 
 [node name="view_sprite" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
@@ -42,3 +44,5 @@ position = Vector2(76, 100)
 texture = ExtResource("4_od3bf")
 
 [node name="options_menu" parent="view" instance=ExtResource("6_xu787")]
+
+[node name="credits_menu" parent="view" instance=ExtResource("7_od3bf")]

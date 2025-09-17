@@ -31,7 +31,6 @@ func _process(_delta: float) -> void:
 		selected.x = selected.x % len(buttons[selected.y])
 	
 	if Input.is_action_just_pressed("A") :
-		print(selected)
 		GameState.update_volume()
 		if buttons[selected.y][selected.x] == $MusicDec :
 			GameState.volume["music"] -= 10
@@ -63,7 +62,6 @@ func update_bars() -> void :
 
 func open() -> void:
 	show()
-	print("open")
 	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(self, "position", Vector2(0, 0), 0.1)
 	selected = Vector2i(0,0)

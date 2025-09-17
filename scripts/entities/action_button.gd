@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 	
 	if touched :
 		return
-	print("changed ", state)
+	
 	touched = true
 	state = not state
 	$sprite.region_rect.position.x = 32 if state else 16
