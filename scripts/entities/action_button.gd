@@ -5,7 +5,7 @@ var touched: bool = false
 
 signal toggled(state: bool)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var player_touching = false
 	
 	for body in get_overlapping_bodies() :
@@ -22,6 +22,5 @@ func _process(delta: float) -> void:
 	print("changed ", state)
 	touched = true
 	state = not state
-	$off.visible = not state
-	$on.visible = state
+	$sprite.region_rect.position.x = 32 if state else 16
 	toggled.emit(state)

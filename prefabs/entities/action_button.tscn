@@ -17,7 +17,7 @@ texture = ExtResource("2_dsimy")
 region_enabled = true
 region_rect = Rect2(32, 16, 16, 16)
 
-[node name="off" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_dsimy")
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)

@@ -10,7 +10,7 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_rgc7e"]
 viewport_path = NodePath("view")
 
-[node name="start_menu" type="Node2D" node_paths=PackedStringArray("StartCard", "OptionsCard", "CreditsCard", "OptionsMenu")]
+[node name="start_menu" type="Node2D" node_paths=PackedStringArray("StartCard", "OptionsCard", "CreditsCard", "OptionsMenu") groups=["start_menu"]]
 process_mode = 3
 script = ExtResource("1_rgc7e")
 StartCard = NodePath("view/StartCard")

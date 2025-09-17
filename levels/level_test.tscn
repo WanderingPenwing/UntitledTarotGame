@@ -1,0 +1,48 @@
+[gd_scene load_steps=12 format=4 uid="uid://g1kl5dy5tp0x"]
+
+[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_cd850"]
+[ext_resource type="PackedScene" uid="uid://cka8l6pvhav6" path="res://prefabs/cards/15-temperance.tscn" id="2_cd850"]
+[ext_resource type="PackedScene" uid="uid://d1pq2u7pm5qsi" path="res://prefabs/cards/20-justice.tscn" id="2_gcim3"]
+[ext_resource type="PackedScene" uid="uid://bwndkhtggejxu" path="res://prefabs/cards/21-the_world.tscn" id="4_gcim3"]
+[ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="5_ca4i1"]
+[ext_resource type="PackedScene" uid="uid://c5mbfjb7eapbt" path="res://prefabs/entities/spikes.tscn" id="6_8sp67"]
+[ext_resource type="PackedScene" uid="uid://bgl8j0qcu3fc2" path="res://prefabs/entities/action_button.tscn" id="7_qyf36"]
+[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="8_f33k1"]
+[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="9_6hwsd"]
+[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="10_p60vf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
+viewport_path = NodePath("view4")
+
+[node name="level4" type="Node2D" groups=["level"]]
+script = ExtResource("1_cd850")
+tarot_card_1 = ExtResource("2_cd850")
+tarot_card_2 = ExtResource("2_gcim3")
+tarot_card_3 = ExtResource("4_gcim3")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_p57ef")
+
+[node name="world2" parent="." instance=ExtResource("5_ca4i1")]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAEAAcAAAACAAAAAAAEAAYAAAACAAAAAAAEAAUAAAACAAAAAAAEAAMAAAABAAAAAAAEAAIAAAACAAAAAAAEAAEAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAACAAAAAAAJAAMAAAACAAAAAAAJAAQAAAACAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAAAAAAJAAcAAAACAAAAAAAJAAgAAAACAAAAAAAIAAgAAAACAAAAAAAHAAgAAAACAAAAAAAGAAgAAAACAAAAAAAFAAgAAAACAAAAAAAIAAQAAAACAAAAAAAHAAQAAAABAAAAAAAGAAQAAAABAAAAAAAFAAQAAAABAAAAAAAEAAQAAAABAAAAAAADAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAMAAAACAAAAAAADAAIAAAACAAAAAAADAAEAAAACAAAAAAACAAEAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAACAAIAAAACAAAAAAABAAQAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAACAAAAAAABAAcAAAACAAAAAAACAAcAAAACAAAAAAACAAYAAAACAAAAAAADAAYAAAACAAAAAAACAAUAAAABAAAAAAADAAUAAAACAAAAAAADAAcAAAACAAAAAAAFAAUAAAACAAAAAAAFAAcAAAACAAAAAAAGAAcAAAACAAAAAAAGAAYAAAACAAAAAAAGAAUAAAACAAAAAAAHAAUAAAABAAAAAAAHAAYAAAABAAAAAAAIAAYAAAABAAAAAAAIAAcAAAABAAAAAAAIAAUAAAACAAAAAAAHAAcAAAABAAAAAAAFAAIAAAACAAAAAAAFAAMAAAABAAAAAAAFAAEAAAACAAAAAAAGAAEAAAACAAAAAAAHAAEAAAACAAAAAAAIAAEAAAABAAAAAAAIAAIAAAACAAAAAAAIAAMAAAACAAAAAAAHAAMAAAACAAAAAAAGAAMAAAABAAAAAAAGAAIAAAACAAAAAAAHAAIAAAACAAAAAAAFAAYAAAACAAAAAAA=")
+
+[node name="spikes" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_8sp67")]
+position = Vector2(72, 71)
+ActionButton = NodePath("../action_button")
+
+[node name="action_button" parent="." instance=ExtResource("7_qyf36")]
+position = Vector2(24, 55)
+
+[node name="player" parent="." instance=ExtResource("8_f33k1")]
+position = Vector2(24, 71)
+
+[node name="mob" parent="." instance=ExtResource("9_6hwsd")]
+position = Vector2(104, 72)
+
+[node name="view4" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(160, 144)
+
+[node name="flag" parent="." instance=ExtResource("10_p60vf")]
+position = Vector2(136, 120)

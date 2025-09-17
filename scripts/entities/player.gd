@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+
+enum TYPE {KING, QUEEN, JACK, WITCH}
+@export var type : TYPE = TYPE.KING
+
 const SPEED: float = 100
 
 

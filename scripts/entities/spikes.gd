@@ -9,7 +9,7 @@ var extended = false
 func _ready() -> void:
 	ActionButton.connect("toggled", toggled)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not extended :
 		return
 	
@@ -20,9 +20,8 @@ func _process(delta: float) -> void:
 			SoundManager.play_sound(DEATH_SOUND, true)
 		if body.is_in_group("mob") :
 			SoundManager.play_sound(DEATH_SOUND, true)
-			GameState.win()
+			body.die()
 
 func toggled(state: bool) -> void :
-	$on.visible = state
-	$off.visible = not state
+	$sprite.region_rect.position.x = 16 if state else 0
 	extended = state

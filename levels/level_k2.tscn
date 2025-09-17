@@ -1,22 +1,22 @@
 [gd_scene load_steps=10 format=4 uid="uid://6g0mtbgbb1ra"]
 
-[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_ogko2"]
-[ext_resource type="PackedScene" uid="uid://d1pq2u7pm5qsi" path="res://prefabs/cards/20-justice.tscn" id="2_rln3n"]
-[ext_resource type="PackedScene" uid="uid://bwndkhtggejxu" path="res://prefabs/cards/21-the_world.tscn" id="3_206pa"]
-[ext_resource type="PackedScene" uid="uid://4cpbjhwvee7e" path="res://prefabs/cards/blank_card.tscn" id="4_5bxxk"]
-[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="5_5bxxk"]
-[ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="5_034sj"]
-[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="6_jx2v2"]
-[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="7_t4cqi"]
+[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_g0n5d"]
+[ext_resource type="PackedScene" uid="uid://d1pq2u7pm5qsi" path="res://prefabs/cards/20-justice.tscn" id="2_qoitn"]
+[ext_resource type="PackedScene" uid="uid://bwndkhtggejxu" path="res://prefabs/cards/21-the_world.tscn" id="3_6oy80"]
+[ext_resource type="PackedScene" uid="uid://4cpbjhwvee7e" path="res://prefabs/cards/blank_card.tscn" id="4_qym1d"]
+[ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="5_7xpys"]
+[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="6_nk4ps"]
+[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="7_tryr5"]
+[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="8_yys4m"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
 viewport_path = NodePath("view2")
 
 [node name="level2" type="Node2D" groups=["level"]]
-script = ExtResource("1_ogko2")
-tarot_card_1 = ExtResource("2_rln3n")
-tarot_card_2 = ExtResource("3_206pa")
-tarot_card_3 = ExtResource("4_5bxxk")
+script = ExtResource("1_g0n5d")
+tarot_card_1 = ExtResource("2_qoitn")
+tarot_card_2 = ExtResource("3_6oy80")
+tarot_card_3 = ExtResource("4_qym1d")
 
 [node name="view_sprite" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
@@ -26,14 +26,14 @@ texture = SubResource("ViewportTexture_p57ef")
 canvas_item_default_texture_filter = 0
 size = Vector2i(160, 144)
 
-[node name="world" parent="view2" instance=ExtResource("5_034sj")]
+[node name="world" parent="view2" instance=ExtResource("5_7xpys")]
 tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAAKAAEAAAACAAAAAAAJAAIAAAACAAAAAAAJAAMAAAACAAAAAAAJAAQAAAACAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAAAAAAJAAcAAAACAAAAAAAJAAEAAAACAAAAAAAJAAgAAAACAAAAAAAIAAgAAAACAAAAAAAHAAgAAAACAAAAAAAGAAgAAAACAAAAAAAFAAgAAAACAAAAAAAEAAgAAAACAAAAAAADAAgAAAACAAAAAAACAAgAAAACAAAAAAABAAgAAAACAAAAAAAAAAgAAAACAAAAAAAAAAcAAAACAAAAAAAAAAYAAAACAAAAAAAAAAUAAAACAAAAAAAAAAQAAAACAAAAAAAAAAMAAAACAAAAAAAAAAIAAAACAAAAAAAAAAEAAAACAAAAAAABAAQAAAADAAAAAAACAAQAAAADAAAAAAADAAQAAAADAAAAAAAEAAQAAAADAAAAAAAFAAQAAAADAAAAAAAGAAQAAAADAAAAAAAHAAQAAAADAAAAAAAIAAQAAAADAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAACAAIAAAACAAAAAAADAAIAAAACAAAAAAAEAAIAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAACAAAAAAAHAAIAAAACAAAAAAAHAAEAAAACAAAAAAAGAAEAAAACAAAAAAAFAAEAAAABAAAAAAAEAAEAAAABAAAAAAADAAEAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAABAAAAAAACAAEAAAACAAAAAAAIAAEAAAACAAAAAAAIAAIAAAACAAAAAAAIAAMAAAACAAAAAAAHAAMAAAACAAAAAAAGAAMAAAACAAAAAAAFAAMAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAACAAYAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAABAAAAAAAIAAcAAAABAAAAAAAHAAcAAAABAAAAAAAGAAcAAAABAAAAAAAFAAcAAAABAAAAAAAEAAcAAAABAAAAAAADAAcAAAABAAAAAAADAAYAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAA=")
 
-[node name="player" parent="view2" instance=ExtResource("5_5bxxk")]
+[node name="player" parent="view2" instance=ExtResource("6_nk4ps")]
 position = Vector2(80, 40)
 
-[node name="mob" parent="view2" instance=ExtResource("6_jx2v2")]
+[node name="mob" parent="view2" instance=ExtResource("7_tryr5")]
 position = Vector2(56, 104)
 
-[node name="flag" parent="view2" instance=ExtResource("7_t4cqi")]
+[node name="flag" parent="view2" instance=ExtResource("8_yys4m")]
 position = Vector2(104, 104)

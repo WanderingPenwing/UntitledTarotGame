@@ -7,18 +7,14 @@
 radius = 7.5
 
 [node name="spikes" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_bkebg")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bkebg")
 
-[node name="off" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_cbgky")
 region_enabled = true
 region_rect = Rect2(0, 32, 16, 16)
-
-[node name="on" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_cbgky")
-region_enabled = true
-region_rect = Rect2(16, 32, 16, 16)

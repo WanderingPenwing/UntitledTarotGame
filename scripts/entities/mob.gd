@@ -7,7 +7,7 @@ const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
 @onready var Player = get_tree().get_first_node_in_group("player")
 
 # pour controler le mouvement du mob
-var target: Vector2 = Vector2(randi_range(0,160), randi_range(0,144))
+var target: Vector2 = Vector2(80, 72)
 
 
 func _ready() -> void:
@@ -40,6 +40,9 @@ func _process(_delta: float) -> void:
 	if GameState.mob_status == GameState.STATUS.FLIPPED :
 		dir = -dir
 	
+	if position.distance_to(target) < 5 :
+		dir = Vector2(0, 0)
+	
 	# pour gerer l'effet glace
 	var friction = 0.05 if GameState.world_status == GameState.STATUS.FROZEN else 0.98
 	velocity = lerp(velocity, dir*SPEED, friction)
@@ -53,7 +56,11 @@ func _process(_delta: float) -> void:
 	
 	move_and_slide()
 
-
+func die() :
+	if Player.type == Player.TYPE.JACK :
+		GameState.win()
+		return
+	queue_free()
 #func _on_detect_body_entered(body: Node2D) -> void:
 	#if not body.is_in_group("player") or body.position.distance_to(position) > 16:
 		#return
