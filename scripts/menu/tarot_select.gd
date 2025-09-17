@@ -16,6 +16,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if not GameState.in_game : return
 	if not visible :
 		# cette idee de just_visible c'est a cause de Input.is_action_just_pressed :
 		# Si on est en jeu, on appuie sur B et ca affiche le tarot_select, la frame est pas terminee

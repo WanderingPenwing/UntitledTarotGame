@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://j557254suj6q"]
+[gd_scene load_steps=12 format=4 uid="uid://j557254suj6q"]
 
 [ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_4p6xu"]
 [ext_resource type="PackedScene" uid="uid://bwndkhtggejxu" path="res://prefabs/cards/21-the_world.tscn" id="2_o0rdq"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="7_txwn3"]
 [ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="8_b6kr8"]
 [ext_resource type="PackedScene" uid="uid://byd7du3lpglw7" path="res://prefabs/entities/door.tscn" id="9_o0rdq"]
+[ext_resource type="PackedScene" uid="uid://bgl8j0qcu3fc2" path="res://prefabs/entities/action_button.tscn" id="10_evqii"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
 viewport_path = NodePath("view3")
@@ -39,5 +40,9 @@ position = Vector2(112, 96)
 [node name="flag" parent="view3" instance=ExtResource("8_b6kr8")]
 position = Vector2(112, 48)
 
-[node name="door" parent="view3" instance=ExtResource("9_o0rdq")]
+[node name="door" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("9_o0rdq")]
 position = Vector2(40, 72)
+ActionButton = NodePath("../../action_button")
+
+[node name="action_button" parent="." instance=ExtResource("10_evqii")]
+position = Vector2(41, -14)
