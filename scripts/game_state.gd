@@ -34,6 +34,7 @@ var world_status = STATUS.NORMAL
 
 #Sers a définir le niveau actuel/si ingame ou pas
 var level_index = 0
+var level_unlocked = 0
 var in_game = false
 
 var cutscene_index = 0
@@ -84,10 +85,16 @@ func start_level() -> void :
 	tween.tween_callback(TarotSelect.reset)
 	in_game = true
 	SoundManager.update_music()
+	
+	level_unlocked = max(level_index, level_unlocked)
+	save_state()
+	
+	
 
 func start_cutscene() -> void :
 	get_tree().change_scene_to_packed(CUTSCENES[cutscene_index])
 	get_tree().paused = true
+
 
 func win() -> void :
 	get_tree().paused = true
@@ -104,7 +111,8 @@ func update_volume() -> void :
 
 func save_state() -> void :
 	var save_dict := { # Here you can put other variable to save
-		"volume" : volume
+		"volume" : volume,
+		"level_unlocked" : level_unlocked
 	}
 	var save_game := FileAccess.open(SAVE_FILE, FileAccess.WRITE)
 	var json_string := JSON.stringify(save_dict)
@@ -127,6 +135,7 @@ func load_state() -> void :
 		print("x : no state_data")
 		return
 		
-	# If you need to add other variable to a save, load them here, but make a save with the variable before
-	# trying to load
-	volume = state_data["volume"]
+	if "volume" in state_data :
+		volume = state_data["volume"]
+	if "level_unlocked" in state_data  :
+		level_unlocked = state_data["level_unlocked"]

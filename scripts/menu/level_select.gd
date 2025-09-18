@@ -5,16 +5,17 @@ const LEVEL_PLACEHOLDER: Resource = preload("res://prefabs/menu/level_placeholde
 
 var lines = [4, 4, 4, 1]
 var selected = Vector2i(0, 0)
-var max_level = 13
+var just_visible = false
 
 func _ready() -> void:
-	#self.hide()
-	#self.position.y = 100
+	self.hide()
+	self.position.y = 100
 	update_levels()
 
 
 func _process(_delta: float) -> void:
 	if not visible :
+		just_visible = true
 		return
 	var dir = Vector2i(0, 0)
 	
@@ -30,22 +31,28 @@ func _process(_delta: float) -> void:
 	
 	$selector.position = get_pos(selected)
 	
+	if Input.is_action_just_pressed("A") and not just_visible :
+		GameState.level_index = selected.y*4+selected.x
+		GameState.cutscene_index = GameState.level_index % len(GameState.CUTSCENES)
+		GameState.start_cutscene()
+	
+	just_visible = false
 
 func update_levels() -> void:
 	lines = []
 	for y in range(3) :
-		var len = 0
+		var unlocked = 0
 		for x in range(4) :
-			if y*4+x < max_level :
-				len += 1
+			if y*4+x < GameState.level_unlocked + 1 :
+				unlocked += 1
 				continue
 			var PlaceHolder = LEVEL_PLACEHOLDER.instantiate()
 			PlaceHolder.position = get_pos(Vector2i(x, y))
 			add_child(PlaceHolder)
-		if len != 0 :
-			lines.append(len)
+		if unlocked != 0 :
+			lines.append(unlocked)
 
-	if max_level == 13 :
+	if GameState.level_unlocked + 1 == 13 :
 		$Level13.show()
 		lines.append(1)
 
