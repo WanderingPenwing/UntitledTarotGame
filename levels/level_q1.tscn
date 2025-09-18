@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=4 uid="uid://buhb57yjpkskh"]
+
+[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_dxo3g"]
+[ext_resource type="PackedScene" uid="uid://4cpbjhwvee7e" path="res://prefabs/cards/blank_card.tscn" id="2_ufxk0"]
+[ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="5_u5rm8"]
+[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="6_u8pty"]
+[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="7_frqx5"]
+[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="8_c35dc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
+viewport_path = NodePath("view3")
+
+[node name="level3" type="Node2D" groups=["level"]]
+script = ExtResource("1_dxo3g")
+tarot_card_1 = ExtResource("2_ufxk0")
+tarot_card_2 = ExtResource("2_ufxk0")
+tarot_card_3 = ExtResource("2_ufxk0")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_p57ef")
+
+[node name="view3" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(160, 144)
+
+[node name="world2" parent="view3" instance=ExtResource("5_u5rm8")]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAACAAAAAAAJAAgAAAACAAAAAAAJAAcAAAACAAAAAAAJAAYAAAACAAAAAAAJAAUAAAACAAAAAAAJAAQAAAACAAAAAAAJAAMAAAACAAAAAAAJAAIAAAACAAAAAAAJAAEAAAACAAAAAAAJAAAAAAACAAAAAAAIAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAAAAAAACAAAAAAAFAAAAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAAEAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAAEAAQAAAABAAAAAAADAAQAAAABAAAAAAACAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAEAAAABAAAAAAACAAIAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAABAAAAAAABAAEAAAABAAAAAAADAAIAAAABAAAAAAADAAMAAAABAAAAAAADAAEAAAABAAAAAAACAAMAAAABAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAHAAEAAAABAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAHAAIAAAABAAAAAAAIAAEAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAIAAYAAAABAAAAAAAGAAcAAAABAAAAAAAFAAcAAAABAAAAAAAEAAcAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAHAAQAAAABAAAAAAAIAAQAAAABAAAAAAA=")
+
+[node name="mob" parent="view3" instance=ExtResource("7_frqx5")]
+position = Vector2(88, 92)
+
+[node name="flag" parent="view3" instance=ExtResource("8_c35dc")]
+position = Vector2(65, 46)
+
+[node name="player" parent="view3" instance=ExtResource("6_u8pty")]
+position = Vector2(40, 66)
+type = 1

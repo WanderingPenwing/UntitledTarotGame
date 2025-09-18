@@ -7,7 +7,9 @@ const LEVELS = [
 	preload("res://levels/level_k1.tscn"),
 	preload("res://levels/level_k2.tscn"),
 	preload("res://levels/level_k3.tscn"),
-	preload("res://levels/level_k4.tscn")
+	preload("res://levels/level_k4.tscn"),
+	preload("res://levels/level_q1.tscn"),
+	preload("res://levels/level_j1.tscn")
 ]
 
 const CUTSCENES = [
@@ -92,6 +94,9 @@ func start_level() -> void :
 	
 
 func start_cutscene() -> void :
+	player_status = STATUS.NORMAL
+	mob_status = STATUS.NORMAL
+	world_status = STATUS.NORMAL
 	get_tree().change_scene_to_packed(CUTSCENES[cutscene_index])
 	get_tree().paused = true
 

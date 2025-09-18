@@ -5,6 +5,7 @@ const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
 
 # Une facon de recup une node random et y avoir acces plus tard
 @onready var Player = get_tree().get_first_node_in_group("player")
+@onready var Flag = get_tree().get_first_node_in_group("flag")
 
 # pour controler le mouvement du mob
 var target: Vector2 = Vector2(80, 72)
@@ -33,7 +34,10 @@ func _process(_delta: float) -> void:
 	
 	# si le mob est pas aveugle on target le joueur
 	if GameState.mob_status != GameState.STATUS.BLIND :
-		target = Player.position
+		if Player.type == Player.TYPE.QUEEN :
+			target = Flag.position
+		else :
+			target = Player.position
 	
 	var dir = (target - position).normalized()
 	# Inversion des controls
@@ -68,3 +72,11 @@ func die() :
 	#get_tree().paused = true
 	#GameState.call_deferred("reset_level")
 	#SoundManager.play_sound(DEATH_SOUND, true)
+
+
+func _on_detect_area_entered(area: Area2D) -> void:
+	if not Flag.is_in_group("flag") or Player.type != Player.TYPE.QUEEN :
+		return
+	get_tree().paused = true
+	GameState.call_deferred("reset_level")
+	SoundManager.play_sound(DEATH_SOUND, true)

@@ -8,5 +8,5 @@ extends CanvasLayer
 
 
 func _process(_delta: float) -> void:
-	blindness.visible = (GameState.player_status == GameState.STATUS.BLIND)
+	blindness.visible = (GameState.player_status == GameState.STATUS.BLIND) and not win_label.visible
 	draw_tarot_label.visible = GameState.in_game

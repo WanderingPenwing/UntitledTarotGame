@@ -28,4 +28,5 @@ collision_mask = 3
 shape = SubResource("CircleShape2D_l4ws6")
 debug_color = Color(0.885015, 0.317972, 0.258857, 0.42)
 
+[connection signal="area_entered" from="detect" to="." method="_on_detect_area_entered"]
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
