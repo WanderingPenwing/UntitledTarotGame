@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=13 format=3 uid="uid://8vivve8goh0k"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_xkkb3"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_u1kqo"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_xkkb3")
+line = "Can't you see it now ?"
+char = "Jack?"
+visual = "Jack"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xkkb3"]
+script = ExtResource("1_xkkb3")
+line = "I only see you in this card."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_u1kqo"]
+script = ExtResource("1_xkkb3")
+line = "An absolute fool."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_tj73m"]
+script = ExtResource("1_xkkb3")
+line = "Think again."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_hgqcr"]
+script = ExtResource("1_xkkb3")
+line = "Because a Fool of a Priestess who is in love with her own astronomical ego is sitting right here."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_y2k0e"]
+script = ExtResource("1_xkkb3")
+line = "In front of me."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_0tdvs"]
+script = ExtResource("1_xkkb3")
+line = "Don't be an idiot. I cannot read myself by accident."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xdyis"]
+script = ExtResource("1_xkkb3")
+line = "Who says you are the one reading ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_734g7"]
+script = ExtResource("1_xkkb3")
+line = "Come on, keep going. You will see I'm right."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_kd3qh"]
+script = ExtResource("1_xkkb3")
+line = "This can't be..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_u1kqo")
+dialogue = Array[ExtResource("1_xkkb3")]([SubResource("Resource_8gjvx"), SubResource("Resource_xkkb3"), SubResource("Resource_u1kqo"), SubResource("Resource_tj73m"), SubResource("Resource_hgqcr"), SubResource("Resource_y2k0e"), SubResource("Resource_0tdvs"), SubResource("Resource_xdyis"), SubResource("Resource_734g7"), SubResource("Resource_kd3qh")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

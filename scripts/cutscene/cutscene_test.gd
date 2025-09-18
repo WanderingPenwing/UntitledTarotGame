@@ -186,3 +186,6 @@ func change_state(next_state):
 
 func change_sprite(next_state):
 	current_sprite = next_state
+
+func query():
+	pass

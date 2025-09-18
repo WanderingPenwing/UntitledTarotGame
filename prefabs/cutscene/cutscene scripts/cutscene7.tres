@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=10 format=3 uid="uid://bpaj08gsp37s6"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_ve7r5"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_s3smn"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_ve7r5")
+line = "The Moon. By itself, it's quite a bad omen."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ve7r5"]
+script = ExtResource("1_ve7r5")
+line = "Of course it would be..."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_s3smn"]
+script = ExtResource("1_ve7r5")
+line = "But... I feel like there is something deeper in there."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_6e830"]
+script = ExtResource("1_ve7r5")
+line = "It may represent danger and mistakes, but a card but me read in context."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_t2m5x"]
+script = ExtResource("1_ve7r5")
+line = "Give me another minute of your time and I shall pierce the mist shrouding your fate."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_njjrd"]
+script = ExtResource("1_ve7r5")
+line = "Such pretty words."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_y7v0v"]
+script = ExtResource("1_ve7r5")
+line = "Then show me, I suppose."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_s3smn")
+dialogue = Array[ExtResource("1_ve7r5")]([SubResource("Resource_8gjvx"), SubResource("Resource_ve7r5"), SubResource("Resource_s3smn"), SubResource("Resource_6e830"), SubResource("Resource_t2m5x"), SubResource("Resource_njjrd"), SubResource("Resource_y7v0v")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

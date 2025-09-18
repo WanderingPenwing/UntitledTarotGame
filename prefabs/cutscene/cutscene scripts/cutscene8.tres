@@ -1,0 +1,261 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=39 format=3 uid="uid://bqf8p34qe567"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_8wpr0"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_74qi4"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_8wpr0")
+line = "Yes, it is like I thought"
+char = "Seer"
+visual = "Queen"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_8wpr0"]
+script = ExtResource("1_8wpr0")
+line = "Yes, you will have your son."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_74qi4"]
+script = ExtResource("1_8wpr0")
+line = "Huh."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ca2f8"]
+script = ExtResource("1_8wpr0")
+line = "You don't look thrilled."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_v5qeb"]
+script = ExtResource("1_8wpr0")
+line = "..."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_octcy"]
+script = ExtResource("1_8wpr0")
+line = "How did you reach that conclusion ?"
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_sfx0f"]
+script = ExtResource("1_8wpr0")
+line = "Does it matter ?"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_f542w"]
+script = ExtResource("1_8wpr0")
+line = "Yeah, I suppose it doesn't."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_sfcur"]
+script = ExtResource("1_8wpr0")
+line = "Fine."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_nqq6i"]
+script = ExtResource("1_8wpr0")
+line = "Thank you."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_5a0ca"]
+script = ExtResource("1_8wpr0")
+line = "I will be on my way, I suppose."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_onvco"]
+script = ExtResource("1_8wpr0")
+line = "..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_hrjcr"]
+script = ExtResource("1_8wpr0")
+line = "Yes."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_5n18u"]
+script = ExtResource("1_8wpr0")
+line = "Take care, Your Highness."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_qu1r3"]
+script = ExtResource("1_8wpr0")
+line = "I'll do my best."
+char = "Queen"
+visual = "none"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_0h85k"]
+script = ExtResource("1_8wpr0")
+line = "..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_lsjwy"]
+script = ExtResource("1_8wpr0")
+line = "What a sad woman..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_rdbsf"]
+script = ExtResource("1_8wpr0")
+line = "*many moments later*"
+char = "."
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_57oul"]
+script = ExtResource("1_8wpr0")
+line = "A brave soul enters in search of..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_yrq6x"]
+script = ExtResource("1_8wpr0")
+line = "Shut up."
+char = "???"
+visual = "Jack"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_nspv5"]
+script = ExtResource("1_8wpr0")
+line = "..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_5bplq"]
+script = ExtResource("1_8wpr0")
+line = "You're going to tell me my name huh ?"
+char = "???"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_hlgm7"]
+script = ExtResource("1_8wpr0")
+line = "..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_p6i5j"]
+script = ExtResource("1_8wpr0")
+line = "You are Jack..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_rv7x5"]
+script = ExtResource("1_8wpr0")
+line = "Dead wrong."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ov36w"]
+script = ExtResource("1_8wpr0")
+line = "Dead, dead wrong."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_s4yj4"]
+script = ExtResource("1_8wpr0")
+line = "You're so wrong I don't even know where to begin."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_x7qmd"]
+script = ExtResource("1_8wpr0")
+line = "You... you are Jack. You may not want that fate, but that's what you are."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_fvwbj"]
+script = ExtResource("1_8wpr0")
+line = "You were born that way."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_854vs"]
+script = ExtResource("1_8wpr0")
+line = "And who are you to say that ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_euuki"]
+script = ExtResource("1_8wpr0")
+line = "Some old woman in an old decrepit tent ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_fqv87"]
+script = ExtResource("1_8wpr0")
+line = "What do you know about me ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_a1bo7"]
+script = ExtResource("1_8wpr0")
+line = "Everything."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_c8pg1"]
+script = ExtResource("1_8wpr0")
+line = "That's what I do."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_hqugp"]
+script = ExtResource("1_8wpr0")
+line = "You came here for a reading, right ? I'll show you, man."
+char = ""
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_4lcrh"]
+script = ExtResource("1_8wpr0")
+line = "I am no man."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_74qi4")
+dialogue = Array[ExtResource("1_8wpr0")]([SubResource("Resource_8gjvx"), SubResource("Resource_8wpr0"), SubResource("Resource_74qi4"), SubResource("Resource_ca2f8"), SubResource("Resource_v5qeb"), SubResource("Resource_octcy"), SubResource("Resource_sfx0f"), SubResource("Resource_f542w"), SubResource("Resource_sfcur"), SubResource("Resource_nqq6i"), SubResource("Resource_5a0ca"), SubResource("Resource_onvco"), SubResource("Resource_hrjcr"), SubResource("Resource_5n18u"), SubResource("Resource_qu1r3"), SubResource("Resource_0h85k"), SubResource("Resource_lsjwy"), SubResource("Resource_rdbsf"), SubResource("Resource_57oul"), SubResource("Resource_yrq6x"), SubResource("Resource_nspv5"), SubResource("Resource_5bplq"), SubResource("Resource_hlgm7"), SubResource("Resource_p6i5j"), SubResource("Resource_rv7x5"), SubResource("Resource_ov36w"), SubResource("Resource_s4yj4"), SubResource("Resource_x7qmd"), SubResource("Resource_fvwbj"), SubResource("Resource_854vs"), SubResource("Resource_euuki"), SubResource("Resource_fqv87"), SubResource("Resource_a1bo7"), SubResource("Resource_c8pg1"), SubResource("Resource_hqugp"), SubResource("Resource_4lcrh")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

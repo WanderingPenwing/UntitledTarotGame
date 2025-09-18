@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=16 format=3 uid="uid://duwn6ye5v5djs"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_t4sqd"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_8uye8"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_t4sqd")
+line = "The High Priestess."
+char = "Seer"
+visual = "Jack"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_t4sqd"]
+script = ExtResource("1_t4sqd")
+line = "Well, maybe now you will take a hint ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_8uye8"]
+script = ExtResource("1_t4sqd")
+line = "Your own cards are telling you the truth"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_gtj60"]
+script = ExtResource("1_t4sqd")
+line = "No."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_wjw1t"]
+script = ExtResource("1_t4sqd")
+line = "That and the Lovers just tell me one thing."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_j7r2p"]
+script = ExtResource("1_t4sqd")
+line = "You overthink it. You could just accept your fate and you would leave happy for the rest of your life."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_0la3e"]
+script = ExtResource("1_t4sqd")
+line = "Happy ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ixnbm"]
+script = ExtResource("1_t4sqd")
+line = "My life was hell everytime I came accross a reflection of myself."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ywjd0"]
+script = ExtResource("1_t4sqd")
+line = "That is a happy life, for you ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_y5dsr"]
+script = ExtResource("1_t4sqd")
+line = "You can't change who you are, Jack."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_v8n1d"]
+script = ExtResource("1_t4sqd")
+line = "Accept it. It is your fate."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_5dq4w"]
+script = ExtResource("1_t4sqd")
+line = "To hell with fate."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_l8qbr"]
+script = ExtResource("1_t4sqd")
+line = "Draw another card."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_8uye8")
+dialogue = Array[ExtResource("1_t4sqd")]([SubResource("Resource_8gjvx"), SubResource("Resource_t4sqd"), SubResource("Resource_8uye8"), SubResource("Resource_gtj60"), SubResource("Resource_wjw1t"), SubResource("Resource_j7r2p"), SubResource("Resource_0la3e"), SubResource("Resource_ixnbm"), SubResource("Resource_ywjd0"), SubResource("Resource_y5dsr"), SubResource("Resource_v8n1d"), SubResource("Resource_5dq4w"), SubResource("Resource_l8qbr")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

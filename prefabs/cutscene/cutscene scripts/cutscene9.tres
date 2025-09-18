@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=17 format=3 uid="uid://iwmr0h8grtdp"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_npeie"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_6g548"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_npeie")
+line = "The Lovers"
+char = "Seer"
+visual = "Jack"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_npeie"]
+script = ExtResource("1_npeie")
+line = "Let me guess."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_6g548"]
+script = ExtResource("1_npeie")
+line = "Am I going to meet the person that will bear my heir soon ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xpfce"]
+script = ExtResource("1_npeie")
+line = "Will I escape my loveless marriage to be with the one I am meant to be with ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_yrwpm"]
+script = ExtResource("1_npeie")
+line = "Or maybe I will escape this marriage but only because I die in childbirth ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_2qrol"]
+script = ExtResource("1_npeie")
+line = "Oh yeah, I can't, I forgot."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_mfesr"]
+script = ExtResource("1_npeie")
+line = "I'm a man ain't I ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ggc4l"]
+script = ExtResource("1_npeie")
+line = "..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_h0ubf"]
+script = ExtResource("1_npeie")
+line = "You are heading to your death."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_11dlh"]
+script = ExtResource("1_npeie")
+line = "Just... Why do you care so much about going against who you truly are ?"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ua8w7"]
+script = ExtResource("1_npeie")
+line = "Because you are not the one to decide that. I am"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_f30io"]
+script = ExtResource("1_npeie")
+line = "Draw another card."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_mvrn2"]
+script = ExtResource("1_npeie")
+line = "Your wish is my..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ftsnc"]
+script = ExtResource("1_npeie")
+line = "Oh, shut up."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_6g548")
+dialogue = Array[ExtResource("1_npeie")]([SubResource("Resource_8gjvx"), SubResource("Resource_npeie"), SubResource("Resource_6g548"), SubResource("Resource_xpfce"), SubResource("Resource_yrwpm"), SubResource("Resource_2qrol"), SubResource("Resource_mfesr"), SubResource("Resource_ggc4l"), SubResource("Resource_h0ubf"), SubResource("Resource_11dlh"), SubResource("Resource_ua8w7"), SubResource("Resource_f30io"), SubResource("Resource_mvrn2"), SubResource("Resource_ftsnc")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

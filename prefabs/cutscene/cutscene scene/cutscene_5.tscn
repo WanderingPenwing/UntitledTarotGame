@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d00xl2vg33ka4"]
+[gd_scene load_steps=11 format=3 uid="uid://bpr07j46c4geb"]
 
-[ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_rog4v"]
-[ext_resource type="Resource" uid="uid://b7g2n6wirve1v" path="res://prefabs/cutscene/cutscene scripts/cutscene3.tres" id="2_rog4v"]
-[ext_resource type="Texture2D" uid="uid://n4ltr1avterl" path="res://images/cutscene/king placeholder.png" id="3_8vgxs"]
-[ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="3_v25pi"]
-[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="4_8vgxs"]
-[ext_resource type="Texture2D" uid="uid://isksm77n3jck" path="res://images/cutscene/queen placeholder.png" id="4_r8fg1"]
-[ext_resource type="Texture2D" uid="uid://dr0epy5tt2b5c" path="res://images/cutscene/tableplaceholder.png" id="5_tdkw6"]
+[ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_6ktqc"]
+[ext_resource type="Resource" uid="uid://d4gxp6bnw1qg1" path="res://prefabs/cutscene/cutscene scripts/cutscene5.tres" id="2_6ktqc"]
+[ext_resource type="Texture2D" uid="uid://n4ltr1avterl" path="res://images/cutscene/king placeholder.png" id="3_wm0bx"]
+[ext_resource type="Texture2D" uid="uid://isksm77n3jck" path="res://images/cutscene/queen placeholder.png" id="4_8ffje"]
+[ext_resource type="Texture2D" uid="uid://dr0epy5tt2b5c" path="res://images/cutscene/tableplaceholder.png" id="5_wxwfq"]
+[ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="6_vwjbw"]
+[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="7_ch225"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6gy54"]
 viewport_path = NodePath("SubViewport")
@@ -16,15 +16,15 @@ size = Vector2(160, 144)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d308j"]
 line_spacing = 0.0
-font = ExtResource("4_8vgxs")
+font = ExtResource("7_ch225")
 
 [node name="cutscene" type="Node2D" node_paths=PackedStringArray("TextBox")]
 process_mode = 3
-script = ExtResource("1_rog4v")
+script = ExtResource("1_6ktqc")
 TextBox = [NodePath("SubViewport/Line1"), NodePath("SubViewport/Line2"), NodePath("SubViewport/Line3")]
-dialogue = ExtResource("2_rog4v")
-KingSprite = ExtResource("3_8vgxs")
-QueenSprite = ExtResource("4_r8fg1")
+dialogue = ExtResource("2_6ktqc")
+KingSprite = ExtResource("3_wm0bx")
+QueenSprite = ExtResource("4_8ffje")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
@@ -41,12 +41,12 @@ texture = SubResource("PlaceholderTexture2D_gdv8h")
 [node name="CharacterSprite" type="Sprite2D" parent="SubViewport"]
 position = Vector2(79, 63)
 scale = Vector2(0.317143, 0.317143)
-texture = ExtResource("3_8vgxs")
+texture = ExtResource("3_wm0bx")
 
 [node name="Table" type="Sprite2D" parent="SubViewport"]
 position = Vector2(80, 73.1731)
 scale = Vector2(0.25817, 0.25817)
-texture = ExtResource("5_tdkw6")
+texture = ExtResource("5_wxwfq")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="SubViewport"]
 offset_left = 5.22
@@ -54,7 +54,7 @@ offset_top = 85.0
 offset_right = 155.22
 offset_bottom = 139.0
 size_flags_horizontal = 3
-texture = ExtResource("3_v25pi")
+texture = ExtResource("6_vwjbw")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -67,7 +67,7 @@ offset_top = 69.0
 offset_right = 48.0
 offset_bottom = 85.0
 size_flags_horizontal = 3
-texture = ExtResource("3_v25pi")
+texture = ExtResource("6_vwjbw")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -115,7 +115,7 @@ offset_left = 10.0
 offset_top = 69.0
 offset_right = 45.0
 offset_bottom = 102.0
-theme_override_fonts/font = ExtResource("4_8vgxs")
+theme_override_fonts/font = ExtResource("7_ch225")
 theme_override_font_sizes/font_size = 16
 text = "
 "
