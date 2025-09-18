@@ -1,23 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgl8j0qcu3fc2"]
 
 [ext_resource type="Script" uid="uid://cghexafn84fc0" path="res://scripts/entities/action_button.gd" id="1_ccima"]
-[ext_resource type="Texture2D" uid="uid://df8vkqerjyd1k" path="res://images/env/map.png" id="2_dsimy"]
+[ext_resource type="Texture2D" uid="uid://dcjjx0uuumide" path="res://images/env/Tarot_Env.png" id="2_ccima"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ikqf"]
 radius = 5.0
 
 [node name="action_button" type="Area2D"]
+collision_layer = 119
+collision_mask = 119
 script = ExtResource("1_ccima")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6ikqf")
 
-[node name="on" type="Sprite2D" parent="."]
-texture = ExtResource("2_dsimy")
-region_enabled = true
-region_rect = Rect2(32, 16, 16, 16)
-
 [node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_dsimy")
+texture = ExtResource("2_ccima")
 region_enabled = true
-region_rect = Rect2(16, 16, 16, 16)
+region_rect = Rect2(0, 0, 16, 16)

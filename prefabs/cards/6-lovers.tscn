@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx366a1ivm338"]
+
+[ext_resource type="Texture2D" uid="uid://5tgyrs11ebev" path="res://images/cards/lovers.png" id="1_rdxp7"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_p1xdp"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_rdxp7")
+script = ExtResource("2_p1xdp")
+status_index = 6

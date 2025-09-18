@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://j3x6c35llf7x"]
+[gd_scene load_steps=7 format=3 uid="uid://j3x6c35llf7x"]
 
 [ext_resource type="Script" uid="uid://c6g2rubnnuemg" path="res://scripts/menu/tarot_select.gd" id="1_veub5"]
+[ext_resource type="Texture2D" uid="uid://boftycdm7366d" path="res://images/menu/hint.png" id="5_ogchh"]
 [ext_resource type="Texture2D" uid="uid://om0p6b52h3gp" path="res://images/menu/backgroud.png" id="5_ogts6"]
 [ext_resource type="Texture2D" uid="uid://dkd0fkxbhcerk" path="res://images/menu/selector.png" id="6_t6qfn"]
 [ext_resource type="Texture2D" uid="uid://ddrjn3uwd2dmt" path="res://images/menu/continue.png" id="7_y54el"]
@@ -30,7 +31,12 @@ z_index = 1
 position = Vector2(30, 54)
 texture = ExtResource("6_t6qfn")
 
+[node name="Hint" type="Sprite2D" parent="view_t"]
+position = Vector2(80, 135)
+texture = ExtResource("5_ogchh")
+region_enabled = true
+region_rect = Rect2(0, 79, 64, 14)
+
 [node name="continue" type="Sprite2D" parent="view_t"]
-visible = false
 position = Vector2(80, 121)
 texture = ExtResource("7_y54el")

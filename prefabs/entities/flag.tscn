@@ -1,19 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpu21bx276evw"]
+[gd_scene load_steps=5 format=3 uid="uid://cpu21bx276evw"]
 
 [ext_resource type="Script" uid="uid://sxp1elcwqse3" path="res://scripts/entities/flag.gd" id="1_j2cfk"]
 [ext_resource type="Texture2D" uid="uid://b5ma0gpxn3ima" path="res://images/entities/flag.png" id="2_j2cfk"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4y0d"]
+radius = 6.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 8.0
 
-[node name="flag" type="Area2D" groups=["flag"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["flag"]]
+collision_layer = 68
+collision_mask = 68
 script = ExtResource("1_j2cfk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d4y0d")
+debug_color = Color(0.764825, 0.447841, 0.0697612, 0.42)
+
+[node name="flag" type="Area2D" parent="."]
+collision_layer = 51
+collision_mask = 51
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flag"]
+shape = SubResource("CircleShape2D_1rtib")
+debug_color = Color(0.764825, 0.447841, 0.0697612, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_j2cfk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_1rtib")
-debug_color = Color(0.764825, 0.447841, 0.0697612, 0.42)
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="flag" to="." method="_on_flag_body_entered"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bihipis3ss6ws"]
+
+[ext_resource type="Texture2D" uid="uid://bphdk57eakwgk" path="res://images/cards/priestess.png" id="1_emdc6"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_lad4s"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_emdc6")
+script = ExtResource("2_lad4s")
+status_index = 7

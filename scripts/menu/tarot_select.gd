@@ -74,11 +74,11 @@ func _process(_delta: float) -> void:
 	if (slots[0][0] and slots[0][1] and slots[0][2]) != ContinueLabel.visible :
 		update_continue_label(slots[0][0] and slots[0][1] and slots[0][2])
 	
-	if Input.is_action_just_pressed("B") and ContinueLabel.visible and not just_visible :
+	if Input.is_action_just_pressed("B") and not just_visible :
 		self.hide()
-		GameState.player_status = slots[0][0].status_index
-		GameState.mob_status = slots[0][1].status_index
-		GameState.world_status = slots[0][2].status_index
+		GameState.player_status = slots[0][0].status_index if slots[0][0] else GameState.STATUS.NORMAL
+		GameState.mob_status = slots[0][1].status_index if slots[0][1] else GameState.STATUS.NORMAL
+		GameState.world_status = slots[0][2].status_index if slots[0][2] else GameState.STATUS.NORMAL
 		GameState.reset_level()
 	
 	update_cards()
@@ -137,13 +137,13 @@ func restore() :
 func select(vec: Vector2i) -> void :
 	# deplace le curseur, et si une carte est en mouvement, ca la deplace avec
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.tween_property($view_t/selector, 'position', Vector2(30 + 50 * (vec.x), 54 + 55 * (vec.y) - (10 if holding else 0)), 0.1)
+	tween.tween_property($view_t/selector, 'position', Vector2(30 + 50 * (vec.x), 54 + 51 * (vec.y) - (10 if holding else 0)), 0.1)
 	if holding :
 		move_card(holding, vec)
 
 
 func move_card(card: Sprite2D, vec: Vector2i) -> void :
-	var target: Vector2 = Vector2(30 + 50 * (vec.x), 54 + 55 * (vec.y) - (10 if card == holding else 0))
+	var target: Vector2 = Vector2(30 + 50 * (vec.x), 54 + 51 * (vec.y) - (10 if card == holding else 0))
 	if card.position == target :
 		return
 	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
@@ -155,9 +155,9 @@ func update_continue_label(visibility: bool) -> void :
 	if visibility :
 		ContinueLabel.show()
 		ContinueLabel.position.y = 121
-		tween.tween_property(ContinueLabel, "position", Vector2(80,72), 0.1)
+		tween.tween_property(ContinueLabel, "position", Vector2(80,68), 0.1)
 		SoundManager.play_sound(TAROT_CHECK_SOUND, true)
 	else :
-		ContinueLabel.position.y = 72
+		ContinueLabel.position.y = 68
 		tween.tween_property(ContinueLabel, "position", Vector2(80,121), 0.1)
 		tween.tween_callback(ContinueLabel.hide)

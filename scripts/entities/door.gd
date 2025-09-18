@@ -8,3 +8,4 @@ func _ready() -> void:
 func toggled(state: bool) -> void :
 	$sprite.region_rect.position.x = 48 if state else 32
 	set_collision_layer_value(1, not state)
+	set_collision_layer_value(2, not state)

@@ -1,6 +1,6 @@
 extends Node
 
-enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN, CHARIOT, FOOL}
+enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN, CHARIOT, FOOL, LOVE, FAITH}
 
 const SAVE_FILE : String = "user://state.save"
 const LEVELS = [
@@ -8,8 +8,10 @@ const LEVELS = [
 	preload("res://levels/level_k2.tscn"),
 	preload("res://levels/level_k3.tscn"),
 	preload("res://levels/level_k4.tscn"),
-	preload("res://levels/level_q1.tscn"),
-	preload("res://levels/level_j1.tscn")
+	preload("res://levels/level_j1.tscn"),
+	preload("res://levels/level_j2.tscn"),
+	preload("res://levels/level_j3.tscn"),
+	preload("res://levels/level_j4.tscn")
 ]
 
 const CUTSCENES = [

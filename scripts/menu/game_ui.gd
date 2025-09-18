@@ -5,6 +5,8 @@ extends CanvasLayer
 @export var draw_tarot_label: Node
 @export var start_label: Node
 @export var win_label: Node
+@export var time_hint: Node
+@export var time_label: Node
 
 
 func _process(_delta: float) -> void:

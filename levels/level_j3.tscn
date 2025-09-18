@@ -1,0 +1,69 @@
+[gd_scene load_steps=14 format=4 uid="uid://bocv8ogi7luw0"]
+
+[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_ynjbi"]
+[ext_resource type="PackedScene" uid="uid://dx366a1ivm338" path="res://prefabs/cards/6-lovers.tscn" id="2_cn0sw"]
+[ext_resource type="PackedScene" uid="uid://bihipis3ss6ws" path="res://prefabs/cards/2-priestess.tscn" id="3_v1slo"]
+[ext_resource type="PackedScene" uid="uid://rav1wjp17sc0" path="res://prefabs/cards/1-fool.tscn" id="4_ynjbi"]
+[ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="5_wmn53"]
+[ext_resource type="PackedScene" uid="uid://c5mbfjb7eapbt" path="res://prefabs/entities/spikes.tscn" id="6_gdele"]
+[ext_resource type="Script" uid="uid://blwc6v2kr36ca" path="res://scripts/entities/world_faith.gd" id="7_cn0sw"]
+[ext_resource type="PackedScene" uid="uid://byd7du3lpglw7" path="res://prefabs/entities/door.tscn" id="7_khtfc"]
+[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="8_gajhs"]
+[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="9_675hj"]
+[ext_resource type="PackedScene" uid="uid://bgl8j0qcu3fc2" path="res://prefabs/entities/action_button.tscn" id="10_6vuwj"]
+[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="11_3g4dq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
+viewport_path = NodePath("view3")
+
+[node name="level3" type="Node2D" groups=["level"]]
+script = ExtResource("1_ynjbi")
+tarot_card_1 = ExtResource("2_cn0sw")
+tarot_card_2 = ExtResource("3_v1slo")
+tarot_card_3 = ExtResource("4_ynjbi")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_p57ef")
+
+[node name="view3" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(160, 144)
+
+[node name="world2" parent="view3" instance=ExtResource("5_wmn53")]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAACAAAAAAAJAAgAAAACAAAAAAAJAAcAAAACAAAAAAAJAAYAAAACAAAAAAAJAAUAAAACAAAAAAAJAAQAAAACAAAAAAAJAAMAAAACAAAAAAAJAAIAAAACAAAAAAAJAAEAAAACAAAAAAAJAAAAAAACAAAAAAAIAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAAAAAAACAAAAAAAFAAAAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAAEAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAAEAAQAAAACAAAAAAADAAQAAAACAAAAAAACAAQAAAACAAAAAAABAAQAAAACAAAAAAACAAEAAAABAAAAAAACAAIAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAABAAAAAAABAAEAAAABAAAAAAADAAIAAAABAAAAAAADAAMAAAABAAAAAAADAAEAAAABAAAAAAACAAMAAAABAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAHAAEAAAABAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAHAAIAAAABAAAAAAAIAAEAAAABAAAAAAAIAAUAAAACAAAAAAAHAAUAAAABAAAAAAAGAAUAAAACAAAAAAAFAAUAAAACAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAADAAAAAAABAAcAAAADAAAAAAACAAcAAAADAAAAAAADAAcAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAADAAAAAAAEAAYAAAABAAAAAAAFAAYAAAACAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAIAAYAAAABAAAAAAAGAAcAAAABAAAAAAAFAAcAAAACAAAAAAAEAAcAAAABAAAAAAAFAAQAAAACAAAAAAAGAAQAAAADAAAAAAAHAAQAAAADAAAAAAAIAAQAAAADAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAUAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAGAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAD//wgAAAAAAAAAAAD5/wYAAAAAAAAAAAA=")
+
+[node name="spikes" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_gdele")]
+position = Vector2(72, 40)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes2" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_gdele")]
+position = Vector2(72, 56)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes3" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_gdele")]
+position = Vector2(72, 24)
+ActionButton = NodePath("../action_button")
+
+[node name="faith" type="Node2D" parent="view3"]
+script = ExtResource("7_cn0sw")
+
+[node name="door" parent="view3/faith" node_paths=PackedStringArray("ActionButton") instance=ExtResource("7_khtfc")]
+position = Vector2(120, 88)
+ActionButton = NodePath("../dummy_button2")
+
+[node name="dummy_button2" parent="view3/faith" instance=ExtResource("10_6vuwj")]
+position = Vector2(104, 120)
+
+[node name="action_button" parent="view3" instance=ExtResource("10_6vuwj")]
+position = Vector2(62, 99)
+
+[node name="flag" parent="view3" instance=ExtResource("8_gajhs")]
+position = Vector2(120, 112)
+
+[node name="mob" parent="view3" instance=ExtResource("9_675hj")]
+position = Vector2(40, 40)
+
+[node name="player" parent="view3" instance=ExtResource("11_3g4dq")]
+position = Vector2(120, 40)
+type = 2

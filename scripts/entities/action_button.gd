@@ -9,7 +9,7 @@ func _process(_delta: float) -> void:
 	var player_touching = false
 	
 	for body in get_overlapping_bodies() :
-		if not body.is_in_group("player") :
+		if not (body.is_in_group("player") or body.is_in_group("flag"))  :
 			continue
 		player_touching = true
 	
@@ -22,5 +22,5 @@ func _process(_delta: float) -> void:
 	
 	touched = true
 	state = not state
-	$sprite.region_rect.position.x = 32 if state else 16
+	$sprite.region_rect.position.x = 16 if state else 0
 	toggled.emit(state)

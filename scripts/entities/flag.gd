@@ -1,8 +1,21 @@
-extends Area2D
+extends CharacterBody2D
 
+const LOVE_SPEED : float = 10 
 const WIN_SOUND : Resource = preload("res://audio/sfx/win2.wav")
 
-func _on_body_entered(body: Node2D) -> void:
+@onready var Player = get_tree().get_first_node_in_group("player")
+@onready var Mob = get_tree().get_first_node_in_group("mob")
+
+func _physics_process(delta: float) -> void:
+	velocity = Vector2(0, 0)
+	if GameState.mob_status == GameState.STATUS.LOVE :
+		velocity = LOVE_SPEED * position.direction_to(Mob.position)
+	if GameState.player_status == GameState.STATUS.LOVE :
+		velocity = LOVE_SPEED * position.direction_to(Player.position)
+	
+	move_and_slide()
+
+func _on_flag_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player") or body.position.distance_to(position) > 16 :
 		return
 	if body.type != body.TYPE.KING :

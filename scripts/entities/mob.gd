@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED: float = 80
+const SPEED: float = 60
 const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
 
 # Une facon de recup une node random et y avoir acces plus tard
@@ -25,16 +25,19 @@ func _ready() -> void:
 		Player.position = Vector2(-100, -100)
 		flag.position = player_pos
 		Player.position = flag_pos
+	if GameState.mob_status == GameState.STATUS.FAITH :
+		set_collision_layer_value(2, false)
+		set_collision_mask_value(2, false)
 
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# si le mob est freeze
 	if GameState.mob_status == GameState.STATUS.FROZEN :
 		return
 	
 	# si le mob est pas aveugle on target le joueur
 	if GameState.mob_status != GameState.STATUS.BLIND :
-		if Player.type == Player.TYPE.QUEEN :
+		if Player.type == Player.TYPE.QUEEN or GameState.world_status == GameState.STATUS.LOVE :
 			target = Flag.position
 		else :
 			target = Player.position
