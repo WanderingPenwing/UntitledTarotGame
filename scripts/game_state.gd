@@ -11,10 +11,14 @@ const LEVELS = [
 ]
 
 const CUTSCENES = [
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_start.tscn"),
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_1.tscn"),
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_2.tscn"),
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_3.tscn"),
-	preload("res://prefabs/cutscene/cutscene scene/cutscene_4.tscn")
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_4.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_5.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_6.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_7.tscn")
 ]
 
 @onready var master_bus : int = AudioServer.get_bus_index("Master")

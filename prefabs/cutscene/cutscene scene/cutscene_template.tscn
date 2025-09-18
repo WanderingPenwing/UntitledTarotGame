@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b44hlgsfso1rt"]
 
 [ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_mcc4g"]
-[ext_resource type="Resource" uid="uid://bkkoht3qs7j61" path="res://prefabs/cutscene/cutscene scripts/cutscene3.tres" id="2_mcc4g"]
+[ext_resource type="Resource" uid="uid://ci8yy2x6qsng6" path="res://prefabs/cutscene/cutscene scripts/cutscenestart.tres" id="2_pkn1k"]
 [ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="3_mhmj7"]
 [ext_resource type="Texture2D" uid="uid://n4ltr1avterl" path="res://images/cutscene/king placeholder.png" id="3_pkn1k"]
 [ext_resource type="Texture2D" uid="uid://isksm77n3jck" path="res://images/cutscene/queen placeholder.png" id="4_gdv8h"]
@@ -22,7 +22,7 @@ font = ExtResource("4_pkn1k")
 process_mode = 3
 script = ExtResource("1_mcc4g")
 TextBox = [NodePath("SubViewport/Line1"), NodePath("SubViewport/Line2"), NodePath("SubViewport/Line3")]
-dialogue = ExtResource("2_mcc4g")
+dialogue = ExtResource("2_pkn1k")
 KingSprite = ExtResource("3_pkn1k")
 QueenSprite = ExtResource("4_gdv8h")
 

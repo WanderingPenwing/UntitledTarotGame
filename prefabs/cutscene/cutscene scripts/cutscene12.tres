@@ -1,0 +1,163 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=25 format=3 uid="uid://bu7ajw4luw6ws"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_xej4k"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_krqsc"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_xej4k")
+line = "Do you see it now ?"
+char = "Jack?"
+visual = "Jack"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xej4k"]
+script = ExtResource("1_xej4k")
+line = "None of this truly fits me."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_krqsc"]
+script = ExtResource("1_xej4k")
+line = "I have that gift that you have too."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_nalnv"]
+script = ExtResource("1_xej4k")
+line = "And tell me, can men do what I do ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_0by3a"]
+script = ExtResource("1_xej4k")
+line = "What we do ?"
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_lkme5"]
+script = ExtResource("1_xej4k")
+line = "You're lying. This is a stupid trick"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_pvln2"]
+script = ExtResource("1_xej4k")
+line = "No, Seer."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_3cqt2"]
+script = ExtResource("1_xej4k")
+line = "There are no stupid tricks."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_340fk"]
+script = ExtResource("1_xej4k")
+line = "I may have been harsh, brutal, but I've come here to help you."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_y7vym"]
+script = ExtResource("1_xej4k")
+line = "Give up this... act of yours."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_m4r6p"]
+script = ExtResource("1_xej4k")
+line = "Stop trying to control the fate of others, and let them decide."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_rrqki"]
+script = ExtResource("1_xej4k")
+line = "I am running away from this place. I'm never coming back."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_qqnuh"]
+script = ExtResource("1_xej4k")
+line = "Let my father die and his cursed place with him."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_b1bde"]
+script = ExtResource("1_xej4k")
+line = "But you don't have to fall with him, or with anyone."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_7opib"]
+script = ExtResource("1_xej4k")
+line = "Take care."
+char = "Jack?"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xq8hl"]
+script = ExtResource("1_xej4k")
+line = "You'll know where to find me."
+char = "Jack?"
+visual = "none"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_bvuev"]
+script = ExtResource("1_xej4k")
+line = "..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_4v6fw"]
+script = ExtResource("1_xej4k")
+line = ".........................................."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_oy7p7"]
+script = ExtResource("1_xej4k")
+line = "....................................................................................................."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_5d3v7"]
+script = ExtResource("1_xej4k")
+line = "This can't be happening."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_d2kba"]
+script = ExtResource("1_xej4k")
+line = "Is he... she... right ?"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ayqvn"]
+script = ExtResource("1_xej4k")
+line = "Maybe... Maybe I could..."
+char = "Seer"
+visual = "query"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_krqsc")
+dialogue = Array[ExtResource("1_xej4k")]([SubResource("Resource_8gjvx"), SubResource("Resource_xej4k"), SubResource("Resource_krqsc"), SubResource("Resource_nalnv"), SubResource("Resource_0by3a"), SubResource("Resource_lkme5"), SubResource("Resource_pvln2"), SubResource("Resource_3cqt2"), SubResource("Resource_340fk"), SubResource("Resource_y7vym"), SubResource("Resource_m4r6p"), SubResource("Resource_rrqki"), SubResource("Resource_qqnuh"), SubResource("Resource_b1bde"), SubResource("Resource_7opib"), SubResource("Resource_xq8hl"), SubResource("Resource_bvuev"), SubResource("Resource_4v6fw"), SubResource("Resource_oy7p7"), SubResource("Resource_5d3v7"), SubResource("Resource_d2kba"), SubResource("Resource_ayqvn")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

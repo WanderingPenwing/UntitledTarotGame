@@ -1,72 +1,72 @@
-[gd_resource type="Resource" script_class="CutsceneScript" load_steps=12 format=3 uid="uid://brj5gbd1utrsu"]
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=12 format=3 uid="uid://bvfk3fkj4l7l6"]
 
 [ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_2crid"]
 [ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_qtp3o"]
 
-[sub_resource type="Resource" id="Resource_2crid"]
+[sub_resource type="Resource" id="Resource_8gjvx"]
 script = ExtResource("1_2crid")
-line = "The World ? That sounds good !"
+line = "Temperance... Now that is interesting..."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_plaxg"]
+script = ExtResource("1_2crid")
+line = "Why ? Is it bad news. Tell me."
 char = "King"
-visual = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
-[sub_resource type="Resource" id="Resource_qtp3o"]
+[sub_resource type="Resource" id="Resource_d417k"]
 script = ExtResource("1_2crid")
-line = "Indeed. For all the land and people you shall conquer and rule over."
+line = "It is an exchange, a movement. One that leads to harmony and control..."
 char = "Seer"
-visual = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
-[sub_resource type="Resource" id="Resource_xywww"]
+[sub_resource type="Resource" id="Resource_ergl2"]
 script = ExtResource("1_2crid")
-line = "Ha ! Incredible ! Is this truly accurate ?"
+line = "Oh my."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_45yxp"]
+script = ExtResource("1_2crid")
+line = "My lord will find soon the woman that will become his wife."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_lkwox"]
+script = ExtResource("1_2crid")
+line = "A Queen  ? Yes !"
 char = "King"
-visual = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
-[sub_resource type="Resource" id="Resource_ln8h5"]
+[sub_resource type="Resource" id="Resource_7qd4m"]
 script = ExtResource("1_2crid")
-line = "Of course. The cards never, ever lie. Fate and I are friends."
-char = "Seer"
-visual = "King"
-metadata/_custom_type_script = "uid://dyvci44ttm3i1"
-
-[sub_resource type="Resource" id="Resource_6j01a"]
-script = ExtResource("1_2crid")
-line = "Really ? You could have made a fortune playing the lottery !"
+line = "Will she give me a male heir ? I cannot abide a woman in control of my kingdom"
 char = "King"
-visual = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
-[sub_resource type="Resource" id="Resource_it87g"]
+[sub_resource type="Resource" id="Resource_i0pq4"]
 script = ExtResource("1_2crid")
-line = "Ah, but a Seer may never draw the cards for herself."
+line = "Ha. Of course, my lord."
 char = "Seer"
-visual = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
-[sub_resource type="Resource" id="Resource_n5kwk"]
+[sub_resource type="Resource" id="Resource_lfy4n"]
 script = ExtResource("1_2crid")
-line = "Unless she wants to cross fate..."
+line = "Let's read all these cards together and figure this out..."
 char = "Seer"
-visual = "King"
-metadata/_custom_type_script = "uid://dyvci44ttm3i1"
-
-[sub_resource type="Resource" id="Resource_2g5ie"]
-script = ExtResource("1_2crid")
-line = "I see... Anyway ! Keep reading, woman. Tell me my future..."
-char = "King"
-visual = "King"
-metadata/_custom_type_script = "uid://dyvci44ttm3i1"
-
-[sub_resource type="Resource" id="Resource_tot6m"]
-script = ExtResource("1_2crid")
-line = "Your wish is my command..."
-char = "Seer"
-visual = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [resource]
 script = ExtResource("2_qtp3o")
-dialogue = Array[ExtResource("1_2crid")]([SubResource("Resource_2crid"), SubResource("Resource_qtp3o"), SubResource("Resource_xywww"), SubResource("Resource_ln8h5"), SubResource("Resource_6j01a"), SubResource("Resource_it87g"), SubResource("Resource_n5kwk"), SubResource("Resource_2g5ie"), SubResource("Resource_tot6m")])
+dialogue = Array[ExtResource("1_2crid")]([SubResource("Resource_8gjvx"), SubResource("Resource_plaxg"), SubResource("Resource_d417k"), SubResource("Resource_ergl2"), SubResource("Resource_45yxp"), SubResource("Resource_lkwox"), SubResource("Resource_7qd4m"), SubResource("Resource_i0pq4"), SubResource("Resource_lfy4n")])
 metadata/_custom_type_script = "uid://dir0e5spbtkgm"

@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=13 format=3 uid="uid://ci8yy2x6qsng6"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_k55st"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_4nkqr"]
+
+[sub_resource type="Resource" id="Resource_k55st"]
+script = ExtResource("1_k55st")
+line = "A brave soul enters my tent in search of his fate."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_4nkqr"]
+script = ExtResource("1_k55st")
+line = "You honour this humble tent..."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_tdg88"]
+script = ExtResource("1_k55st")
+line = "Of course I do, for I am..."
+char = "???"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_c6hyb"]
+script = ExtResource("1_k55st")
+line = "Is it not obvious ?"
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ff2xh"]
+script = ExtResource("1_k55st")
+line = "You are the King."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_q11kp"]
+script = ExtResource("1_k55st")
+line = "..."
+char = "King"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_80lsj"]
+script = ExtResource("1_k55st")
+line = "Indeed, in name only for now, but soon in title too."
+char = "King"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ha3tx"]
+script = ExtResource("1_k55st")
+line = "Draw my fortune, Seer. Tell me if Fate will bless me."
+char = "King"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_08e6p"]
+script = ExtResource("1_k55st")
+line = "Your wish is my command, King."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_lmf4s"]
+script = ExtResource("1_k55st")
+line = "But be careful what you wish for..."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_4nkqr")
+dialogue = Array[ExtResource("1_k55st")]([SubResource("Resource_k55st"), SubResource("Resource_4nkqr"), SubResource("Resource_tdg88"), SubResource("Resource_c6hyb"), SubResource("Resource_ff2xh"), SubResource("Resource_q11kp"), SubResource("Resource_80lsj"), SubResource("Resource_ha3tx"), SubResource("Resource_08e6p"), SubResource("Resource_lmf4s")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

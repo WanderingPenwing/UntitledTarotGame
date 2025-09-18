@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d00xl2vg33ka4"]
+[gd_scene load_steps=11 format=3 uid="uid://dp8knigny1ft2"]
 
-[ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_rog4v"]
-[ext_resource type="Resource" uid="uid://b7g2n6wirve1v" path="res://prefabs/cutscene/cutscene scripts/cutscene3.tres" id="2_rog4v"]
-[ext_resource type="Texture2D" uid="uid://n4ltr1avterl" path="res://images/cutscene/king placeholder.png" id="3_8vgxs"]
-[ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="3_v25pi"]
-[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="4_8vgxs"]
-[ext_resource type="Texture2D" uid="uid://isksm77n3jck" path="res://images/cutscene/queen placeholder.png" id="4_r8fg1"]
-[ext_resource type="Texture2D" uid="uid://dr0epy5tt2b5c" path="res://images/cutscene/tableplaceholder.png" id="5_tdkw6"]
+[ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_345gx"]
+[ext_resource type="Resource" uid="uid://bu7ajw4luw6ws" path="res://prefabs/cutscene/cutscene scripts/cutscene12.tres" id="2_345gx"]
+[ext_resource type="Texture2D" uid="uid://n4ltr1avterl" path="res://images/cutscene/king placeholder.png" id="3_cj3sv"]
+[ext_resource type="Texture2D" uid="uid://isksm77n3jck" path="res://images/cutscene/queen placeholder.png" id="4_h0t5v"]
+[ext_resource type="Texture2D" uid="uid://dr0epy5tt2b5c" path="res://images/cutscene/tableplaceholder.png" id="5_blkwh"]
+[ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="6_f3n14"]
+[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="7_vir7u"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6gy54"]
 viewport_path = NodePath("SubViewport")
@@ -16,19 +16,45 @@ size = Vector2(160, 144)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d308j"]
 line_spacing = 0.0
-font = ExtResource("4_8vgxs")
+font = ExtResource("7_vir7u")
 
 [node name="cutscene" type="Node2D" node_paths=PackedStringArray("TextBox")]
 process_mode = 3
-script = ExtResource("1_rog4v")
+script = ExtResource("1_345gx")
 TextBox = [NodePath("SubViewport/Line1"), NodePath("SubViewport/Line2"), NodePath("SubViewport/Line3")]
-dialogue = ExtResource("2_rog4v")
-KingSprite = ExtResource("3_8vgxs")
-QueenSprite = ExtResource("4_r8fg1")
+dialogue = ExtResource("2_345gx")
+KingSprite = ExtResource("3_cj3sv")
+QueenSprite = ExtResource("4_h0t5v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
 texture = SubResource("ViewportTexture_6gy54")
+
+[node name="Box 1" type="NinePatchRect" parent="."]
+offset_left = 18.0
+offset_top = 32.0
+offset_right = 74.0
+offset_bottom = 52.0
+size_flags_horizontal = 3
+texture = ExtResource("6_f3n14")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Box 2" type="NinePatchRect" parent="."]
+offset_left = 89.0
+offset_top = 32.0
+offset_right = 145.0
+offset_bottom = 52.0
+size_flags_horizontal = 3
+texture = ExtResource("6_f3n14")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 
 [node name="SubViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
@@ -41,12 +67,12 @@ texture = SubResource("PlaceholderTexture2D_gdv8h")
 [node name="CharacterSprite" type="Sprite2D" parent="SubViewport"]
 position = Vector2(79, 63)
 scale = Vector2(0.317143, 0.317143)
-texture = ExtResource("3_8vgxs")
+texture = ExtResource("3_cj3sv")
 
 [node name="Table" type="Sprite2D" parent="SubViewport"]
 position = Vector2(80, 73.1731)
 scale = Vector2(0.25817, 0.25817)
-texture = ExtResource("5_tdkw6")
+texture = ExtResource("5_blkwh")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="SubViewport"]
 offset_left = 5.22
@@ -54,7 +80,7 @@ offset_top = 85.0
 offset_right = 155.22
 offset_bottom = 139.0
 size_flags_horizontal = 3
-texture = ExtResource("3_v25pi")
+texture = ExtResource("6_f3n14")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -67,7 +93,7 @@ offset_top = 69.0
 offset_right = 48.0
 offset_bottom = 85.0
 size_flags_horizontal = 3
-texture = ExtResource("3_v25pi")
+texture = ExtResource("6_f3n14")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -115,7 +141,7 @@ offset_left = 10.0
 offset_top = 69.0
 offset_right = 45.0
 offset_bottom = 102.0
-theme_override_fonts/font = ExtResource("4_8vgxs")
+theme_override_fonts/font = ExtResource("7_vir7u")
 theme_override_font_sizes/font_size = 16
 text = "
 "

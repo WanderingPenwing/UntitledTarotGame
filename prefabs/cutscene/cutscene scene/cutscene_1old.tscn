@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cevxf4001vgiy"]
+[gd_scene load_steps=7 format=3 uid="uid://b4xsq8vxpdlln"]
 
 [ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_26kd1"]
-[ext_resource type="Resource" uid="uid://ci8yy2x6qsng6" path="res://prefabs/cutscene/cutscene scripts/cutscene1.tres" id="2_fsehj"]
+[ext_resource type="Resource" uid="uid://ci8yy2x6qsng6" path="res://prefabs/cutscene/cutscene scripts/cutscenestart.tres" id="2_fsehj"]
 [ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="3_nw6n2"]
 [ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="4_fx30n"]
 
