@@ -7,54 +7,63 @@
 script = ExtResource("1_b8t3i")
 line = "Temperance... Now that is interesting..."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_plaxg"]
 script = ExtResource("1_b8t3i")
 line = "Why ? Is it bad news. Tell me."
 char = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_d417k"]
 script = ExtResource("1_b8t3i")
 line = "It is an exchange, a movement. One that leads to harmony and control..."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_ergl2"]
 script = ExtResource("1_b8t3i")
 line = "Oh my."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_45yxp"]
 script = ExtResource("1_b8t3i")
 line = "My lord will find soon the woman that will give him his heir."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_lkwox"]
 script = ExtResource("1_b8t3i")
 line = "An heir ? Yes !"
 char = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_7qd4m"]
 script = ExtResource("1_b8t3i")
 line = "Will it be male ? I cannot abide a woman in control of my kingdom"
 char = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_i0pq4"]
 script = ExtResource("1_b8t3i")
 line = "Ha. Of course, my lord."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_lfy4n"]
 script = ExtResource("1_b8t3i")
 line = "Let's read all these cards together and figure this out..."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [resource]

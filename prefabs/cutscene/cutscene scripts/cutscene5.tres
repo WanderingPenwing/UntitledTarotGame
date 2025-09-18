@@ -1,69 +1,163 @@
-[gd_resource type="Resource" script_class="CutsceneScript" load_steps=13 format=3 uid="uid://b7g2n6wirve1v"]
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=25 format=3 uid="uid://b7g2n6wirve1v"]
 
 [ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_n3sgp"]
 [ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_06s7o"]
 
 [sub_resource type="Resource" id="Resource_8gjvx"]
 script = ExtResource("1_n3sgp")
-line = "So ? Tell me woman !"
+line = "So ? Tell me, woman !"
 char = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_n3sgp"]
 script = ExtResource("1_n3sgp")
 line = "Temper yourself my lord..."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_06s7o"]
 script = ExtResource("1_n3sgp")
 line = "Tell me !"
 char = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_taqyq"]
 script = ExtResource("1_n3sgp")
 line = "Fine."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_kkeqc"]
 script = ExtResource("1_n3sgp")
 line = "You will, indeed, have a son as your heir."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_gyrei"]
 script = ExtResource("1_n3sgp")
 line = "He shall inherit everything you own, and all your values."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_rou3h"]
 script = ExtResource("1_n3sgp")
 line = "You will love him, and he will love you in return."
 char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_bgsee"]
 script = ExtResource("1_n3sgp")
 line = "I knew it."
 char = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_chtx5"]
 script = ExtResource("1_n3sgp")
 line = "You shall be rewarded, Seer."
 char = "King"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_xp147"]
 script = ExtResource("1_n3sgp")
 line = "I must leave now. There is something I must rightfully claim as mine."
 char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_nwwxd"]
+script = ExtResource("1_n3sgp")
+line = "..."
+char = "Seer"
+visual = "none"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_aq3hl"]
+script = ExtResource("1_n3sgp")
+line = "Sometimes I wish I was wrong..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_2kh64"]
+script = ExtResource("1_n3sgp")
+line = "*Many moments later*"
+char = "..."
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_x4ref"]
+script = ExtResource("1_n3sgp")
+line = "My, my."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_nepo4"]
+script = ExtResource("1_n3sgp")
+line = "Hello, Your Highness"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_6bf1p"]
+script = ExtResource("1_n3sgp")
+line = "It's just like he said then."
+char = "Queen"
+visual = "Queen"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_lyidn"]
+script = ExtResource("1_n3sgp")
+line = "You know how to read people, don't you ?"
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_vyi5c"]
+script = ExtResource("1_n3sgp")
+line = "Not just people. The past, the present and the future too."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_bout8"]
+script = ExtResource("1_n3sgp")
+line = "..."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_45d7o"]
+script = ExtResource("1_n3sgp")
+line = "So it would seem."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_2ihog"]
+script = ExtResource("1_n3sgp")
+line = "Then read for me, Seer. Tell me my future."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_la3ge"]
+script = ExtResource("1_n3sgp")
+line = "Your wish is my command..."
+char = "Seer"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [resource]
 script = ExtResource("2_06s7o")
-dialogue = Array[ExtResource("1_n3sgp")]([SubResource("Resource_8gjvx"), SubResource("Resource_n3sgp"), SubResource("Resource_06s7o"), SubResource("Resource_taqyq"), SubResource("Resource_kkeqc"), SubResource("Resource_gyrei"), SubResource("Resource_rou3h"), SubResource("Resource_bgsee"), SubResource("Resource_chtx5"), SubResource("Resource_xp147")])
+dialogue = Array[ExtResource("1_n3sgp")]([SubResource("Resource_8gjvx"), SubResource("Resource_n3sgp"), SubResource("Resource_06s7o"), SubResource("Resource_taqyq"), SubResource("Resource_kkeqc"), SubResource("Resource_gyrei"), SubResource("Resource_rou3h"), SubResource("Resource_bgsee"), SubResource("Resource_chtx5"), SubResource("Resource_xp147"), SubResource("Resource_nwwxd"), SubResource("Resource_aq3hl"), SubResource("Resource_2kh64"), SubResource("Resource_x4ref"), SubResource("Resource_nepo4"), SubResource("Resource_6bf1p"), SubResource("Resource_lyidn"), SubResource("Resource_vyi5c"), SubResource("Resource_bout8"), SubResource("Resource_45d7o"), SubResource("Resource_2ihog"), SubResource("Resource_la3ge")])
 metadata/_custom_type_script = "uid://dir0e5spbtkgm"
