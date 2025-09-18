@@ -13,10 +13,6 @@ func _ready() -> void:
 	if GameState.world_status == GameState.STATUS.BLIND :
 		modulate = Color.BLACK 
 	
-	if GameState.world_status == GameState.STATUS.FLIPPED :
-		scale.y = -1
-		position.y = 144
-	
 	if GameState.world_status == GameState.STATUS.FOOL :
 		var mob = get_tree().get_first_node_in_group("mob")
 		var player = get_tree().get_first_node_in_group("player")
