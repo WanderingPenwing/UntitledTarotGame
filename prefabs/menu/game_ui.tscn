@@ -9,7 +9,7 @@ script = ExtResource("1_i2he4")
 blindness = NodePath("control_node/blind")
 draw_tarot_label = NodePath("hint_draw")
 start_label = NodePath("hint_start")
-win_label = NodePath("control_node/win")
+win_label = NodePath("hint_win")
 
 [node name="control_node" type="Control" parent="."]
 layout_mode = 3
@@ -24,56 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="b_to_draw_tarot" type="Label" parent="control_node"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -61.5
-offset_right = 61.5
-offset_bottom = 14.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 10
-text = "press B to draw the cards"
-horizontal_alignment = 1
-
-[node name="a_to_start" type="Label" parent="control_node"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -14.0
-offset_right = 47.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 10
-text = "press A to start"
-horizontal_alignment = 1
-
-[node name="win" type="Label" parent="control_node"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.0
-offset_top = -7.0
-offset_right = 47.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 10
-text = "you won ! press A"
-horizontal_alignment = 1
+color = Color(0.105882, 0.0117647, 0.14902, 1)
 
 [node name="hint_draw" type="Sprite2D" parent="."]
 visible = false
@@ -88,3 +39,10 @@ position = Vector2(80, 132)
 texture = ExtResource("2_k0yo7")
 region_enabled = true
 region_rect = Rect2(0, 17, 64, 17)
+
+[node name="hint_win" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(80, 72)
+texture = ExtResource("2_k0yo7")
+region_enabled = true
+region_rect = Rect2(0, 34, 64, 30)
