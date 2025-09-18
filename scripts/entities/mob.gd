@@ -61,6 +61,7 @@ func die() :
 		GameState.win()
 		return
 	queue_free()
+
 #func _on_detect_body_entered(body: Node2D) -> void:
 	#if not body.is_in_group("player") or body.position.distance_to(position) > 16:
 		#return

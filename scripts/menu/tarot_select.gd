@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 const TAROT_CHECK_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
+const PICK_UP_SOUND: Resource = preload("res://audio/sfx/place.wav")
+
 @export var ContinueLabel : Sprite2D
 
 var slots : Array[Array] = [[null, null, null], [null, null, null]]
@@ -33,6 +35,7 @@ func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down")) :
 		# comme on loop osef de savoir si on va vers le haut ou le bas, dans les deux cas on change de ligne
 		cursor.y = (cursor.y + 1) % 2
+	
 
 	# Le reste : Ui sheneniganns
 	# je te ferais un topo en voc si tu es curieux et que mon code est trop horrible a lire
@@ -55,12 +58,14 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("A") :
 		if not holding :
 			if slots[cursor.y][cursor.x] :
+				SoundManager.play_sound(PICK_UP_SOUND, true)
 				holding = slots[cursor.y][cursor.x]
 				slots[cursor.y][cursor.x] = null
 				backup()
 				holding.z_index = 1
 				cursor = Vector2i(cursor.x, 0)
 		else :
+			SoundManager.play_sound(PICK_UP_SOUND, true)
 			slots[cursor.y][cursor.x] = holding
 			backup()
 			holding.z_index = 0

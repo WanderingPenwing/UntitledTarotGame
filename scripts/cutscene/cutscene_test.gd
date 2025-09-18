@@ -1,6 +1,7 @@
 extends Node2D
 class_name Textbox
 
+const TALK_SOUND = preload("res://audio/sfx/discussion.wav")
 const CHAR_READ_RATE  = 0.05
 
 @onready var tween = get_tree().create_tween()
@@ -34,6 +35,8 @@ enum Sprite {
 @onready var char_queue : Array
 @onready var visual_queue : Array
 
+var visible_count = []
+
 func _ready() -> void:
 	for i in dialogue.dialogue:
 		text_queue.append(i.line)
@@ -57,6 +60,16 @@ func _process(_delta: float) -> void:
 					line.visible_characters = -1
 				tween.stop()
 				change_state(State.FINISHED)
+			
+			for line_index in range(len(TextBox)) :
+				if visible_count[line_index] == TextBox[line_index].visible_characters :
+					continue
+				visible_count[line_index] = TextBox[line_index].visible_characters
+				if visible_count[line_index] == -1 :
+					continue
+				if not TextBox[line_index].text[visible_count[line_index] - 1] in " ;:.,!?" :
+					SoundManager.play_sound(TALK_SOUND, true)
+				
 		State.FINISHED:
 			if Input.is_action_just_pressed("A") and text_queue.is_empty():
 				sprite_change()
@@ -102,8 +115,8 @@ func display_text():
 		tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	for i in range(len(TextBox)) :
 		tween.tween_property(TextBox[i], "visible_characters", len(TextBox[i].text), len(TextBox[i].text)*CHAR_READ_RATE)
-
 	tween.connect("finished", on_tween_finished)
+	visible_count = [0, 0, 0]
 
 func get_line(text: String, line:int) -> String :
 	# justification

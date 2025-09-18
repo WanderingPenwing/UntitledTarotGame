@@ -1,13 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy3dgmw7b5ler"]
+[gd_scene load_steps=3 format=3 uid="uid://cy3dgmw7b5ler"]
 
 [ext_resource type="Script" uid="uid://c3xnmcs1c2v8w" path="res://scripts/menu/game_ui.gd" id="1_i2he4"]
+[ext_resource type="Texture2D" uid="uid://boftycdm7366d" path="res://images/menu/hint.png" id="2_k0yo7"]
 
 [node name="game_ui" type="CanvasLayer" node_paths=PackedStringArray("blindness", "draw_tarot_label", "start_label", "win_label")]
 process_mode = 3
 script = ExtResource("1_i2he4")
 blindness = NodePath("control_node/blind")
-draw_tarot_label = NodePath("control_node/b_to_draw_tarot")
-start_label = NodePath("control_node/a_to_start")
+draw_tarot_label = NodePath("hint_draw")
+start_label = NodePath("hint_start")
 win_label = NodePath("control_node/win")
 
 [node name="control_node" type="Control" parent="."]
@@ -17,7 +18,6 @@ offset_right = 160.0
 offset_bottom = 144.0
 
 [node name="blind" type="ColorRect" parent="control_node"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +27,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="b_to_draw_tarot" type="Label" parent="control_node"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -40,6 +41,7 @@ text = "press B to draw the cards"
 horizontal_alignment = 1
 
 [node name="a_to_start" type="Label" parent="control_node"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -72,3 +74,17 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 10
 text = "you won ! press A"
 horizontal_alignment = 1
+
+[node name="hint_draw" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(80, 11)
+texture = ExtResource("2_k0yo7")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 17)
+
+[node name="hint_start" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(80, 132)
+texture = ExtResource("2_k0yo7")
+region_enabled = true
+region_rect = Rect2(0, 17, 64, 17)
