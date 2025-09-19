@@ -9,10 +9,16 @@ const CHAR_READ_RATE  = 0.05
 @onready var charbox = $SubViewport/Char
 @onready var view = $Sprite2D
 @onready var charSprite = $SubViewport/CharacterSprite
+@onready var query1 = $SubViewport/Query1
+@onready var query2 = $SubViewport/Query2
+@onready var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badend.tscn")
+@onready var keyartbadend = preload("res://prefabs/cutscene/cutscene scene/badend_keyart.tscn")
+@onready var keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/goodend_keyart.tscn")
 @export var dialogue : CutsceneScript
 @export var KingSprite : CompressedTexture2D
 @export var QueenSprite : CompressedTexture2D
 @export var JackSprite : CompressedTexture2D
+var isChoosing = false
 
 enum State {
 	READY,
@@ -49,6 +55,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	print(current_state)
 	match current_state:
 		State.READY:
 			if !text_queue.is_empty():
@@ -69,9 +76,16 @@ func _process(_delta: float) -> void:
 					continue
 				if not TextBox[line_index].text[visible_count[line_index] - 1] in " ;:.,!?" :
 					SoundManager.play_sound(TALK_SOUND, true)
-				
+		State.CHOOSING:
+			if Input.is_action_just_pressed("A"):
+				pass #envoie vers le niveau 13
+			elif Input.is_action_just_pressed("B"):
+				get_tree().change_scene_to_packed(cutscenebadend)
 		State.FINISHED:
-			if Input.is_action_just_pressed("A") and text_queue.is_empty():
+			if isChoosing == true :
+				current_state = State.CHOOSING
+				return
+			elif Input.is_action_just_pressed("A") and text_queue.is_empty():
 				sprite_change()
 				change_state(State.OVER)
 				fade_out()
@@ -165,6 +179,10 @@ func sprite_change():
 			change_sprite(Sprite.JACK)
 		elif next_sprite == "void":
 			change_sprite(Sprite.NONE)
+		elif next_sprite == "query":
+			query()
+		elif next_sprite == "badend":
+			badend()
 
 func on_tween_finished():
 	change_state(State.FINISHED)
@@ -188,4 +206,9 @@ func change_sprite(next_state):
 	current_sprite = next_state
 
 func query():
-	pass
+	isChoosing = true
+	query1.show()
+	query2.show()
+	
+func badend():
+	get_tree().change_scene_to_packed(keyartbadend)
