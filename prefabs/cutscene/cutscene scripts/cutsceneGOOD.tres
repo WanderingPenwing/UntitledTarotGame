@@ -1,16 +1,107 @@
-[gd_resource type="Resource" script_class="CutsceneScript" load_steps=4 format=3 uid="uid://cjttb8is0musa"]
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=17 format=3 uid="uid://cjttb8is0musa"]
 
 [ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_34bvy"]
 [ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_tlsap"]
 
 [sub_resource type="Resource" id="Resource_8gjvx"]
 script = ExtResource("1_34bvy")
-line = "This is an empty cutscene"
-char = "Test"
+line = "..."
+char = "Seer"
+visual = "none"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_34bvy"]
+script = ExtResource("1_34bvy")
+line = "Crap."
+char = "Seer"
 visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_tlsap"]
+script = ExtResource("1_34bvy")
+line = "She's right, isn't she..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ymtha"]
+script = ExtResource("1_34bvy")
+line = "Maybe..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_il7jk"]
+script = ExtResource("1_34bvy")
+line = "Maybe I should run after her."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_s3yex"]
+script = ExtResource("1_34bvy")
+line = "I have... an apology to make."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_5438o"]
+script = ExtResource("1_34bvy")
+line = "*sigh*"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_3r2f7"]
+script = ExtResource("1_34bvy")
+line = "Tarot truly is a scam, isn't it ?"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_bo02p"]
+script = ExtResource("1_34bvy")
+line = "*a few moments later*"
+char = "..."
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_2abrn"]
+script = ExtResource("1_34bvy")
+line = "Here's her tent !"
+char = "Mob"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_26x6o"]
+script = ExtResource("1_34bvy")
+line = "She's gone though !"
+char = "Mob"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_mndrv"]
+script = ExtResource("1_34bvy")
+line = "Good riddance then ! Just burn the hell of this sinful witch's house !"
+char = "Mob"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_kwfrw"]
+script = ExtResource("1_34bvy")
+line = "May her and her godless friends never come back !"
+char = "Mob"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_btdbk"]
+script = ExtResource("1_34bvy")
+line = "!!!!!!!!!!!!!!!!!!"
+char = "Mob"
+visual = "goodend"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [resource]
 script = ExtResource("2_tlsap")
-dialogue = Array[ExtResource("1_34bvy")]([SubResource("Resource_8gjvx")])
+dialogue = Array[ExtResource("1_34bvy")]([SubResource("Resource_8gjvx"), SubResource("Resource_34bvy"), SubResource("Resource_tlsap"), SubResource("Resource_ymtha"), SubResource("Resource_il7jk"), SubResource("Resource_s3yex"), SubResource("Resource_5438o"), SubResource("Resource_3r2f7"), SubResource("Resource_bo02p"), SubResource("Resource_2abrn"), SubResource("Resource_26x6o"), SubResource("Resource_mndrv"), SubResource("Resource_kwfrw"), SubResource("Resource_btdbk")])
 metadata/_custom_type_script = "uid://dir0e5spbtkgm"

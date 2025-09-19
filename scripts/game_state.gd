@@ -22,7 +22,12 @@ const CUTSCENES = [
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_4.tscn"),
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_5.tscn"),
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_6.tscn"),
-	preload("res://prefabs/cutscene/cutscene scene/cutscene_7.tscn")
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_7.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_8.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_9.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_10.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_11.tscn"),
+	preload("res://prefabs/cutscene/cutscene scene/cutscene_12.tscn")
 ]
 
 @onready var master_bus : int = AudioServer.get_bus_index("Master")

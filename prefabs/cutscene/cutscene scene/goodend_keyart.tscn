@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://biwxqh0h3ubja"]
+
+[ext_resource type="Script" uid="uid://cdism2uul33g5" path="res://scripts/menu/end_credits.gd" id="1_61hix"]
+[ext_resource type="Texture2D" uid="uid://c5218ionwlv6h" path="res://images/cutscene/ending2.png" id="3_4hpov"]
+[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="7_46yp1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6gy54"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d308j"]
+line_spacing = 0.0
+font = ExtResource("7_46yp1")
+
+[node name="endcredits" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_61hix")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_6gy54")
+
+[node name="Line" type="Label" parent="."]
+process_mode = 3
+offset_top = 144.645
+offset_right = 158.0
+offset_bottom = 600.645
+text = "Crossing Fate
+
+A \"Pinguins Have Wings\" Production
+
+Game Design :
+Penwing
+Powerduff
+SadOS
+
+Code :
+Penwing
+Powerduff
+
+Story :
+Powerduff
+
+Art :
+SadOS
+Misty
+
+Music :
+Burn04
+
+Engine :
+Godot 4.4, by Juan Linietsky and Ariel Manzur
+
+The m3x6 font was created by Daniel Linssen
+
+
+Made for GBJam 13
+
+Thank you for playing !"
+label_settings = SubResource("LabelSettings_d308j")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SubViewport" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(160, 144)
+
+[node name="Background" type="Sprite2D" parent="SubViewport"]
+position = Vector2(79, 72)
+texture = ExtResource("3_4hpov")
