@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=4 uid="uid://6ovbnd243k5m"]
+
+[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_t3ur6"]
+[ext_resource type="PackedScene" uid="uid://bhvt5q80gqc2j" path="res://prefabs/cards/18-moon.tscn" id="2_munft"]
+[ext_resource type="PackedScene" uid="uid://dlrupo1uixv7o" path="res://prefabs/cards/5-pope.tscn" id="3_d4p02"]
+[ext_resource type="PackedScene" uid="uid://ihuy3j81bm0r" path="res://prefabs/cards/16-tower.tscn" id="4_8es7k"]
+[ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="5_m8nao"]
+[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="6_42wcb"]
+[ext_resource type="PackedScene" uid="uid://c5mbfjb7eapbt" path="res://prefabs/entities/spikes.tscn" id="6_d4p02"]
+[ext_resource type="PackedScene" uid="uid://bgl8j0qcu3fc2" path="res://prefabs/entities/action_button.tscn" id="7_8es7k"]
+[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="7_au365"]
+[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="8_tyxbq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
+viewport_path = NodePath("view3")
+
+[node name="level3" type="Node2D" groups=["level"]]
+script = ExtResource("1_t3ur6")
+tarot_card_1 = ExtResource("4_8es7k")
+tarot_card_2 = ExtResource("2_munft")
+tarot_card_3 = ExtResource("3_d4p02")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_p57ef")
+
+[node name="world2" parent="." instance=ExtResource("5_m8nao")]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAACAAAAAAAJAAgAAAACAAAAAAAJAAcAAAACAAAAAAAJAAYAAAACAAAAAAAJAAUAAAACAAAAAAAJAAQAAAACAAAAAAAJAAMAAAACAAAAAAAJAAIAAAACAAAAAAAJAAEAAAACAAAAAAAJAAAAAAACAAAAAAAIAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAAAAAAACAAAAAAAFAAAAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAAEAAEAAAACAAAAAAACAAEAAAACAAAAAAABAAEAAAACAAAAAAADAAEAAAACAAAAAAAFAAEAAAACAAAAAAAHAAEAAAACAAAAAAAGAAEAAAACAAAAAAAIAAEAAAACAAAAAAAIAAUAAAADAAAAAAAHAAUAAAABAAAAAAAGAAUAAAADAAAAAAAFAAUAAAADAAAAAAAEAAUAAAADAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAAEAAYAAAADAAAAAAAFAAYAAAADAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAADAAAAAAAIAAcAAAADAAAAAAAIAAYAAAADAAAAAAAGAAcAAAADAAAAAAAFAAcAAAADAAAAAAAEAAcAAAADAAAAAAADAAQAAAADAAAAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAACAAIAAAACAAAAAAABAAIAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAAFAAIAAAACAAAAAAAEAAIAAAACAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAHAAIAAAABAAAAAAAHAAQAAAABAAAAAAAGAAQAAAADAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAAFAAQAAAADAAAAAAAEAAQAAAADAAAAAAAKAAIAAAACAAAAAAAIAAQAAAADAAAAAAAKAAEAAAACAAAAAAA=")
+
+[node name="spikes" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(40, 104)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes2" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(24, 104)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes3" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(56, 104)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes4" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(40, 88)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes5" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(24, 88)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes6" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(56, 88)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes7" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(40, 120)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes8" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(24, 120)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes9" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(56, 120)
+ActionButton = NodePath("../action_button")
+
+[node name="action_button" parent="." instance=ExtResource("7_8es7k")]
+position = Vector2(120, 80)
+
+[node name="flag" parent="." instance=ExtResource("6_42wcb")]
+position = Vector2(120, 39)
+
+[node name="mob" parent="." instance=ExtResource("7_au365")]
+position = Vector2(120, 104)
+
+[node name="player" parent="." instance=ExtResource("8_tyxbq")]
+position = Vector2(40, 104)
+type = 1
+
+[node name="view3" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(160, 144)

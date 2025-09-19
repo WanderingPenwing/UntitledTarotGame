@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxxg1x26nuwdt"]
+[gd_scene load_steps=11 format=3 uid="uid://cxxg1x26nuwdt"]
 
 [ext_resource type="Texture2D" uid="uid://04ftlwgemnoo" path="res://images/menu/start_bg.png" id="1_78x17"]
 [ext_resource type="Script" uid="uid://c4qb0c2gjeden" path="res://scripts/menu/start_menu.gd" id="1_rgc7e"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b64asvl1iitne" path="res://prefabs/menu/options_menu.tscn" id="6_xu787"]
 [ext_resource type="PackedScene" uid="uid://jsdsf8eupcd5" path="res://prefabs/menu/credits_menu.tscn" id="7_od3bf"]
 [ext_resource type="PackedScene" uid="uid://bhbll1macpi4s" path="res://prefabs/menu/level_select.tscn" id="8_2dou6"]
+[ext_resource type="Texture2D" uid="uid://btgxrlr8rkdqk" path="res://images/menu/controls.png" id="9_q82tv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rgc7e"]
 viewport_path = NodePath("view")
@@ -43,8 +44,15 @@ texture = ExtResource("3_xu787")
 position = Vector2(76, 100)
 texture = ExtResource("4_od3bf")
 
+[node name="Controls" type="Sprite2D" parent="view"]
+position = Vector2(80, 72)
+texture = ExtResource("9_q82tv")
+
 [node name="options_menu" parent="view" instance=ExtResource("6_xu787")]
+visible = false
 
 [node name="credits_menu" parent="view" instance=ExtResource("7_od3bf")]
+visible = false
 
 [node name="level_select" parent="view" instance=ExtResource("8_2dou6")]
+visible = false

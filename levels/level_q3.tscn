@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=4 uid="uid://g3we4q648exa"]
+
+[ext_resource type="Script" uid="uid://duhqjydrykkbh" path="res://scripts/level.gd" id="1_yhx0h"]
+[ext_resource type="PackedScene" uid="uid://ihuy3j81bm0r" path="res://prefabs/cards/16-tower.tscn" id="2_ryt5p"]
+[ext_resource type="PackedScene" uid="uid://bhvt5q80gqc2j" path="res://prefabs/cards/18-moon.tscn" id="2_yhx0h"]
+[ext_resource type="PackedScene" uid="uid://dlrupo1uixv7o" path="res://prefabs/cards/5-pope.tscn" id="3_ktnxf"]
+[ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="5_c8jt4"]
+[ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="6_sccpb"]
+[ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="7_2kel7"]
+[ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="10_utacl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
+viewport_path = NodePath("view3")
+
+[node name="level3" type="Node2D" groups=["level"]]
+script = ExtResource("1_yhx0h")
+tarot_card_1 = ExtResource("2_yhx0h")
+tarot_card_2 = ExtResource("3_ktnxf")
+tarot_card_3 = ExtResource("2_ryt5p")
+
+[node name="view_sprite" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_p57ef")
+
+[node name="view3" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(160, 144)
+
+[node name="world2" parent="view3" instance=ExtResource("10_utacl")]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAACAAAAAAAJAAgAAAACAAAAAAAJAAcAAAACAAAAAAAJAAYAAAACAAAAAAAJAAUAAAACAAAAAAAJAAQAAAACAAAAAAAJAAMAAAACAAAAAAAJAAIAAAACAAAAAAAJAAEAAAACAAAAAAAJAAAAAAACAAAAAAAIAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAAAAAAACAAAAAAAFAAAAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAAEAAEAAAACAAAAAAACAAEAAAACAAAAAAABAAEAAAACAAAAAAADAAEAAAACAAAAAAAFAAEAAAACAAAAAAAHAAEAAAACAAAAAAAGAAEAAAACAAAAAAAIAAEAAAACAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAADAAMAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAAEAAYAAAADAAAAAAAFAAYAAAADAAAAAAAGAAYAAAADAAAAAAAHAAYAAAABAAAAAAAHAAcAAAADAAAAAAAIAAcAAAADAAAAAAAIAAYAAAABAAAAAAAGAAcAAAADAAAAAAAFAAcAAAADAAAAAAAEAAcAAAADAAAAAAADAAQAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAACAAIAAAACAAAAAAABAAIAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAABAAAAAAAEAAMAAAADAAAAAAAFAAMAAAADAAAAAAAFAAIAAAACAAAAAAAEAAIAAAACAAAAAAAGAAIAAAACAAAAAAAGAAMAAAADAAAAAAAHAAMAAAADAAAAAAAIAAMAAAADAAAAAAAIAAIAAAACAAAAAAAHAAIAAAACAAAAAAAHAAQAAAABAAAAAAAGAAQAAAADAAAAAAACAAQAAAABAAAAAAABAAQAAAABAAAAAAAFAAQAAAADAAAAAAAEAAQAAAADAAAAAAAKAAIAAAACAAAAAAAIAAQAAAABAAAAAAAKAAEAAAACAAAAAAA=")
+
+[node name="flag" parent="view3" instance=ExtResource("5_c8jt4")]
+position = Vector2(120, 88)
+
+[node name="mob" parent="view3" instance=ExtResource("7_2kel7")]
+position = Vector2(56, 88)
+
+[node name="player" parent="view3" instance=ExtResource("6_sccpb")]
+position = Vector2(88, 88)
+type = 1

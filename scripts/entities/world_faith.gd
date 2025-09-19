@@ -1,5 +1,6 @@
 extends Node2D
 
+const FAITH_SOUND = preload("res://audio/sfx/faith.wav")
 
 func _ready() -> void:	
 	if GameState.world_status != GameState.STATUS.FAITH :
@@ -23,3 +24,4 @@ func faith() :
 		var Map: TileMapLayer = get_tree().get_first_node_in_group("world")
 		var door_pos = Map.local_to_map(child.position)
 		Map.set_cell(door_pos, 0, Vector2(1,0))
+	SoundManager.play_sound(FAITH_SOUND, true)

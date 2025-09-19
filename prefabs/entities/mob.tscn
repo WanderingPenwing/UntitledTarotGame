@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs2xtrp8r1c5h"]
+[gd_scene load_steps=9 format=3 uid="uid://cs2xtrp8r1c5h"]
 
 [ext_resource type="Script" uid="uid://d4jt75f6lgje0" path="res://scripts/entities/mob.gd" id="1_l4ws6"]
 [ext_resource type="Texture2D" uid="uid://bx5cbyhryhkdd" path="res://images/entities/enemy.png" id="2_8mnx0"]
 [ext_resource type="Texture2D" uid="uid://dp16i8ei55tk4" path="res://images/entities/heart.png" id="3_8mnx0"]
+[ext_resource type="Texture2D" uid="uid://ds3a56xx1w5g0" path="res://images/entities/shadow.png" id="3_cr5dr"]
 [ext_resource type="Texture2D" uid="uid://dvi4u2qwu6jh2" path="res://images/entities/faith.png" id="4_7dyax"]
+[ext_resource type="Texture2D" uid="uid://ch0a308rsvob0" path="res://images/entities/stun.png" id="5_pjy5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 7.5
@@ -15,6 +17,15 @@ collision_layer = 34
 collision_mask = 34
 script = ExtResource("1_l4ws6")
 
+[node name="Tradition" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.1, 11)
+texture = ExtResource("4_7dyax")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 10)
+texture = ExtResource("3_cr5dr")
+
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_8mnx0")
 region_enabled = true
@@ -25,30 +36,39 @@ shape = SubResource("CircleShape2D_1rtib")
 debug_color = Color(0.948992, 0.189822, 0.322724, 0.42)
 
 [node name="detect" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="collision" type="CollisionShape2D" parent="detect"]
 shape = SubResource("CircleShape2D_l4ws6")
 debug_color = Color(0.885015, 0.317972, 0.258857, 0.42)
 
 [node name="Heart" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0.1, -13)
 texture = ExtResource("3_8mnx0")
 
 [node name="Blind" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_8mnx0")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)
 
 [node name="Freeze" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_8mnx0")
 region_enabled = true
 region_rect = Rect2(32, 0, 16, 16)
 
 [node name="Faith" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-0.1, -8)
 texture = ExtResource("4_7dyax")
+
+[node name="Stun" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -8)
+texture = ExtResource("5_pjy5x")
 
 [connection signal="area_entered" from="detect" to="." method="_on_detect_area_entered"]
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]

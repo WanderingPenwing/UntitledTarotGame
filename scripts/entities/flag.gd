@@ -8,7 +8,15 @@ const WIN_SOUND : Resource = preload("res://audio/sfx/win2.wav")
 
 
 func _ready() -> void:
-	$Heart.visible = (GameState.world_status == GameState.STATUS.LOVE)
+	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_interval(0.9)
+	$Heart.hide()
+	$Shadow.hide()
+	if GameState.world_status == GameState.STATUS.LOVE :
+		tween.tween_callback($Heart.show)
+	if GameState.world_status == GameState.STATUS.ILLUSION :
+		tween.tween_callback($sprite.hide)
+		tween.parallel().tween_callback($Shadow.show)
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, 0)

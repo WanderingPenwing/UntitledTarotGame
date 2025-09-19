@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhvt5q80gqc2j"]
+
+[ext_resource type="Texture2D" uid="uid://bepunx1pmmdxu" path="res://images/cards/moon.png" id="1_gifhj"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_42ceq"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_gifhj")
+script = ExtResource("2_42ceq")
+status_index = 10

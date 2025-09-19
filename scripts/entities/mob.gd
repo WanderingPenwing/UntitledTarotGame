@@ -19,16 +19,26 @@ func _ready() -> void:
 	$Freeze.hide()
 	$Blind.hide()
 	$Faith.hide()
+	$Stun.hide()
+	$Tradition.hide()
+	$Shadow.hide()
 	if GameState.mob_status == GameState.STATUS.LOVE :
 		tween.tween_callback($Heart.show)
 	if GameState.mob_status == GameState.STATUS.FROZEN :
 		tween.tween_callback($Freeze.show)
 	if GameState.mob_status == GameState.STATUS.BLIND :
 		tween.tween_callback($Blind.show)
+	if GameState.mob_status == GameState.STATUS.CHAOS :
+		tween.tween_callback($Stun.show)
+	if GameState.mob_status == GameState.STATUS.TRADITION :
+		tween.tween_callback($Tradition.show)
 	if GameState.mob_status == GameState.STATUS.FAITH :
 		tween.tween_callback($Faith.show)
 		set_collision_layer_value(2, false)
 		set_collision_mask_value(2, false)
+	if GameState.mob_status == GameState.STATUS.ILLUSION :
+		tween.tween_callback($sprite.hide)
+		tween.parallel().tween_callback($Shadow.show)
 	
 	if GameState.mob_status == GameState.STATUS.FLIPPED :
 		tween.tween_property(self, "scale", Vector2(1, -1), 0.1)
@@ -40,17 +50,29 @@ func _ready() -> void:
 		tween.parallel().tween_property(Player, "position", flag_pos, 0.1)
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# si le mob est freeze
 	if GameState.mob_status == GameState.STATUS.FROZEN :
 		return
 	
-	# si le mob est pas aveugle on target le joueur
-	if GameState.mob_status != GameState.STATUS.BLIND :
-		if Player.type == Player.TYPE.QUEEN or GameState.world_status == GameState.STATUS.LOVE :
+	# choix de la cible
+	if GameState.mob_status != GameState.STATUS.BLIND and Player.type == Player.TYPE.KING :
+		target = Player.position
+	
+	if Player.type == Player.TYPE.JACK :
+		if GameState.world_status == GameState.STATUS.LOVE :
 			target = Flag.position
 		else :
 			target = Player.position
+	
+	if Player.type == Player.TYPE.QUEEN :
+		if GameState.world_status != GameState.STATUS.ILLUSION and GameState.mob_status != GameState.STATUS.TRADITION :
+			target = Flag.position
+		elif GameState.player_status != GameState.STATUS.ILLUSION :
+			target = Player.position
+	
+	if GameState.mob_status == GameState.STATUS.CHAOS :
+		target = position + Vector2(10,0).rotated(-Player.chrono * 4)
 	
 	var dir = (target - position).normalized()
 	# Inversion des controls
@@ -65,13 +87,22 @@ func _physics_process(_delta: float) -> void:
 	velocity = lerp(velocity, dir*SPEED, friction)
 	
 	for body in $detect.get_overlapping_bodies() :
-		if not body.is_in_group("player") :
+		if body.position.distance_to(position) > 10 :
 			continue
-		get_tree().paused = true
-		GameState.call_deferred("reset_level")
-		SoundManager.play_sound(DEATH_SOUND, true)
+		if body.is_in_group("flag") :
+			kill()
+		if body.is_in_group("player") and not GameState.player_status == GameState.STATUS.TRADITION :
+			kill()
 	
 	move_and_slide()
+
+
+func kill() :
+	print("mob death")
+	get_tree().paused = true
+	GameState.call_deferred("reset_level")
+	SoundManager.play_sound(DEATH_SOUND, true)
+
 
 func die() :
 	if Player.type == Player.TYPE.JACK :
@@ -87,9 +118,15 @@ func die() :
 	#SoundManager.play_sound(DEATH_SOUND, true)
 
 
-func _on_detect_area_entered(area: Area2D) -> void:
-	if not Flag.is_in_group("flag") or Player.type != Player.TYPE.QUEEN :
-		return
-	get_tree().paused = true
-	GameState.call_deferred("reset_level")
-	SoundManager.play_sound(DEATH_SOUND, true)
+#func _on_detect_area_entered(area: Area2D) -> void:
+	#print(area, Player.type, Player.TYPE.QUEEN)
+	#if not area.is_in_group("flag") :
+		#print("flag")
+		#return
+	#if Player.type != Player.TYPE.QUEEN :
+		#print("queen")
+		#return
+	#print("ah")
+	#get_tree().paused = true
+	#GameState.call_deferred("reset_level")
+	#SoundManager.play_sound(DEATH_SOUND, true)

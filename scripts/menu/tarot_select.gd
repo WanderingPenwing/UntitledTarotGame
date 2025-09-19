@@ -4,6 +4,8 @@ const TAROT_CHECK_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
 const PICK_UP_SOUND: Resource = preload("res://audio/sfx/place.wav")
 
 @export var ContinueLabel : Sprite2D
+@export var HintCards : Node2D
+@export var HintControl : Node2D
 
 var slots : Array[Array] = [[null, null, null], [null, null, null]]
 var backup_slots : Array[Array] = [[null, null, null], [null, null, null]]
@@ -15,6 +17,8 @@ var just_visible = false
 func _ready() -> void:
 	reset()
 	hide()
+	if GameState.level_unlocked > 0 :
+		HintControl.hide()
 
 
 func _process(_delta: float) -> void:
@@ -27,6 +31,7 @@ func _process(_delta: float) -> void:
 		just_visible = true
 		return
 	
+	HintCards.visible = (GameState.level_unlocked < 1)
 	# Mouvement du curseur
 	var dir = -int(Input.is_action_just_pressed("ui_left"))+int(Input.is_action_just_pressed("ui_right"))
 	if dir != 0 :
@@ -70,6 +75,7 @@ func _process(_delta: float) -> void:
 			backup()
 			holding.z_index = 0
 			holding = null
+			HintControl.hide()
 
 	if (slots[0][0] and slots[0][1] and slots[0][2]) != ContinueLabel.visible :
 		update_continue_label(slots[0][0] and slots[0][1] and slots[0][2])

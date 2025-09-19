@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ihuy3j81bm0r"]
+
+[ext_resource type="Texture2D" uid="uid://db3hp6sd8c2w4" path="res://images/cards/tower.png" id="1_fiqo5"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_rawak"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_fiqo5")
+script = ExtResource("2_rawak")
+status_index = 9

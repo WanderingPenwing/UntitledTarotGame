@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @export var ActionButton: Area2D
 
-func _ready() -> void:
+func _ready() -> void:		
 	ActionButton.connect("toggled", toggled)
 
 func toggled(state: bool) -> void :

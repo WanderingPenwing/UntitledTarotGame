@@ -1,6 +1,6 @@
 extends Node
 
-enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN, CHARIOT, FOOL, LOVE, FAITH}
+enum STATUS {NORMAL, FLIPPED, BLIND, FROZEN, CHARIOT, FOOL, LOVE, FAITH, TRADITION, CHAOS, ILLUSION}
 
 const SAVE_FILE : String = "user://state.save"
 const LEVELS = [
@@ -8,6 +8,10 @@ const LEVELS = [
 	preload("res://levels/level_k2.tscn"),
 	preload("res://levels/level_k3.tscn"),
 	preload("res://levels/level_k4.tscn"),
+	preload("res://levels/level_q1.tscn"),
+	preload("res://levels/level_q2.tscn"),
+	preload("res://levels/level_q3.tscn"),
+	preload("res://levels/level_q4.tscn"),
 	preload("res://levels/level_j1.tscn"),
 	preload("res://levels/level_j2.tscn"),
 	preload("res://levels/level_j3.tscn"),
@@ -46,6 +50,7 @@ var level_unlocked = 0
 var in_game = false
 
 var cutscene_index = 0
+var anim_pause = 0
 
 func _ready() -> void:
 	get_tree().paused = true
@@ -54,8 +59,11 @@ func _ready() -> void:
 	update_volume()
 
 
-func _process(_delta: float) -> void:
-	GameUi.start_label.visible = TarotSelect.ContinueLabel.visible and get_tree().paused and in_game
+func _process(delta: float) -> void:
+	if anim_pause > 0 :
+		anim_pause -= delta
+	
+	GameUi.start_label.visible = TarotSelect.ContinueLabel.visible and get_tree().paused and in_game and anim_pause <= 0
 	
 	if Input.is_action_just_pressed("A") and GameUi.win_label.visible :
 		level_index = (level_index + 1) % len(LEVELS)
@@ -80,6 +88,7 @@ func reset_level() -> void :
 	get_tree().change_scene_to_packed(LEVELS[level_index])
 	get_tree().paused = true
 	GameUi.win_label.hide()
+	anim_pause = 1.0
 
 func start_level() -> void :
 	reset_level()

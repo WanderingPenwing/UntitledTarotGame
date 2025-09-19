@@ -21,16 +21,26 @@ func _ready() -> void:
 	$Freeze.hide()
 	$Blind.hide()
 	$Faith.hide()
+	$Stun.hide()
+	$Tradition.hide()
+	$Shadow.hide()
 	if GameState.player_status == GameState.STATUS.LOVE :
 		tween.tween_callback($Heart.show)
 	if GameState.player_status == GameState.STATUS.FROZEN :
 		tween.tween_callback($Freeze.show)
 	if GameState.player_status == GameState.STATUS.BLIND :
 		$Blind.show()
+	if GameState.player_status == GameState.STATUS.CHAOS :
+		$Stun.show()
+	if GameState.player_status == GameState.STATUS.TRADITION :
+		tween.tween_callback($Tradition.show)
 	if GameState.player_status == GameState.STATUS.FAITH :
 		tween.tween_callback($Faith.show)
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)
+	if GameState.player_status == GameState.STATUS.ILLUSION :
+		tween.tween_callback($sprite.hide)
+		tween.parallel().tween_callback($Shadow.show)
 	
 	if GameState.player_status == GameState.STATUS.FLIPPED :
 		tween.tween_property(self, "scale", Vector2(1, -1), 0.1)
@@ -61,6 +71,11 @@ func _physics_process(delta: float) -> void:
 		GameState.win()
 		SoundManager.play_sound(WIN_SOUND, true)
 		GameUi.time_hint.hide()
+	
+	if GameState.player_status == GameState.STATUS.CHAOS and chrono < 5 :
+		$sprite.rotation_degrees = -90
+		$Stun.hide()
+		return
 		
 	# Si frozen on bouge pas
 	if GameState.player_status == GameState.STATUS.FROZEN :
