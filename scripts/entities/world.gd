@@ -30,7 +30,7 @@ func _ready() -> void:
 func freeze() -> void :
 	for x in range(0, 9) :
 		for y in range(0, 8) :
-			if get_cell_atlas_coords(Vector2i(x,y)) == WATER :
+			if get_cell_atlas_coords(Vector2i(x,y)) == WATER or get_cell_source_id(Vector2i(x,y)) == 2 :
 				set_cell(Vector2i(x,y), 0, ICE)
 
 func collapse() -> void :

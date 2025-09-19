@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cs2xtrp8r1c5h"]
+[gd_scene load_steps=10 format=3 uid="uid://cs2xtrp8r1c5h"]
 
 [ext_resource type="Script" uid="uid://d4jt75f6lgje0" path="res://scripts/entities/mob.gd" id="1_l4ws6"]
 [ext_resource type="Texture2D" uid="uid://bx5cbyhryhkdd" path="res://images/entities/enemy.png" id="2_8mnx0"]
 [ext_resource type="Texture2D" uid="uid://dp16i8ei55tk4" path="res://images/entities/heart.png" id="3_8mnx0"]
 [ext_resource type="Texture2D" uid="uid://ds3a56xx1w5g0" path="res://images/entities/shadow.png" id="3_cr5dr"]
 [ext_resource type="Texture2D" uid="uid://dvi4u2qwu6jh2" path="res://images/entities/faith.png" id="4_7dyax"]
+[ext_resource type="Texture2D" uid="uid://cfg0dytid6krf" path="res://images/entities/Monsters_Spritesheet.png" id="4_jnt03"]
 [ext_resource type="Texture2D" uid="uid://ch0a308rsvob0" path="res://images/entities/stun.png" id="5_pjy5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
@@ -27,7 +28,7 @@ position = Vector2(0, 10)
 texture = ExtResource("3_cr5dr")
 
 [node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_8mnx0")
+texture = ExtResource("4_jnt03")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 

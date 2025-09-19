@@ -21,10 +21,19 @@ func update_music() -> void :
 	if not GameState.in_game :
 		set_music(1)
 		return
-	if GameState.level_index < 5 :
-		set_music(GameState.level_index + 2)
+	if GameState.level_index < 2 :
+		set_music(2)
 		return
-	set_music(1)
+	if GameState.level_index < 4 :
+		set_music(3)
+		return
+	if GameState.level_index < 8 :
+		set_music(4)
+		return
+	if GameState.level_index < 12 :
+		set_music(5)
+		return
+	set_music(6)
 
 func set_music(music_index: int) -> void :
 	for child_index in get_child_count() :

@@ -9,8 +9,6 @@ const CHAR_READ_RATE  = 0.05
 @onready var charbox = $SubViewport/Char
 @onready var view = $Sprite2D
 @onready var charSprite = $SubViewport/CharacterSprite
-@onready var query1 = $SubViewport/Query1
-@onready var query2 = $SubViewport/Query2
 @onready var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badend.tscn")
 @onready var keyartbadend = preload("res://prefabs/cutscene/cutscene scene/badend_keyart.tscn")
 @onready var keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/goodend_keyart.tscn")
@@ -55,7 +53,6 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	print(current_state)
 	match current_state:
 		State.READY:
 			if !text_queue.is_empty():
@@ -207,8 +204,9 @@ func change_sprite(next_state):
 
 func query():
 	isChoosing = true
-	query1.show()
-	query2.show()
+	# pour eviter que godot panique
+	$SubViewport/Query1.show()
+	$SubViewport/Query2.show()
 	
 func badend():
 	get_tree().change_scene_to_packed(keyartbadend)

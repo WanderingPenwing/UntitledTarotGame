@@ -13,25 +13,20 @@ const LOVE_SPEED: float = 10
 
 var chrono = 10.0
 
-
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_interval(0.3)
 	$Heart.hide()
-	$Freeze.hide()
-	$Blind.hide()
 	$Faith.hide()
 	$Stun.hide()
 	$Tradition.hide()
 	$Shadow.hide()
 	if GameState.player_status == GameState.STATUS.LOVE :
 		tween.tween_callback($Heart.show)
-	if GameState.player_status == GameState.STATUS.FROZEN :
-		tween.tween_callback($Freeze.show)
 	if GameState.player_status == GameState.STATUS.BLIND :
-		$Blind.show()
+		tween.tween_callback(GameUi.blindness.show)
 	if GameState.player_status == GameState.STATUS.CHAOS :
-		$Stun.show()
+		tween.tween_callback($Stun.show)
 	if GameState.player_status == GameState.STATUS.TRADITION :
 		tween.tween_callback($Tradition.show)
 	if GameState.player_status == GameState.STATUS.FAITH :
@@ -55,6 +50,7 @@ func _ready() -> void:
 	if type == TYPE.QUEEN :
 		GameUi.time_hint.show()
 	GameUi.time_label.text = "10"
+	GameUi.PlayerSprite = $sprite
 	
 
 

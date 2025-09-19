@@ -17,8 +17,10 @@ func _ready() -> void:
 	if GameState.world_status == GameState.STATUS.ILLUSION :
 		tween.tween_callback($sprite.hide)
 		tween.parallel().tween_callback($Shadow.show)
+	
+	GameUi.FlagSprite = $sprite
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = Vector2(0, 0)
 	if GameState.mob_status == GameState.STATUS.LOVE :
 		velocity = LOVE_SPEED * position.direction_to(Mob.position)

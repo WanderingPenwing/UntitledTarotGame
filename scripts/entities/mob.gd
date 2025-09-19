@@ -48,9 +48,11 @@ func _ready() -> void:
 		var player_pos = Player.position
 		tween.tween_property(flag, "position", player_pos, 0.1)
 		tween.parallel().tween_property(Player, "position", flag_pos, 0.1)
+	
+	GameUi.MobSprite = $sprite
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# si le mob est freeze
 	if GameState.mob_status == GameState.STATUS.FROZEN :
 		return

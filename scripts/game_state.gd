@@ -93,6 +93,7 @@ func reset_level() -> void :
 	get_tree().change_scene_to_packed(LEVELS[level_index])
 	get_tree().paused = true
 	GameUi.win_label.hide()
+	GameUi.blindness.hide()
 	anim_pause = 1.0
 
 func start_level() -> void :
@@ -124,6 +125,7 @@ func start_cutscene() -> void :
 func win() -> void :
 	get_tree().paused = true
 	GameUi.win_label.show()
+	GameUi.blindness.hide()
 	in_game = false
 	# a completer avec transition vers les autres niveaux
 
