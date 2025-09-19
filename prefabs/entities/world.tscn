@@ -194,3 +194,9 @@ sources/1 = SubResource("TileSetAtlasSource_1camh")
 [node name="world" type="TileMapLayer" groups=["world"]]
 tile_set = SubResource("TileSet_gee14")
 script = ExtResource("2_nyyv6")
+
+[node name="Blind" type="ColorRect" parent="."]
+visible = false
+offset_right = 160.0
+offset_bottom = 144.0
+color = Color(0.105882, 0.0117647, 0.14902, 1)

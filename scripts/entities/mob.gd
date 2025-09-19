@@ -12,22 +12,32 @@ var target: Vector2 = Vector2(80, 72)
 
 
 func _ready() -> void:
+	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_interval(0.6)
+	
+	$Heart.hide()
+	$Freeze.hide()
+	$Blind.hide()
+	$Faith.hide()
+	if GameState.mob_status == GameState.STATUS.LOVE :
+		tween.tween_callback($Heart.show)
 	if GameState.mob_status == GameState.STATUS.FROZEN :
-		modulate = Color.PALE_TURQUOISE
-	elif GameState.mob_status == GameState.STATUS.BLIND :
-		modulate = Color.BLACK 
+		tween.tween_callback($Freeze.show)
+	if GameState.mob_status == GameState.STATUS.BLIND :
+		tween.tween_callback($Blind.show)
+	if GameState.mob_status == GameState.STATUS.FAITH :
+		tween.tween_callback($Faith.show)
+		set_collision_layer_value(2, false)
+		set_collision_mask_value(2, false)
+	
 	if GameState.mob_status == GameState.STATUS.FLIPPED :
-		scale.y = -1
+		tween.tween_property(self, "scale", Vector2(1, -1), 0.1)
 	if GameState.mob_status == GameState.STATUS.FOOL :
 		var flag = get_tree().get_first_node_in_group("flag")
 		var flag_pos = flag.position
 		var player_pos = Player.position
-		Player.position = Vector2(-100, -100)
-		flag.position = player_pos
-		Player.position = flag_pos
-	if GameState.mob_status == GameState.STATUS.FAITH :
-		set_collision_layer_value(2, false)
-		set_collision_mask_value(2, false)
+		tween.tween_property(flag, "position", player_pos, 0.1)
+		tween.parallel().tween_property(Player, "position", flag_pos, 0.1)
 
 
 func _physics_process(_delta: float) -> void:

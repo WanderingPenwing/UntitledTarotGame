@@ -5,6 +5,8 @@ extends Node2D
 
 func _ready() -> void:
 	if GameState.world_status == GameState.STATUS.FLIPPED :
-		NormalWorld.queue_free()
+		var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween.tween_interval(0.9)
+		tween.tween_callback(NormalWorld.queue_free)
 	else :
 		FlippedWorld.queue_free()

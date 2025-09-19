@@ -15,20 +15,33 @@ var chrono = 10.0
 
 
 func _ready() -> void:
+	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_interval(0.3)
+	$Heart.hide()
+	$Freeze.hide()
+	$Blind.hide()
+	$Faith.hide()
+	if GameState.player_status == GameState.STATUS.LOVE :
+		tween.tween_callback($Heart.show)
 	if GameState.player_status == GameState.STATUS.FROZEN :
-		modulate = Color.PALE_TURQUOISE
+		tween.tween_callback($Freeze.show)
+	if GameState.player_status == GameState.STATUS.BLIND :
+		$Blind.show()
+	if GameState.player_status == GameState.STATUS.FAITH :
+		tween.tween_callback($Faith.show)
+		set_collision_layer_value(1, false)
+		set_collision_mask_value(1, false)
+	
 	if GameState.player_status == GameState.STATUS.FLIPPED :
-		scale.y = -1
+		tween.tween_property(self, "scale", Vector2(1, -1), 0.1)
 	if GameState.player_status == GameState.STATUS.FOOL :
 		var flag = get_tree().get_first_node_in_group("flag")
 		var mob = get_tree().get_first_node_in_group("mob")
 		var flag_pos = flag.position
-		flag.position = mob.position
-		mob.position = flag_pos
+		var mob_pos = mob.position
+		tween.tween_property(mob, "position", flag_pos, 0.1)
+		tween.parallel().tween_property(flag, "position", mob_pos, 0.1)
 	
-	if GameState.player_status == GameState.STATUS.FAITH :
-		set_collision_layer_value(1, false)
-		set_collision_mask_value(1, false)
 	if type == TYPE.QUEEN :
 		GameUi.time_hint.show()
 	GameUi.time_label.text = "10"

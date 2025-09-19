@@ -13,6 +13,9 @@ config_version=5
 config/name="tarot"
 run/main_scene="uid://cxxg1x26nuwdt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.105882, 0.0117647, 0.14902, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://dd4l6dchqr34h"
 config/icon="uid://cbdctlg68iof4"
 
 [autoload]
@@ -51,4 +54,5 @@ B={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.105882, 0.0117647, 0.14902, 1)
 2d/snap/snap_2d_transforms_to_pixel=true

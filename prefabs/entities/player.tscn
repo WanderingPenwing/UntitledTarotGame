@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://brh1ungyth2n1"]
+[gd_scene load_steps=8 format=3 uid="uid://brh1ungyth2n1"]
 
 [ext_resource type="Script" uid="uid://ddeknh0g2sqj3" path="res://scripts/entities/player.gd" id="1_n42l2"]
 [ext_resource type="Texture2D" uid="uid://btty5qph7itrr" path="res://images/entities/Tarot_Knight1.png" id="2_n42l2"]
+[ext_resource type="Texture2D" uid="uid://dp16i8ei55tk4" path="res://images/entities/heart.png" id="3_ebhuq"]
+[ext_resource type="Texture2D" uid="uid://swiifn1ukm7t" path="res://images/entities/Tarot_Knight_blind.png" id="4_grlhh"]
+[ext_resource type="Texture2D" uid="uid://2mefhwbmiige" path="res://images/entities/Tarot_Knight_frozen.png" id="4_j0cl5"]
+[ext_resource type="Texture2D" uid="uid://dvi4u2qwu6jh2" path="res://images/entities/faith.png" id="6_qpvj0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 7.5
@@ -14,5 +18,20 @@ script = ExtResource("1_n42l2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_n42l2")
 
+[node name="Blind" type="Sprite2D" parent="."]
+texture = ExtResource("4_grlhh")
+
+[node name="Freeze" type="Sprite2D" parent="."]
+texture = ExtResource("4_j0cl5")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1rtib")
+
+[node name="Heart" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.1, -13)
+texture = ExtResource("3_ebhuq")
+
+[node name="Faith" type="Sprite2D" parent="."]
+position = Vector2(-1.1, -8)
+texture = ExtResource("6_qpvj0")
