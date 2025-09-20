@@ -1,13 +1,18 @@
 shader_type canvas_item;
-// 239 249 214
-const vec4 white = vec4(0.941, 0.9803, 0.8425, 1.0);
-uniform bool active = false;
+
+uniform vec4 white : source_color = vec4(1.0);
+uniform vec4 black : source_color = vec4(1.0);
+
+uniform bool hurt = false;
+uniform bool blind = false;
 
 void fragment() {
 	if (texture(TEXTURE, UV).w == 0.0) {
 		COLOR = vec4(0.0, 0.0, 0.0, 0.0);
-	} else if (active) {
+	} else if (hurt || length(texture(TEXTURE, UV) - white) < 0.1) {
 		COLOR = white;
+	} else if (blind) {
+		COLOR = black;
 	} else {
 		COLOR = texture(TEXTURE, UV);
 	}

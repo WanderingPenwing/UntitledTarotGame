@@ -35,6 +35,7 @@ func _process(_delta: float) -> void:
 		GameState.level_index = selected.y*4+selected.x
 		GameState.cutscene_index = GameState.level_index % len(GameState.CUTSCENES)
 		GameState.start_cutscene()
+		SoundManager.play_sound(BIP_SOUND, true)
 	
 	just_visible = false
 

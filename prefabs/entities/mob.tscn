@@ -11,7 +11,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_brxcf"]
 resource_local_to_scene = true
 shader = ExtResource("4_o7agu")
-shader_parameter/active = false
+shader_parameter/white = Color(0.937255, 0.976471, 0.839216, 1)
+shader_parameter/black = Color(0.105882, 0.0117647, 0.14902, 1)
+shader_parameter/hurt = false
+shader_parameter/blind = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 7.5
@@ -34,7 +37,6 @@ position = Vector2(0, 12)
 texture = ExtResource("3_cr5dr")
 
 [node name="sprite" type="Sprite2D" parent="."]
-modulate = Color(0.937255, 0.976471, 0.839216, 1)
 material = SubResource("ShaderMaterial_brxcf")
 texture = ExtResource("4_jnt03")
 region_enabled = true

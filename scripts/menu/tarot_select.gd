@@ -1,7 +1,10 @@
 extends CanvasLayer
 
-const TAROT_CHECK_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
+const TAROT_CHECK_SOUND: Resource = preload("res://audio/sfx/validate.wav")
 const PICK_UP_SOUND: Resource = preload("res://audio/sfx/place.wav")
+const SHUFFLE_SOUND = preload("res://audio/sfx/carte.wav")
+const LOW_SHUFFLE_SOUND = preload("res://audio/sfx/carte_low.wav")
+const BIP_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
 
 @export var ContinueLabel : Sprite2D
 @export var HintCards : Node2D
@@ -35,6 +38,7 @@ func _process(_delta: float) -> void:
 	GameUi.snow.emitting = false
 	HintCards.visible = (GameState.level_unlocked < 1)
 	# Mouvement du curseur
+	var old_cursor = cursor
 	var dir = -int(Input.is_action_just_pressed("ui_left"))+int(Input.is_action_just_pressed("ui_right"))
 	if dir != 0 :
 		cursor.x = (cursor.x + dir + 3) % 3
@@ -43,6 +47,8 @@ func _process(_delta: float) -> void:
 		# comme on loop osef de savoir si on va vers le haut ou le bas, dans les deux cas on change de ligne
 		cursor.y = (cursor.y + 1) % 2
 	
+	if old_cursor != cursor and holding :
+		SoundManager.play_sound(SHUFFLE_SOUND, true)
 
 	# Le reste : Ui sheneniganns
 	# je te ferais un topo en voc si tu es curieux et que mon code est trop horrible a lire
@@ -70,6 +76,8 @@ func _process(_delta: float) -> void:
 				slots[cursor.y][cursor.x] = null
 				backup()
 				holding.z_index = 1
+				if cursor.y == 1 :
+					SoundManager.play_sound(SHUFFLE_SOUND, true)
 				cursor = Vector2i(cursor.x, 0)
 		else :
 			SoundManager.play_sound(PICK_UP_SOUND, true)
@@ -88,6 +96,7 @@ func _process(_delta: float) -> void:
 		GameState.mob_status = slots[0][1].status_index if slots[0][1] else GameState.STATUS.NORMAL
 		GameState.world_status = slots[0][2].status_index if slots[0][2] else GameState.STATUS.NORMAL
 		GameState.reset_level()
+		SoundManager.play_sound(LOW_SHUFFLE_SOUND, true)
 	
 	update_cards()
 	select(cursor)
@@ -164,7 +173,7 @@ func update_continue_label(visibility: bool) -> void :
 		ContinueLabel.show()
 		ContinueLabel.position.y = 121
 		tween.tween_property(ContinueLabel, "position", Vector2(80,68), 0.1)
-		SoundManager.play_sound(TAROT_CHECK_SOUND, true)
+		SoundManager.play_sound(TAROT_CHECK_SOUND)
 	else :
 		ContinueLabel.position.y = 68
 		tween.tween_property(ContinueLabel, "position", Vector2(80,121), 0.1)

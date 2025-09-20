@@ -19,7 +19,8 @@ var dead = false
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_interval(0.3)
-	$sprite.material.set_shader_parameter("active", false)
+	$sprite.material.set_shader_parameter("hurt", false)
+	$sprite.material.set_shader_parameter("blind", false)
 	$Heart.hide()
 	$Faith.hide()
 	$Stun.hide()
@@ -96,7 +97,7 @@ func die() -> void :
 	if dead :
 		return
 	dead = true
-	$sprite.material.set_shader_parameter("active", true)
+	$sprite.material.set_shader_parameter("hurt", true)
 	get_tree().paused = true
 	GameUi.reset_label.show()
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
@@ -113,5 +114,5 @@ func die() -> void :
 	SoundManager.play_sound(DEATH_SOUND, true)
 
 func end_blink() -> void :
-	$sprite.material.set_shader_parameter("active", false)
+	$sprite.material.set_shader_parameter("hurt", false)
 	

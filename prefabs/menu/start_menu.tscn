@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxxg1x26nuwdt"]
+[gd_scene load_steps=15 format=3 uid="uid://cxxg1x26nuwdt"]
 
 [ext_resource type="Texture2D" uid="uid://04ftlwgemnoo" path="res://images/menu/start_bg.png" id="1_78x17"]
 [ext_resource type="Script" uid="uid://c4qb0c2gjeden" path="res://scripts/menu/start_menu.gd" id="1_rgc7e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dakgu5i2b3udp" path="res://images/menu/options.png" id="3_xu787"]
 [ext_resource type="Texture2D" uid="uid://bn1604pi3xb4q" path="res://images/menu/start_card.png" id="4_od3bf"]
 [ext_resource type="PackedScene" uid="uid://b64asvl1iitne" path="res://prefabs/menu/options_menu.tscn" id="6_xu787"]
+[ext_resource type="Texture2D" uid="uid://cp0pb2otnftsh" path="res://images/menu/title.png" id="7_dnf1r"]
 [ext_resource type="PackedScene" uid="uid://jsdsf8eupcd5" path="res://prefabs/menu/credits_menu.tscn" id="7_od3bf"]
 [ext_resource type="PackedScene" uid="uid://bhbll1macpi4s" path="res://prefabs/menu/level_select.tscn" id="8_2dou6"]
 [ext_resource type="Texture2D" uid="uid://btgxrlr8rkdqk" path="res://images/menu/controls.png" id="9_q82tv"]
@@ -13,19 +14,183 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_rgc7e"]
 viewport_path = NodePath("view")
 
-[node name="start_menu" type="Node2D" node_paths=PackedStringArray("StartCard", "OptionsCard", "CreditsCard", "Menus") groups=["start_menu"]]
+[sub_resource type="Animation" id="Animation_dnf1r"]
+resource_name = "start"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 72), Vector2(80, 140)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Credits:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(128, 196), Vector2(128, 124)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(57, 162), Vector2(57, 88)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StartCard:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(76, 173), Vector2(76, 100)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Controls:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 100), Vector2(80, 72)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ready"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f405w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Credits:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 196)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(57, 162)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StartCard:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(76, 173)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Controls:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv6aw"]
+_data = {
+&"RESET": SubResource("Animation_f405w"),
+&"start": SubResource("Animation_dnf1r")
+}
+
+[node name="start_menu" type="Node2D" node_paths=PackedStringArray("StartCard", "OptionsCard", "CreditsCard", "Menus", "Title", "StartAnim") groups=["start_menu"]]
 process_mode = 3
 script = ExtResource("1_rgc7e")
 StartCard = NodePath("view/StartCard")
 OptionsCard = NodePath("view/Options")
 CreditsCard = NodePath("view/Credits")
 Menus = [NodePath("view/level_select"), NodePath("view/options_menu"), NodePath("view/credits_menu")]
+Title = NodePath("view/Title")
+StartAnim = NodePath("view/anim")
 
 [node name="view_sprite" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
 texture = SubResource("ViewportTexture_rgc7e")
 
 [node name="view" type="SubViewport" parent="."]
+canvas_item_default_texture_filter = 0
 size = Vector2i(160, 144)
 
 [node name="StartBg" type="Sprite2D" parent="view"]
@@ -33,20 +198,24 @@ position = Vector2(80, 72)
 texture = ExtResource("1_78x17")
 
 [node name="Credits" type="Sprite2D" parent="view"]
-position = Vector2(128, 124)
+position = Vector2(128, 196)
 texture = ExtResource("2_rgc7e")
 
 [node name="Options" type="Sprite2D" parent="view"]
-position = Vector2(57, 88)
+position = Vector2(57, 162)
 texture = ExtResource("3_xu787")
 
 [node name="StartCard" type="Sprite2D" parent="view"]
-position = Vector2(76, 100)
+position = Vector2(76, 173)
 texture = ExtResource("4_od3bf")
 
 [node name="Controls" type="Sprite2D" parent="view"]
-position = Vector2(80, 72)
+position = Vector2(80, 100)
 texture = ExtResource("9_q82tv")
+
+[node name="Title" type="Sprite2D" parent="view"]
+position = Vector2(80, 72)
+texture = ExtResource("7_dnf1r")
 
 [node name="options_menu" parent="view" instance=ExtResource("6_xu787")]
 visible = false
@@ -56,3 +225,8 @@ visible = false
 
 [node name="level_select" parent="view" instance=ExtResource("8_2dou6")]
 visible = false
+
+[node name="anim" type="AnimationPlayer" parent="view"]
+libraries = {
+&"": SubResource("AnimationLibrary_qv6aw")
+}

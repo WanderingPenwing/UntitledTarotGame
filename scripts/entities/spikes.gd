@@ -1,6 +1,7 @@
 extends Area2D
 
 const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
+const EXTEND_SOUND: Resource = preload("res://audio/sfx/pic qui fait mal.wav")
 
 @export var ActionButton: Area2D
 
@@ -20,10 +21,7 @@ func _process(_delta: float) -> void:
 	
 	for body in get_overlapping_bodies() :
 		if body.is_in_group("player") :
-			print("spike death")
-			get_tree().paused = true
-			GameState.call_deferred("reset_level")
-			SoundManager.play_sound(DEATH_SOUND, true)
+			body.die()
 		if body.is_in_group("mob") :
 			SoundManager.play_sound(DEATH_SOUND, true)
 			body.die()
@@ -31,6 +29,7 @@ func _process(_delta: float) -> void:
 func toggled(state: bool) -> void :
 	$sprite.region_rect.position.x = 16 if state else 0
 	extended = state
+	SoundManager.play_sound(EXTEND_SOUND, true)
 
 func activate() -> void :
 	toggled(true)

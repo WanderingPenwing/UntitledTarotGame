@@ -14,13 +14,15 @@ func _ready() -> void:
 	tween.tween_interval(0.9)
 	$Heart.hide()
 	$Shadow.hide()
-	$sprite.material.set_shader_parameter("active", false)
+	$sprite.material.set_shader_parameter("hurt", false)
+	$sprite.material.set_shader_parameter("blind", false)
 	if GameState.world_status == GameState.STATUS.LOVE :
 		tween.tween_callback($Heart.show)
 	if GameState.world_status == GameState.STATUS.ILLUSION :
 		tween.tween_callback($sprite.hide)
 		tween.parallel().tween_callback($Shadow.show)
-	
+	if GameState.world_status == GameState.STATUS.BLIND :
+		tween.tween_callback(blind)
 	GameUi.FlagSprite = $sprite
 
 func _physics_process(_delta: float) -> void:
@@ -50,7 +52,7 @@ func die() -> void :
 	if dead :
 		return
 	dead = true
-	$sprite.material.set_shader_parameter("active", true)
+	$sprite.material.set_shader_parameter("hurt", true)
 	get_tree().paused = true
 	GameUi.reset_label.show()
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
@@ -61,5 +63,8 @@ func die() -> void :
 	SoundManager.play_sound(DEATH_SOUND, true)
 
 func end_blink() -> void :
-	$sprite.material.set_shader_parameter("active", false)
+	$sprite.material.set_shader_parameter("hurt", false)
 	
+
+func blind() -> void :
+	$sprite.material.set_shader_parameter("blind", true)

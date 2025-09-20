@@ -33,6 +33,8 @@ const CUTSCENES = [
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_11.tscn"),
 	preload("res://prefabs/cutscene/cutscene scene/cutscene_12.tscn")
 ]
+const BIP_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
+const LOW_SHUFFLE_SOUND = preload("res://audio/sfx/carte_low.wav")
 
 @onready var master_bus : int = AudioServer.get_bus_index("Master")
 @onready var sfx_bus : int = AudioServer.get_bus_index("Sfx")
@@ -73,6 +75,12 @@ func _process(delta: float) -> void:
 		cutscene_index = (cutscene_index + 1) % len(CUTSCENES)
 		GameUi.win_label.hide()
 		start_cutscene()
+		SoundManager.play_sound(BIP_SOUND, true)
+	
+	if Input.is_action_just_pressed("B") and GameUi.win_label.visible :
+		SoundManager.play_sound(BIP_SOUND, true)
+		reset_level()
+		in_game = true
 	
 	if not in_game : return
 	
@@ -81,6 +89,7 @@ func _process(delta: float) -> void:
 		get_tree().paused = true
 		TarotSelect.show()
 		GameUi.start_label.hide()
+		SoundManager.play_sound(LOW_SHUFFLE_SOUND, true)
 	
 	# Pour lancer le niveau
 	if Input.is_action_just_pressed("A") and GameUi.start_label.visible :
@@ -89,10 +98,12 @@ func _process(delta: float) -> void:
 		var player = get_tree().get_first_node_in_group("player")
 		if player.type == player.TYPE.QUEEN :
 			GameUi.time_hint.show()
+		SoundManager.play_sound(BIP_SOUND, true)
 		
 	
 	if Input.is_action_just_pressed("A") and GameUi.reset_label.visible :
 		reset_level()
+		SoundManager.play_sound(BIP_SOUND, true)
 		
 	
 
@@ -100,12 +111,17 @@ func reset_level() -> void :
 	get_tree().change_scene_to_packed(LEVELS[level_index])
 	get_tree().paused = true
 	GameUi.reset_ui()
+	GameUi.level_index.region_rect.position.x = level_index * 16
+	GameUi.level_index.show()
+	GameUi.level_type.show()
+	if level_index % 4 == 0 :
+		GameUi.objectives_hints[level_index/4].show()
 	anim_pause = 1.0
 	if not TarotSelect.ContinueLabel.visible :
 		return
 	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_interval(1.0)
-	tween.tween_callback(GameUi.start_label.show)
+	tween.tween_callback(GameUi.show_start)
 
 func start_level() -> void :
 	reset_level()
@@ -129,6 +145,7 @@ func start_cutscene() -> void :
 	player_status = STATUS.NORMAL
 	mob_status = STATUS.NORMAL
 	world_status = STATUS.NORMAL
+	GameUi.reset_ui()
 	get_tree().change_scene_to_packed(CUTSCENES[cutscene_index])
 	get_tree().paused = true
 

@@ -8,7 +8,11 @@ extends CanvasLayer
 @export var reset_label: Node
 @export var time_hint: Node
 @export var time_label: Node
+@export var level_type: Node
+@export var level_index: Node
 @export var snow: Node
+@export var snow_particles: Node
+@export var objectives_hints: Array[Node]
 
 const ANIMATION_DELAY : float = 0.5
 
@@ -35,10 +39,21 @@ func _process(delta: float) -> void:
 	update_sprites()
 
 func reset_ui() -> void :
-	GameUi.win_label.hide()
-	GameUi.blindness.hide()
-	GameUi.reset_label.hide()
-	GameUi.time_hint.hide()
+	win_label.hide()
+	blindness.hide()
+	reset_label.hide()
+	time_hint.hide()
+	level_index.hide()
+	start_label.hide()
+	snow_particles.hide()
+	snow.emitting = false
+	for hint in objectives_hints :
+		hint.hide()
+
+func show_start() -> void :
+	for hint in objectives_hints :
+		hint.hide()
+	start_label.show()
 
 func toggle_anim(sprite:Sprite2D) -> void :
 	if not sprite :
@@ -47,6 +62,7 @@ func toggle_anim(sprite:Sprite2D) -> void :
 
 func update_sprites() -> void :
 	var player_type = PlayerSprite.get_parent().type
+	level_type.region_rect.position.x = player_type * 16
 	PlayerSprite.region_rect.position.x = player_type 
 	if PlayerSprite.get_parent().velocity.length() > 5 and not get_tree().paused :
 		PlayerSprite.region_rect.position.x += 4

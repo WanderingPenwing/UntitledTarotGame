@@ -24,58 +24,58 @@ tarot_card_3 = ExtResource("3_d4p02")
 position = Vector2(80, 72)
 texture = SubResource("ViewportTexture_p57ef")
 
-[node name="world2" parent="." instance=ExtResource("5_m8nao")]
-tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAACAAAAAAAJAAgAAAACAAAAAAAJAAcAAAACAAAAAAAJAAYAAAACAAAAAAAJAAUAAAACAAAAAAAJAAQAAAACAAAAAAAJAAMAAAACAAAAAAAJAAIAAAACAAAAAAAJAAEAAAACAAAAAAAJAAAAAAACAAAAAAAIAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAAAAAAACAAAAAAAFAAAAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAAEAAEAAAACAAAAAAACAAEAAAACAAAAAAABAAEAAAACAAAAAAADAAEAAAACAAAAAAAFAAEAAAACAAAAAAAHAAEAAAACAAAAAAAGAAEAAAACAAAAAAAIAAEAAAACAAAAAAAIAAUAAAADAAAAAAAHAAUAAAABAAAAAAAGAAUAAAADAAAAAAAFAAUAAAADAAAAAAAEAAUAAAADAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAAEAAYAAAADAAAAAAAFAAYAAAADAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAADAAAAAAAIAAcAAAADAAAAAAAIAAYAAAADAAAAAAAGAAcAAAADAAAAAAAFAAcAAAADAAAAAAAEAAcAAAADAAAAAAADAAQAAAADAAAAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAACAAIAAAACAAAAAAABAAIAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAAFAAIAAAACAAAAAAAEAAIAAAACAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAHAAIAAAABAAAAAAAHAAQAAAABAAAAAAAGAAQAAAADAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAAFAAQAAAADAAAAAAAEAAQAAAADAAAAAAAKAAIAAAACAAAAAAAIAAQAAAADAAAAAAAKAAEAAAACAAAAAAA=")
-
-[node name="spikes" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(40, 104)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes2" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(24, 104)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes3" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(56, 104)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes4" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(40, 88)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes5" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(24, 88)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes6" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(56, 88)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes7" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(40, 120)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes8" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(24, 120)
-ActionButton = NodePath("../action_button")
-
-[node name="spikes9" parent="." node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
-position = Vector2(56, 120)
-ActionButton = NodePath("../action_button")
-
-[node name="action_button" parent="." instance=ExtResource("7_8es7k")]
-position = Vector2(120, 80)
-
-[node name="flag" parent="." instance=ExtResource("6_42wcb")]
-position = Vector2(120, 39)
-
-[node name="mob" parent="." instance=ExtResource("7_au365")]
-position = Vector2(120, 104)
-
-[node name="player" parent="." instance=ExtResource("8_tyxbq")]
-position = Vector2(40, 104)
-type = 1
-
 [node name="view3" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(160, 144)
+
+[node name="world2" parent="view3" instance=ExtResource("5_m8nao")]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAACAAAAAAAJAAgAAAACAAAAAAAJAAcAAAACAAAAAAAJAAYAAAACAAAAAAAJAAUAAAACAAAAAAAJAAQAAAACAAAAAAAJAAMAAAACAAAAAAAJAAIAAAACAAAAAAAJAAEAAAACAAAAAAAJAAAAAAACAAAAAAAIAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAAAAAAACAAAAAAAFAAAAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAAEAAEAAAACAAAAAAACAAEAAAACAAAAAAABAAEAAAACAAAAAAADAAEAAAACAAAAAAAFAAEAAAACAAAAAAAHAAEAAAACAAAAAAAGAAEAAAACAAAAAAAIAAEAAAACAAAAAAAIAAUAAAADAAAAAAAHAAUAAAABAAAAAAAGAAUAAAADAAAAAAAFAAUAAAADAAAAAAAEAAUAAAADAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAAEAAYAAAADAAMAAAAFAAYAAAADAAMAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAADAAAAAAAIAAcAAAADAAAAAAAIAAYAAAADAAAAAAAGAAcAAAADAAAAAAAFAAcAAAADAAAAAAAEAAcAAAADAAAAAAADAAQAAAADAAAAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAACAAIAAAACAAAAAAABAAIAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAAFAAIAAAACAAAAAAAEAAIAAAACAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAHAAIAAAABAAAAAAAHAAQAAAABAAAAAAAGAAQAAAADAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAAFAAQAAAADAAAAAAAEAAQAAAADAAAAAAAKAAIAAAACAAAAAAAIAAQAAAADAAAAAAAKAAEAAAACAAAAAAA=")
+
+[node name="spikes" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(40, 104)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes2" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(24, 104)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes3" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(56, 104)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes4" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(40, 88)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes5" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(24, 88)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes6" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(56, 88)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes7" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(40, 120)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes8" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(24, 120)
+ActionButton = NodePath("../action_button")
+
+[node name="spikes9" parent="view3" node_paths=PackedStringArray("ActionButton") instance=ExtResource("6_d4p02")]
+position = Vector2(56, 120)
+ActionButton = NodePath("../action_button")
+
+[node name="action_button" parent="view3" instance=ExtResource("7_8es7k")]
+position = Vector2(120, 80)
+
+[node name="flag" parent="view3" instance=ExtResource("6_42wcb")]
+position = Vector2(120, 39)
+
+[node name="mob" parent="view3" instance=ExtResource("7_au365")]
+position = Vector2(120, 104)
+
+[node name="player" parent="view3" instance=ExtResource("8_tyxbq")]
+position = Vector2(40, 104)
+type = 1

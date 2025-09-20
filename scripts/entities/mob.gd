@@ -15,7 +15,8 @@ var dead: bool = false
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_interval(0.6)
-	$sprite.material.set_shader_parameter("active", false)
+	$sprite.material.set_shader_parameter("hurt", false)
+	$sprite.material.set_shader_parameter("blind", false)
 	$Heart.hide()
 	$Faith.hide()
 	$Stun.hide()
@@ -43,7 +44,8 @@ func _ready() -> void:
 		var player_pos = Player.position
 		tween.tween_property(flag, "position", player_pos, 0.1)
 		tween.parallel().tween_property(Player, "position", flag_pos, 0.1)
-	
+	if GameState.mob_status == GameState.STATUS.BLIND :
+		tween.tween_callback(blind)
 	GameUi.MobSprite = $sprite
 
 
@@ -69,6 +71,8 @@ func _physics_process(_delta: float) -> void:
 			target = Flag.position
 		elif GameState.player_status != GameState.STATUS.ILLUSION :
 			target = Player.position
+		elif GameState.player_status == GameState.STATUS.ILLUSION and GameState.mob_status == GameState.STATUS.TRADITION :
+			target = Flag.position
 	
 	if GameState.mob_status == GameState.STATUS.CHAOS :
 		target = position + Vector2(10,0).rotated(-Player.chrono * 4)
@@ -97,8 +101,10 @@ func die() :
 	if dead :
 		return
 	dead = true
-	$sprite.material.set_shader_parameter("active", true)
+	$sprite.material.set_shader_parameter("hurt", true)
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_interval(0.1)
+	tween.tween_callback(end_blink)
 	tween.tween_interval(0.1)
 	tween.tween_callback(finish)
 	var blood = BLOOD.instantiate()
@@ -108,7 +114,13 @@ func die() :
 	tween.tween_interval(0.2)
 	tween.tween_callback(blood.queue_free)
 
+func end_blink() -> void :
+	$sprite.material.set_shader_parameter("hurt", false)
+
 func finish() :
 	if Player.type == Player.TYPE.JACK :
 		Flag.win()
 	queue_free()
+
+func blind() -> void :
+	$sprite.material.set_shader_parameter("blind", true)

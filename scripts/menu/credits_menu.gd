@@ -1,6 +1,6 @@
 extends Node2D
 
-const BIP_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
+const PICK_UP_SOUND: Resource = preload("res://audio/sfx/place.wav")
 
 var just_visible = false
 
@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("A") and not just_visible :
 		close()
-		SoundManager.play_sound(BIP_SOUND, true)
+		SoundManager.play_sound(PICK_UP_SOUND, true)
 	just_visible = false
 
 

@@ -14,7 +14,10 @@ radius = 8.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4u8o6"]
 shader = ExtResource("3_4u8o6")
-shader_parameter/active = false
+shader_parameter/white = Color(0.937255, 0.976471, 0.839216, 1)
+shader_parameter/black = Color(0.105882, 0.0117647, 0.14902, 1)
+shader_parameter/hurt = false
+shader_parameter/blind = false
 
 [sub_resource type="Curve" id="Curve_4oaam"]
 _data = [Vector2(0, 0.977528), 0.0, 0.0, 0, 0, Vector2(0.531707, 0.808989), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

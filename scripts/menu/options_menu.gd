@@ -1,6 +1,7 @@
 extends Node2D
 
 const BIP_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
+const PICK_UP_SOUND: Resource = preload("res://audio/sfx/place.wav")
 
 @onready var buttons = [[$MusicDec, $MusicInc], [$SfxDec, $SfxInc], [$Back]]
 @onready var master_bus : int = AudioServer.get_bus_index("Master")
@@ -8,6 +9,7 @@ const BIP_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
 @onready var music_bus : int = AudioServer.get_bus_index("Music")
 
 var selected = Vector2i(0, 0)
+var just_visible = false
 
 func _ready() -> void:
 	self.hide()
@@ -17,6 +19,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not visible :
+		just_visible = true
 		return
 	
 	if Input.is_action_just_pressed("ui_left") :
@@ -30,7 +33,7 @@ func _process(_delta: float) -> void:
 		selected.y = (selected.y + 1 + len(buttons)) % len(buttons)
 		selected.x = selected.x % len(buttons[selected.y])
 	
-	if Input.is_action_just_pressed("A") :
+	if Input.is_action_just_pressed("A") and not just_visible:
 		GameState.update_volume()
 		if buttons[selected.y][selected.x] == $MusicDec :
 			GameState.volume["music"] -= 10
@@ -43,10 +46,13 @@ func _process(_delta: float) -> void:
 		if buttons[selected.y][selected.x] == $Back :
 			close()
 			GameState.save_state()
-		SoundManager.play_sound(BIP_SOUND, true)
+			SoundManager.play_sound(PICK_UP_SOUND, true)
+		else :
+			SoundManager.play_sound(BIP_SOUND, true)
 	
 	update_buttons()
 	update_bars()
+	just_visible = false
 
 
 func update_buttons() -> void:
