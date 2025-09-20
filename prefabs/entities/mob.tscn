@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://cs2xtrp8r1c5h"]
+[gd_scene load_steps=11 format=3 uid="uid://cs2xtrp8r1c5h"]
 
 [ext_resource type="Script" uid="uid://d4jt75f6lgje0" path="res://scripts/entities/mob.gd" id="1_l4ws6"]
 [ext_resource type="Texture2D" uid="uid://dp16i8ei55tk4" path="res://images/entities/heart.png" id="3_8mnx0"]
 [ext_resource type="Texture2D" uid="uid://ds3a56xx1w5g0" path="res://images/entities/shadow.png" id="3_cr5dr"]
 [ext_resource type="Texture2D" uid="uid://dvi4u2qwu6jh2" path="res://images/entities/faith.png" id="4_7dyax"]
 [ext_resource type="Texture2D" uid="uid://cfg0dytid6krf" path="res://images/entities/Monsters_Spritesheet.png" id="4_jnt03"]
+[ext_resource type="Shader" uid="uid://d1t4eppau6cpk" path="res://scripts/shaders/death.gdshader" id="4_o7agu"]
 [ext_resource type="Texture2D" uid="uid://ch0a308rsvob0" path="res://images/entities/stun.png" id="5_pjy5x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_brxcf"]
+resource_local_to_scene = true
+shader = ExtResource("4_o7agu")
+shader_parameter/active = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 7.5
@@ -28,6 +34,8 @@ position = Vector2(0, 12)
 texture = ExtResource("3_cr5dr")
 
 [node name="sprite" type="Sprite2D" parent="."]
+modulate = Color(0.937255, 0.976471, 0.839216, 1)
+material = SubResource("ShaderMaterial_brxcf")
 texture = ExtResource("4_jnt03")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
@@ -58,6 +66,21 @@ texture = ExtResource("4_7dyax")
 visible = false
 position = Vector2(-1, -8)
 texture = ExtResource("5_pjy5x")
+
+[node name="blood" type="CPUParticles2D" parent="."]
+process_mode = 3
+position = Vector2(0, 3)
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(0.729412, 0.313726, 0.266667, 1)
 
 [connection signal="area_entered" from="detect" to="." method="_on_detect_area_entered"]
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]

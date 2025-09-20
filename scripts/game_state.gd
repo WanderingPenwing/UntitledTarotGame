@@ -68,8 +68,6 @@ func _process(delta: float) -> void:
 	if anim_pause > 0 :
 		anim_pause -= delta
 	
-	GameUi.start_label.visible = TarotSelect.ContinueLabel.visible and get_tree().paused and in_game and anim_pause <= 0
-	
 	if Input.is_action_just_pressed("A") and GameUi.win_label.visible :
 		level_index = (level_index + 1) % len(LEVELS)
 		cutscene_index = (cutscene_index + 1) % len(CUTSCENES)
@@ -82,19 +80,32 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("B") and not TarotSelect.visible:
 		get_tree().paused = true
 		TarotSelect.show()
+		GameUi.start_label.hide()
 	
 	# Pour lancer le niveau
-	if Input.is_action_just_pressed("A") and not TarotSelect.visible and GameUi.start_label.visible :
+	if Input.is_action_just_pressed("A") and GameUi.start_label.visible :
 		get_tree().paused = false
+		GameUi.start_label.hide()
+		var player = get_tree().get_first_node_in_group("player")
+		if player.type == player.TYPE.QUEEN :
+			GameUi.time_hint.show()
+		
+	
+	if Input.is_action_just_pressed("A") and GameUi.reset_label.visible :
+		reset_level()
 		
 	
 
 func reset_level() -> void :
 	get_tree().change_scene_to_packed(LEVELS[level_index])
 	get_tree().paused = true
-	GameUi.win_label.hide()
-	GameUi.blindness.hide()
+	GameUi.reset_ui()
 	anim_pause = 1.0
+	if not TarotSelect.ContinueLabel.visible :
+		return
+	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_interval(1.0)
+	tween.tween_callback(GameUi.start_label.show)
 
 func start_level() -> void :
 	reset_level()

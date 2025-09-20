@@ -19,6 +19,7 @@ func _ready() -> void:
 	hide()
 	if GameState.level_unlocked > 0 :
 		HintControl.hide()
+	ContinueLabel.hide()
 
 
 func _process(_delta: float) -> void:

@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://brh1ungyth2n1"]
+[gd_scene load_steps=10 format=3 uid="uid://brh1ungyth2n1"]
 
 [ext_resource type="Script" uid="uid://ddeknh0g2sqj3" path="res://scripts/entities/player.gd" id="1_n42l2"]
 [ext_resource type="Texture2D" uid="uid://dp16i8ei55tk4" path="res://images/entities/heart.png" id="3_ebhuq"]
 [ext_resource type="Texture2D" uid="uid://pm7s8p8sjm04" path="res://images/entities/Heroes_Spritesheet.png" id="4_2tsmg"]
+[ext_resource type="Shader" uid="uid://d1t4eppau6cpk" path="res://scripts/shaders/death.gdshader" id="4_ohfey"]
 [ext_resource type="Texture2D" uid="uid://dvi4u2qwu6jh2" path="res://images/entities/faith.png" id="6_qpvj0"]
 [ext_resource type="Texture2D" uid="uid://ch0a308rsvob0" path="res://images/entities/stun.png" id="7_2tsmg"]
 [ext_resource type="Texture2D" uid="uid://ds3a56xx1w5g0" path="res://images/entities/shadow.png" id="8_ohfey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ss567"]
+resource_local_to_scene = true
+shader = ExtResource("4_ohfey")
+shader_parameter/active = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 7.5
@@ -26,6 +32,7 @@ position = Vector2(0, 12)
 texture = ExtResource("8_ohfey")
 
 [node name="sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ss567")
 texture = ExtResource("4_2tsmg")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)

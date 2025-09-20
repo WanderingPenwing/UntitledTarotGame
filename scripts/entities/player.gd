@@ -3,6 +3,8 @@ extends CharacterBody2D
 enum TYPE {KING, QUEEN, JACK, WITCH}
 
 const WIN_SOUND : Resource = preload("res://audio/sfx/win2.wav")
+const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
+const BLOOD: Resource = preload("res://prefabs/env/blood.tscn")
 const SPEED: float = 100
 const LOVE_SPEED: float = 10
 
@@ -12,10 +14,12 @@ const LOVE_SPEED: float = 10
 @export var type : TYPE = TYPE.KING
 
 var chrono = 10.0
+var dead = false
 
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_interval(0.3)
+	$sprite.material.set_shader_parameter("active", false)
 	$Heart.hide()
 	$Faith.hide()
 	$Stun.hide()
@@ -47,14 +51,15 @@ func _ready() -> void:
 		tween.tween_property(mob, "position", flag_pos, 0.1)
 		tween.parallel().tween_property(flag, "position", mob_pos, 0.1)
 	
-	if type == TYPE.QUEEN :
-		GameUi.time_hint.show()
 	GameUi.time_label.text = "10"
 	GameUi.PlayerSprite = $sprite
 	
 
 
 func _physics_process(delta: float) -> void:
+	if dead :
+		return
+	
 	var dir := Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized()
 	# Inversion des controls
 	if GameState.player_status == GameState.STATUS.FLIPPED :
@@ -86,3 +91,27 @@ func _physics_process(delta: float) -> void:
 		velocity += LOVE_SPEED * position.direction_to(Flag.position)
 	
 	move_and_slide()
+
+func die() -> void :
+	if dead :
+		return
+	dead = true
+	$sprite.material.set_shader_parameter("active", true)
+	get_tree().paused = true
+	GameUi.reset_label.show()
+	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_interval(0.1)
+	tween.tween_callback(end_blink)
+	var blood = BLOOD.instantiate()
+	blood.position = position + Vector2(0, 3)
+	get_parent().add_child(blood)
+	blood.emitting = true
+	tween.tween_interval(0.1)
+	tween.tween_callback(queue_free)
+	tween.tween_interval(0.2)
+	tween.tween_callback(blood.queue_free)
+	SoundManager.play_sound(DEATH_SOUND, true)
+
+func end_blink() -> void :
+	$sprite.material.set_shader_parameter("active", false)
+	

@@ -60,5 +60,6 @@ position = Vector2(130, 54)
 texture = ExtResource("5_40lsp")
 
 [node name="continue" type="Sprite2D" parent="view_t"]
+visible = false
 position = Vector2(80, 121)
 texture = ExtResource("7_y54el")

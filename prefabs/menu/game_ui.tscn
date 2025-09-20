@@ -8,13 +8,14 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_de62b"]
 viewport_path = NodePath("SubViewport")
 
-[node name="game_ui" type="CanvasLayer" node_paths=PackedStringArray("blindness", "draw_tarot_label", "start_label", "win_label", "time_hint", "time_label", "snow")]
+[node name="game_ui" type="CanvasLayer" node_paths=PackedStringArray("blindness", "draw_tarot_label", "start_label", "win_label", "reset_label", "time_hint", "time_label", "snow")]
 process_mode = 3
 script = ExtResource("1_i2he4")
 blindness = NodePath("Blindfold")
 draw_tarot_label = NodePath("hint_draw")
 start_label = NodePath("hint_start")
 win_label = NodePath("hint_win")
+reset_label = NodePath("hint_reset")
 time_hint = NodePath("hint_time")
 time_label = NodePath("hint_time/Label")
 snow = NodePath("SubViewport/snow")
@@ -59,6 +60,13 @@ position = Vector2(80, 132)
 texture = ExtResource("2_k0yo7")
 region_enabled = true
 region_rect = Rect2(0, 17, 64, 17)
+
+[node name="hint_reset" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(80, 132)
+texture = ExtResource("2_k0yo7")
+region_enabled = true
+region_rect = Rect2(0, 93, 66, 17)
 
 [node name="hint_win" type="Sprite2D" parent="."]
 visible = false

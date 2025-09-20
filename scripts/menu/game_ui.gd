@@ -5,6 +5,7 @@ extends CanvasLayer
 @export var draw_tarot_label: Node
 @export var start_label: Node
 @export var win_label: Node
+@export var reset_label: Node
 @export var time_hint: Node
 @export var time_label: Node
 @export var snow: Node
@@ -19,22 +20,25 @@ var FlagSprite : Sprite2D
 func _process(delta: float) -> void:
 	draw_tarot_label.visible = GameState.in_game
 	
-	if not PlayerSprite :
-		return
-	
-	update_sprites()
-	
 	if animation_timer > 0 :
 		animation_timer -= delta
 	else :
 		animation_timer = ANIMATION_DELAY
-		toggle_anim(PlayerSprite)
-		toggle_anim(FlagSprite)
-		if not MobSprite :
-			return
-		toggle_anim(MobSprite)
-		
-		
+		if PlayerSprite :
+			toggle_anim(PlayerSprite)
+		if FlagSprite :
+			toggle_anim(FlagSprite)
+		if MobSprite :
+			toggle_anim(MobSprite)
+	if not PlayerSprite :
+		return
+	update_sprites()
+
+func reset_ui() -> void :
+	GameUi.win_label.hide()
+	GameUi.blindness.hide()
+	GameUi.reset_label.hide()
+	GameUi.time_hint.hide()
 
 func toggle_anim(sprite:Sprite2D) -> void :
 	if not sprite :

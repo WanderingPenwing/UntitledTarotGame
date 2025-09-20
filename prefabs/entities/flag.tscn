@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpu21bx276evw"]
+[gd_scene load_steps=10 format=3 uid="uid://cpu21bx276evw"]
 
 [ext_resource type="Script" uid="uid://sxp1elcwqse3" path="res://scripts/entities/flag.gd" id="1_j2cfk"]
 [ext_resource type="Texture2D" uid="uid://ds3a56xx1w5g0" path="res://images/entities/shadow.png" id="2_4oaam"]
 [ext_resource type="Texture2D" uid="uid://d1pmfxa0vn61q" path="res://images/entities/Flags_Spritesheet.png" id="3_4oaam"]
+[ext_resource type="Shader" uid="uid://d1t4eppau6cpk" path="res://scripts/shaders/death.gdshader" id="3_4u8o6"]
 [ext_resource type="Texture2D" uid="uid://dp16i8ei55tk4" path="res://images/entities/heart.png" id="3_qebke"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4y0d"]
@@ -10,6 +11,10 @@ radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4u8o6"]
+shader = ExtResource("3_4u8o6")
+shader_parameter/active = false
 
 [sub_resource type="Curve" id="Curve_4oaam"]
 _data = [Vector2(0, 0.977528), 0.0, 0.0, 0, 0, Vector2(0.531707, 0.808989), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -37,6 +42,7 @@ shape = SubResource("CircleShape2D_1rtib")
 debug_color = Color(0.764825, 0.447841, 0.0697612, 0.42)
 
 [node name="sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4u8o6")
 texture = ExtResource("3_4oaam")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)

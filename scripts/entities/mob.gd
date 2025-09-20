@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED: float = 60
 const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
+const BLOOD: Resource = preload("res://prefabs/env/blood.tscn")
 
 # Une facon de recup une node random et y avoir acces plus tard
 @onready var Player = get_tree().get_first_node_in_group("player")
@@ -9,12 +10,12 @@ const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
 
 # pour controler le mouvement du mob
 var target: Vector2 = Vector2(80, 72)
-
+var dead: bool = false
 
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_interval(0.6)
-	
+	$sprite.material.set_shader_parameter("active", false)
 	$Heart.hide()
 	$Faith.hide()
 	$Stun.hide()
@@ -47,6 +48,8 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if dead :
+		return
 	# si le mob est freeze
 	if GameState.mob_status == GameState.STATUS.FROZEN :
 		return
@@ -85,44 +88,27 @@ func _physics_process(_delta: float) -> void:
 	for body in $detect.get_overlapping_bodies() :
 		if body.position.distance_to(position) > 10 :
 			continue
-		if body.is_in_group("flag") :
-			kill()
-		if body.is_in_group("player") and not GameState.player_status == GameState.STATUS.TRADITION :
-			kill()
+		if body.is_in_group("flag") or (body.is_in_group("player") and not GameState.player_status == GameState.STATUS.TRADITION) :
+			body.die()
 	
 	move_and_slide()
 
-
-func kill() :
-	print("mob death")
-	get_tree().paused = true
-	GameState.call_deferred("reset_level")
-	SoundManager.play_sound(DEATH_SOUND, true)
-
-
 func die() :
+	if dead :
+		return
+	dead = true
+	$sprite.material.set_shader_parameter("active", true)
+	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_interval(0.1)
+	tween.tween_callback(finish)
+	var blood = BLOOD.instantiate()
+	blood.position = position + Vector2(0, 3)
+	get_parent().add_child(blood)
+	blood.emitting = true
+	tween.tween_interval(0.2)
+	tween.tween_callback(blood.queue_free)
+
+func finish() :
 	if Player.type == Player.TYPE.JACK :
 		Flag.win()
-		return
 	queue_free()
-
-#func _on_detect_body_entered(body: Node2D) -> void:
-	#if not body.is_in_group("player") or body.position.distance_to(position) > 16:
-		#return
-	#get_tree().paused = true
-	#GameState.call_deferred("reset_level")
-	#SoundManager.play_sound(DEATH_SOUND, true)
-
-
-#func _on_detect_area_entered(area: Area2D) -> void:
-	#print(area, Player.type, Player.TYPE.QUEEN)
-	#if not area.is_in_group("flag") :
-		#print("flag")
-		#return
-	#if Player.type != Player.TYPE.QUEEN :
-		#print("queen")
-		#return
-	#print("ah")
-	#get_tree().paused = true
-	#GameState.call_deferred("reset_level")
-	#SoundManager.play_sound(DEATH_SOUND, true)
