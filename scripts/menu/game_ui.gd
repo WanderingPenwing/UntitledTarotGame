@@ -7,6 +7,7 @@ extends CanvasLayer
 @export var win_label: Node
 @export var time_hint: Node
 @export var time_label: Node
+@export var snow: Node
 
 const ANIMATION_DELAY : float = 0.5
 
@@ -49,18 +50,24 @@ func update_sprites() -> void :
 			PlayerSprite.scale.x = 1
 		if PlayerSprite.get_parent().velocity.x < 0 :
 			PlayerSprite.scale.x = -1
-	if GameState.player_status == GameState.STATUS.FROZEN :
-		PlayerSprite.region_rect.position.x += 8 
+	if GameState.player_status == GameState.STATUS.FROZEN and GameState.anim_pause < 0.6 :
+		PlayerSprite.region_rect.position.x = 8 
 	PlayerSprite.region_rect.position.x *= 16
 	
 	if not MobSprite :
 		return
 	
-	MobSprite.region_rect.position.x = min(player_type, 1)
+	MobSprite.region_rect.position.x = player_type
 	if MobSprite.get_parent().velocity.length() > 5 and not get_tree().paused :
 		MobSprite.region_rect.position.x += 4
 		if MobSprite.get_parent().velocity.x > 0 :
 			MobSprite.scale.x = -1
 		if MobSprite.get_parent().velocity.x < 0 :
 			MobSprite.scale.x = 1
+	if GameState.mob_status == GameState.STATUS.FROZEN and GameState.anim_pause < 0.3:
+		MobSprite.region_rect.position.x = 8
+	if GameState.mob_status == GameState.STATUS.BLIND and GameState.anim_pause < 0.3 :
+		MobSprite.region_rect.position.x = 9
+		if MobSprite.get_parent().velocity.length() > 5 and not get_tree().paused :
+			MobSprite.region_rect.position.x += 1
 	MobSprite.region_rect.position.x *= 16

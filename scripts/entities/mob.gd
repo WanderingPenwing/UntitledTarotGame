@@ -16,18 +16,12 @@ func _ready() -> void:
 	tween.tween_interval(0.6)
 	
 	$Heart.hide()
-	$Freeze.hide()
-	$Blind.hide()
 	$Faith.hide()
 	$Stun.hide()
 	$Tradition.hide()
-	$Shadow.hide()
+	#$Shadow.hide()
 	if GameState.mob_status == GameState.STATUS.LOVE :
 		tween.tween_callback($Heart.show)
-	if GameState.mob_status == GameState.STATUS.FROZEN :
-		tween.tween_callback($Freeze.show)
-	if GameState.mob_status == GameState.STATUS.BLIND :
-		tween.tween_callback($Blind.show)
 	if GameState.mob_status == GameState.STATUS.CHAOS :
 		tween.tween_callback($Stun.show)
 	if GameState.mob_status == GameState.STATUS.TRADITION :
@@ -108,7 +102,7 @@ func kill() :
 
 func die() :
 	if Player.type == Player.TYPE.JACK :
-		GameState.win()
+		Flag.win()
 		return
 	queue_free()
 

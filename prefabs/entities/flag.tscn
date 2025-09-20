@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpu21bx276evw"]
+[gd_scene load_steps=8 format=3 uid="uid://cpu21bx276evw"]
 
 [ext_resource type="Script" uid="uid://sxp1elcwqse3" path="res://scripts/entities/flag.gd" id="1_j2cfk"]
 [ext_resource type="Texture2D" uid="uid://ds3a56xx1w5g0" path="res://images/entities/shadow.png" id="2_4oaam"]
@@ -10,6 +10,10 @@ radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1rtib"]
 radius = 8.0
+
+[sub_resource type="Curve" id="Curve_4oaam"]
+_data = [Vector2(0, 0.977528), 0.0, 0.0, 0, 0, Vector2(0.531707, 0.808989), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="flag" type="CharacterBody2D" groups=["flag"]]
 collision_layer = 68
@@ -41,5 +45,21 @@ region_rect = Rect2(0, 0, 16, 16)
 visible = false
 position = Vector2(0.1, -13)
 texture = ExtResource("3_qebke")
+
+[node name="particles" type="CPUParticles2D" parent="."]
+process_mode = 3
+emitting = false
+amount = 16
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_4oaam")
+color = Color(0.937255, 0.976471, 0.839216, 1)
 
 [connection signal="body_entered" from="flag" to="." method="_on_flag_body_entered"]

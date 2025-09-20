@@ -34,5 +34,9 @@ func _on_flag_body_entered(body: Node2D) -> void:
 	if body.type != body.TYPE.KING :
 		return
 	# si le joueur touche le drapeau on a gagneeeee
+	win()
+
+func win() -> void :
+	$particles.emitting = true
 	GameState.win()
 	SoundManager.play_sound(WIN_SOUND, true)

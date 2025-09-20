@@ -20,7 +20,7 @@ func _ready() -> void:
 	$Faith.hide()
 	$Stun.hide()
 	$Tradition.hide()
-	$Shadow.hide()
+	#$Shadow.hide()
 	if GameState.player_status == GameState.STATUS.LOVE :
 		tween.tween_callback($Heart.show)
 	if GameState.player_status == GameState.STATUS.BLIND :
@@ -64,8 +64,7 @@ func _physics_process(delta: float) -> void:
 		chrono -= delta
 		GameUi.time_label.text = str(int(ceil(chrono)))
 	elif type == TYPE.QUEEN :
-		GameState.win()
-		SoundManager.play_sound(WIN_SOUND, true)
+		Flag.win()
 		GameUi.time_hint.hide()
 	
 	if GameState.player_status == GameState.STATUS.CHAOS and chrono < 5 :

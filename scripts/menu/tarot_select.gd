@@ -31,6 +31,7 @@ func _process(_delta: float) -> void:
 		just_visible = true
 		return
 	
+	GameUi.snow.emitting = false
 	HintCards.visible = (GameState.level_unlocked < 1)
 	# Mouvement du curseur
 	var dir = -int(Input.is_action_just_pressed("ui_left"))+int(Input.is_action_just_pressed("ui_right"))
