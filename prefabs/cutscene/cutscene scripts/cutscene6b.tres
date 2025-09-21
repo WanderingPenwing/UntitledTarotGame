@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=15 format=3 uid="uid://bf2kecafhay4q"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_cp08s"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_jtgep"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_cp08s")
+line = "Oh, the Hierophant... You are quite the righteous person, are you not, my Queen ?"
+char = "Seer"
+visual = "Queen"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_jgpq3"]
+script = ExtResource("1_cp08s")
+line = "I suppose so."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ru76a"]
+script = ExtResource("1_cp08s")
+line = "I try my best, that's for sure."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_qw0yv"]
+script = ExtResource("1_cp08s")
+line = "But maybe too righteous... You are not happy in your current bondage."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_hnqmv"]
+script = ExtResource("1_cp08s")
+line = "What kind of bondage are you talking about ?"
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_n7sfk"]
+script = ExtResource("1_cp08s")
+line = "You tell me."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_pd55a"]
+script = ExtResource("1_cp08s")
+line = "But if you insist on getting my opinion... Your unhappy marriage will end soon. "
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_kjwml"]
+script = ExtResource("1_cp08s")
+line = "End..."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_grbgf"]
+script = ExtResource("1_cp08s")
+line = "But it can't end yet !"
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_1siue"]
+script = ExtResource("1_cp08s")
+line = "I must give him a son !"
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_uxsh4"]
+script = ExtResource("1_cp08s")
+line = "Please, tell me I will succeed..."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ujxut"]
+script = ExtResource("1_cp08s")
+line = "Let us find out..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_jtgep")
+dialogue = Array[ExtResource("1_cp08s")]([SubResource("Resource_8gjvx"), SubResource("Resource_jgpq3"), SubResource("Resource_ru76a"), SubResource("Resource_qw0yv"), SubResource("Resource_hnqmv"), SubResource("Resource_n7sfk"), SubResource("Resource_pd55a"), SubResource("Resource_kjwml"), SubResource("Resource_grbgf"), SubResource("Resource_1siue"), SubResource("Resource_uxsh4"), SubResource("Resource_ujxut")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

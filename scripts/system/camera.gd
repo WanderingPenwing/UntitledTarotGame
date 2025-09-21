@@ -10,13 +10,13 @@ func _process(delta: float) -> void:
 		return
 	position = Player.position
 	
-	if Player.position.y < -64 :
+	if Player.position.y < 36 :
 		get_tree().paused = true
 		get_tree().change_scene_to_packed(keyartbadend)
 		GameUi.reset_ui()
 		GameState.in_game = false
 		
-	if Player.position.y > 174 :
+	if Player.position.y > 275 :
 		get_tree().paused = true
 		get_tree().change_scene_to_packed(keyartgoodend)
 		GameUi.reset_ui()

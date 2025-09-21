@@ -1,0 +1,191 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=29 format=3 uid="uid://doakx11gvrdr6"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_2n20u"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_7arv0"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_2n20u")
+line = "So ? Tell me, woman !"
+char = "King"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_n3sgp"]
+script = ExtResource("1_2n20u")
+line = "Temper yourself my lord..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_06s7o"]
+script = ExtResource("1_2n20u")
+line = "Tell me !"
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_taqyq"]
+script = ExtResource("1_2n20u")
+line = "Fine."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_kkeqc"]
+script = ExtResource("1_2n20u")
+line = "You will, indeed, have a son as your heir."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_gyrei"]
+script = ExtResource("1_2n20u")
+line = "He shall inherit everything you own, and all your values."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_rou3h"]
+script = ExtResource("1_2n20u")
+line = "You will love him, and he will love you in return."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_bgsee"]
+script = ExtResource("1_2n20u")
+line = "I knew it."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_chtx5"]
+script = ExtResource("1_2n20u")
+line = "You shall be rewarded, Seer."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_xp147"]
+script = ExtResource("1_2n20u")
+line = "I must leave now. There is something I must rightfully claim as mine."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_nwwxd"]
+script = ExtResource("1_2n20u")
+line = "..."
+char = "Seer"
+visual = "void"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_aq3hl"]
+script = ExtResource("1_2n20u")
+line = "Sometimes I wish I was wrong..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_2kh64"]
+script = ExtResource("1_2n20u")
+line = "*Many moments later*"
+char = "..."
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_x4ref"]
+script = ExtResource("1_2n20u")
+line = "My, my."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_nepo4"]
+script = ExtResource("1_2n20u")
+line = "Hello, Your Highness."
+char = "Seer"
+visual = "Queen"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_6bf1p"]
+script = ExtResource("1_2n20u")
+line = "It's just like he said then."
+char = "Queen"
+visual = "Queen"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_lyidn"]
+script = ExtResource("1_2n20u")
+line = "You know how to read people, don't you ?"
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_vyi5c"]
+script = ExtResource("1_2n20u")
+line = "Not just people. The past, the present and the future too."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_bout8"]
+script = ExtResource("1_2n20u")
+line = "..."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_45d7o"]
+script = ExtResource("1_2n20u")
+line = "So it would seem."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_2ihog"]
+script = ExtResource("1_2n20u")
+line = "Then read for me, Seer. Tell me my future."
+char = "Queen"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_la3ge"]
+script = ExtResource("1_2n20u")
+line = "Your wish is my command... But be careful."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_plaxg"]
+script = ExtResource("1_2n20u")
+line = "This won't be the same kind of reading as the one I did for your King."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_d417k"]
+script = ExtResource("1_2n20u")
+line = "He was... a rather straightforward person."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ergl2"]
+script = ExtResource("1_2n20u")
+line = "You are a protector."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_45yxp"]
+script = ExtResource("1_2n20u")
+line = "So... Protect, will you ?"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_7arv0")
+dialogue = Array[ExtResource("1_2n20u")]([SubResource("Resource_8gjvx"), SubResource("Resource_n3sgp"), SubResource("Resource_06s7o"), SubResource("Resource_taqyq"), SubResource("Resource_kkeqc"), SubResource("Resource_gyrei"), SubResource("Resource_rou3h"), SubResource("Resource_bgsee"), SubResource("Resource_chtx5"), SubResource("Resource_xp147"), SubResource("Resource_nwwxd"), SubResource("Resource_aq3hl"), SubResource("Resource_2kh64"), SubResource("Resource_x4ref"), SubResource("Resource_nepo4"), SubResource("Resource_6bf1p"), SubResource("Resource_lyidn"), SubResource("Resource_vyi5c"), SubResource("Resource_bout8"), SubResource("Resource_45d7o"), SubResource("Resource_2ihog"), SubResource("Resource_la3ge"), SubResource("Resource_plaxg"), SubResource("Resource_d417k"), SubResource("Resource_ergl2"), SubResource("Resource_45yxp")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

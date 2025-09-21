@@ -1,6 +1,7 @@
 extends Area2D
 
 const DEATH_SOUND: Resource = preload("res://audio/sfx/death.wav")
+const HURT_SOUND: Resource = preload("res://audio/sfx/hurt.wav")
 const EXPLOSION_SOUND = preload("res://audio/sfx/explosion.wav")
 const EXTEND_SOUND: Resource = preload("res://audio/sfx/pic qui fait mal.wav")
 
@@ -37,8 +38,8 @@ func _process(_delta: float) -> void:
 				get_tree().get_first_node_in_group("world").explode(position)
 				SoundManager.play_sound(EXPLOSION_SOUND)
 			else :
-				SoundManager.play_sound(DEATH_SOUND, true)
 				body.die()
+				SoundManager.play_sound(HURT_SOUND)
 
 func toggled(state: bool) -> void :
 	$sprite.region_rect.position.x = 16 if state else 0

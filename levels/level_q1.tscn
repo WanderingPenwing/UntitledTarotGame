@@ -40,9 +40,9 @@ ActionButton = NodePath("../action_button")
 [node name="action_button" parent="view3" instance=ExtResource("9_dxo3g")]
 position = Vector2(24, 89)
 
+[node name="mob" parent="view3" instance=ExtResource("7_frqx5")]
+position = Vector2(104, 96)
+
 [node name="player" parent="view3" instance=ExtResource("6_u8pty")]
 position = Vector2(32, 112)
 type = 1
-
-[node name="mob" parent="view3" instance=ExtResource("7_frqx5")]
-position = Vector2(104, 96)
