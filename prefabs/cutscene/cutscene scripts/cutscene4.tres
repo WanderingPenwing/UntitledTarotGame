@@ -7,7 +7,7 @@
 script = ExtResource("1_jgpq3")
 line = "So ? Tell me, woman !"
 char = "King"
-visual = ""
+visual = "King"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_n3sgp"]
@@ -77,7 +77,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 script = ExtResource("1_jgpq3")
 line = "..."
 char = "Seer"
-visual = "none"
+visual = "void"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_aq3hl"]
@@ -103,9 +103,9 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_nepo4"]
 script = ExtResource("1_jgpq3")
-line = "Hello, Your Highness"
+line = "Hello, Your Highness."
 char = "Seer"
-visual = ""
+visual = "Queen"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_6bf1p"]
@@ -159,7 +159,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_plaxg"]
 script = ExtResource("1_jgpq3")
-line = "This won't be the same kind of reading as the I did for your King."
+line = "This won't be the same kind of reading as the one I did for your King."
 char = "Seer"
 visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"

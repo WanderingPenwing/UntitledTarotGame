@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("A") and not just_visible :
 		GameState.level_index = selected.y*4+selected.x
-		GameState.cutscene_index = GameState.level_index % len(GameState.CUTSCENES)
+		GameState.cutscene_index = GameState.level_index - 1 % len(GameState.CUTSCENES)
 		GameState.start_cutscene()
 	
 	just_visible = false

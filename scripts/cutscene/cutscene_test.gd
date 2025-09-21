@@ -9,13 +9,13 @@ const CHAR_READ_RATE  = 0.05
 @onready var charbox = $SubViewport/Char
 @onready var view = $Sprite2D
 @onready var charSprite = $SubViewport/CharacterSprite
-@onready var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badend.tscn")
+@onready var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badendkimarch.tscn")
 @onready var keyartbadend = preload("res://prefabs/cutscene/cutscene scene/badend_keyart.tscn")
 @onready var keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/goodend_keyart.tscn")
 @export var dialogue : CutsceneScript
-@export var KingSprite : CompressedTexture2D
-@export var QueenSprite : CompressedTexture2D
-@export var JackSprite : CompressedTexture2D
+@export var KingSprite = preload("res://images/cutscene/King.png")
+@export var QueenSprite = preload("res://images/cutscene/Queen.png")
+@export var JackSprite = preload("res://images/cutscene/Jack.png")
 var isChoosing = false
 
 enum State {
@@ -42,14 +42,7 @@ enum Sprite {
 var visible_count = []
 
 func _ready() -> void:
-	for i in dialogue.dialogue:
-		text_queue.append(i.line)
-	for i in dialogue.dialogue:
-		char_queue.append(i.char)
-	for i in dialogue.dialogue:
-		visual_queue.append(i.visual)
-	# pour virer l'erreur de la console
-	tween.tween_callback(print)
+	queue_text()
 
 
 func _process(_delta: float) -> void:
@@ -77,7 +70,7 @@ func _process(_delta: float) -> void:
 			if Input.is_action_just_pressed("A"):
 				pass #envoie vers le niveau 13
 			elif Input.is_action_just_pressed("B"):
-				get_tree().change_scene_to_packed(cutscenebadend)
+				badend()
 		State.FINISHED:
 			if isChoosing == true :
 				current_state = State.CHOOSING
@@ -85,7 +78,6 @@ func _process(_delta: float) -> void:
 			elif Input.is_action_just_pressed("A") and text_queue.is_empty():
 				sprite_change()
 				change_state(State.OVER)
-				fade_out()
 			elif Input.is_action_just_pressed("A") and !text_queue.is_empty():
 				sprite_change()
 				change_state(State.READY)
@@ -101,6 +93,17 @@ func _process(_delta: float) -> void:
 			charSprite.texture = QueenSprite
 		Sprite.JACK:
 			charSprite.texture = JackSprite
+
+func queue_text():
+	for i in dialogue.dialogue:
+		text_queue.append(i.line)
+	for i in dialogue.dialogue:
+		char_queue.append(i.char)
+	for i in dialogue.dialogue:
+		visual_queue.append(i.visual)
+	# pour virer l'erreur de la console
+	tween.tween_callback(print)
+
 
 func hide_textbox():
 	for line in TextBox :
@@ -179,7 +182,7 @@ func sprite_change():
 		elif next_sprite == "query":
 			query()
 		elif next_sprite == "badend":
-			badend()
+			get_tree().change_scene_to_packed(keyartbadend)
 
 func on_tween_finished():
 	change_state(State.FINISHED)
@@ -209,4 +212,9 @@ func query():
 	$SubViewport/Query2.show()
 	
 func badend():
-	get_tree().change_scene_to_packed(keyartbadend)
+	dialogue = preload("res://prefabs/cutscene/cutscene scripts/cutsceneBAD2.tres")
+	queue_text()
+	isChoosing = false
+	$SubViewport/Query1.hide()
+	$SubViewport/Query2.hide()
+	change_state(State.READY)
