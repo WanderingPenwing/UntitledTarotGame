@@ -1,26 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp8knigny1ft2"]
+[gd_scene load_steps=11 format=3 uid="uid://w6jetdk3yqti"]
 
-[ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_345gx"]
-[ext_resource type="Resource" uid="uid://bu7ajw4luw6ws" path="res://prefabs/cutscene/cutscene scripts/cutscene12.tres" id="2_345gx"]
-[ext_resource type="Texture2D" uid="uid://bimvk0g0wtqij" path="res://images/cutscene/Tente.png" id="3_woqjx"]
-[ext_resource type="Texture2D" uid="uid://dg8gycc84vg7g" path="res://images/cutscene/Table.png" id="4_cj3sv"]
-[ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="6_f3n14"]
-[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="7_vir7u"]
-[ext_resource type="Texture2D" uid="uid://c4dnlppxqp6at" path="res://images/cutscene/Tarot_Button_B.png" id="8_cj3sv"]
-[ext_resource type="Texture2D" uid="uid://d28olmvlub1cq" path="res://images/cutscene/Tarot_Button_A.png" id="9_h0t5v"]
+[ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_lfv0h"]
+[ext_resource type="Resource" uid="uid://bb0dtu74o8y1u" path="res://prefabs/cutscene/cutscene scripts/cutsceneBAD2.tres" id="2_lfv0h"]
+[ext_resource type="Texture2D" uid="uid://bimvk0g0wtqij" path="res://images/cutscene/Tente.png" id="3_67fr2"]
+[ext_resource type="Texture2D" uid="uid://dg8gycc84vg7g" path="res://images/cutscene/Table.png" id="4_lnfnj"]
+[ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="5_bvwi5"]
+[ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="6_kk1yl"]
+[ext_resource type="Texture2D" uid="uid://c4dnlppxqp6at" path="res://images/cutscene/Tarot_Button_B.png" id="7_l1kou"]
+[ext_resource type="Texture2D" uid="uid://d28olmvlub1cq" path="res://images/cutscene/Tarot_Button_A.png" id="8_sl7bj"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6gy54"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_d308j"]
 line_spacing = 0.0
-font = ExtResource("7_vir7u")
+font = ExtResource("6_kk1yl")
 
 [node name="cutscene" type="Node2D" node_paths=PackedStringArray("TextBox")]
 process_mode = 3
-script = ExtResource("1_345gx")
+script = ExtResource("1_lfv0h")
 TextBox = [NodePath("SubViewport/Line1"), NodePath("SubViewport/Line2"), NodePath("SubViewport/Line3")]
-dialogue = ExtResource("2_345gx")
+dialogue = ExtResource("2_lfv0h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
@@ -32,14 +32,14 @@ size = Vector2i(160, 144)
 
 [node name="Background" type="Sprite2D" parent="SubViewport"]
 position = Vector2(79, 72)
-texture = ExtResource("3_woqjx")
+texture = ExtResource("3_67fr2")
 
 [node name="CharacterSprite" type="Sprite2D" parent="SubViewport"]
 position = Vector2(79, 72)
 
 [node name="Table" type="Sprite2D" parent="SubViewport"]
 position = Vector2(80, 66)
-texture = ExtResource("4_cj3sv")
+texture = ExtResource("4_lnfnj")
 
 [node name="Query1" type="NinePatchRect" parent="SubViewport"]
 visible = false
@@ -48,7 +48,7 @@ offset_top = 32.0
 offset_right = 145.0
 offset_bottom = 52.0
 size_flags_horizontal = 3
-texture = ExtResource("6_f3n14")
+texture = ExtResource("5_bvwi5")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -73,7 +73,7 @@ autowrap_mode = 3
 [node name="Sprite2D3" type="Sprite2D" parent="SubViewport/Query1"]
 position = Vector2(9, 9)
 scale = Vector2(1.1875, 1.1875)
-texture = ExtResource("8_cj3sv")
+texture = ExtResource("7_l1kou")
 
 [node name="Query2" type="NinePatchRect" parent="SubViewport"]
 visible = false
@@ -82,7 +82,7 @@ offset_top = 32.0
 offset_right = 73.0
 offset_bottom = 52.0
 size_flags_horizontal = 3
-texture = ExtResource("6_f3n14")
+texture = ExtResource("5_bvwi5")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -107,7 +107,7 @@ autowrap_mode = 3
 [node name="Sprite2D2" type="Sprite2D" parent="SubViewport/Query2"]
 position = Vector2(9, 9)
 scale = Vector2(1.1875, 1.1875)
-texture = ExtResource("9_h0t5v")
+texture = ExtResource("8_sl7bj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="SubViewport"]
 offset_left = 5.22
@@ -115,7 +115,7 @@ offset_top = 85.0
 offset_right = 155.22
 offset_bottom = 139.0
 size_flags_horizontal = 3
-texture = ExtResource("6_f3n14")
+texture = ExtResource("5_bvwi5")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -128,7 +128,7 @@ offset_top = 69.0
 offset_right = 48.0
 offset_bottom = 85.0
 size_flags_horizontal = 3
-texture = ExtResource("6_f3n14")
+texture = ExtResource("5_bvwi5")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -176,7 +176,7 @@ offset_left = 10.0
 offset_top = 69.0
 offset_right = 45.0
 offset_bottom = 102.0
-theme_override_fonts/font = ExtResource("7_vir7u")
+theme_override_fonts/font = ExtResource("6_kk1yl")
 theme_override_font_sizes/font_size = 16
 text = "
 "

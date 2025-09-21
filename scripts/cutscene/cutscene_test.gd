@@ -9,13 +9,13 @@ const CHAR_READ_RATE  = 0.05
 @onready var charbox = $SubViewport/Char
 @onready var view = $Sprite2D
 @onready var charSprite = $SubViewport/CharacterSprite
-@onready var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badend.tscn")
+@onready var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badendkimarch.tscn")
 @onready var keyartbadend = preload("res://prefabs/cutscene/cutscene scene/badend_keyart.tscn")
 @onready var keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/goodend_keyart.tscn")
 @export var dialogue : CutsceneScript
-@export var KingSprite : CompressedTexture2D
-@export var QueenSprite : CompressedTexture2D
-@export var JackSprite : CompressedTexture2D
+@export var KingSprite = preload("res://images/cutscene/King.png")
+@export var QueenSprite = preload("res://images/cutscene/Queen.png")
+@export var JackSprite = preload("res://images/cutscene/Jack.png")
 var isChoosing = false
 
 enum State {
@@ -42,6 +42,7 @@ enum Sprite {
 var visible_count = []
 
 func _ready() -> void:
+	print("pitié copain")
 	for i in dialogue.dialogue:
 		text_queue.append(i.line)
 	for i in dialogue.dialogue:
@@ -85,7 +86,6 @@ func _process(_delta: float) -> void:
 			elif Input.is_action_just_pressed("A") and text_queue.is_empty():
 				sprite_change()
 				change_state(State.OVER)
-				fade_out()
 			elif Input.is_action_just_pressed("A") and !text_queue.is_empty():
 				sprite_change()
 				change_state(State.READY)

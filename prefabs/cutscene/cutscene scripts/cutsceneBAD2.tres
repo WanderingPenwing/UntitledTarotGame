@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=14 format=3 uid="uid://bb0dtu74o8y1u"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_p43ei"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_gpmfe"]
+
+[sub_resource type="Resource" id="Resource_8gjvx"]
+script = ExtResource("1_p43ei")
+line = "I have rules for a reason !"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_p43ei"]
+script = ExtResource("1_p43ei")
+line = "To hell with her and her so called powers ! I am a seer and I know what I'm worth !"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_gpmfe"]
+script = ExtResource("1_p43ei")
+line = "*A few moments later*"
+char = "*...*"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_1swcl"]
+script = ExtResource("1_p43ei")
+line = "What is this noise ?"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_p5y4l"]
+script = ExtResource("1_p43ei")
+line = "Down with her !"
+char = "Mob"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_i8dj0"]
+script = ExtResource("1_p43ei")
+line = "Down with the witch !"
+char = "Mob"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_voutd"]
+script = ExtResource("1_p43ei")
+line = "A what ? I'm not a witch !"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_pg1ua"]
+script = ExtResource("1_p43ei")
+line = "What are you doing ?!"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_lypeo"]
+script = ExtResource("1_p43ei")
+line = "Stop !!!!!"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_5om52"]
+script = ExtResource("1_p43ei")
+line = "NOOOOO !!!"
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_coa5b"]
+script = ExtResource("1_p43ei")
+line = "!!!!!!!!!"
+char = "Seer"
+visual = "badend"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_gpmfe")
+dialogue = Array[ExtResource("1_p43ei")]([SubResource("Resource_8gjvx"), SubResource("Resource_p43ei"), SubResource("Resource_gpmfe"), SubResource("Resource_1swcl"), SubResource("Resource_p5y4l"), SubResource("Resource_i8dj0"), SubResource("Resource_voutd"), SubResource("Resource_pg1ua"), SubResource("Resource_lypeo"), SubResource("Resource_5om52"), SubResource("Resource_coa5b")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"
