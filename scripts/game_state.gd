@@ -148,6 +148,7 @@ func start_cutscene() -> void :
 	mob_status = STATUS.NORMAL
 	world_status = STATUS.NORMAL
 	GameUi.reset_ui()
+	print("starting cutscene ",cutscene_index)
 	get_tree().change_scene_to_packed(CUTSCENES[cutscene_index])
 	get_tree().paused = true
 

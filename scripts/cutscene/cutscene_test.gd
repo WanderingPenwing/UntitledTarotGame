@@ -131,7 +131,9 @@ func display_text():
 	for i in range(len(TextBox)) :
 		tween.tween_property(TextBox[i], "visible_characters", len(TextBox[i].text), len(TextBox[i].text)*CHAR_READ_RATE)
 	tween.connect("finished", on_tween_finished)
-	visible_count = [0, 0, 0]
+	visible_count = []
+	for i in range(len(TextBox)) :
+		visible_count.append(0)
 
 func get_line(text: String, line:int) -> String :
 	# justification

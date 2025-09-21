@@ -17,7 +17,7 @@ font = ExtResource("7_nbdb7")
 [node name="cutscene" type="Node2D" node_paths=PackedStringArray("TextBox")]
 process_mode = 3
 script = ExtResource("1_pru67")
-TextBox = [NodePath("SubViewport/Line1"), NodePath("SubViewport/Line2"), NodePath("SubViewport/Line3")]
+TextBox = [NodePath("SubViewport/Line1"), NodePath("SubViewport/Line2"), NodePath("SubViewport/Line3"), NodePath("SubViewport/Line4")]
 dialogue = ExtResource("2_pru67")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -93,7 +93,19 @@ visible_ratio = 0.0
 offset_left = 9.0
 offset_top = 106.0
 offset_right = 153.0
-offset_bottom = 154.0
+offset_bottom = 122.0
+text = "
+"
+label_settings = SubResource("LabelSettings_d308j")
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Line4" type="Label" parent="SubViewport"]
+offset_left = 9.0
+offset_top = 116.0
+offset_right = 153.0
+offset_bottom = 132.0
 text = "
 "
 label_settings = SubResource("LabelSettings_d308j")
