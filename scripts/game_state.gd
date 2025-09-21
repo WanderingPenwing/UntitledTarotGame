@@ -15,7 +15,8 @@ const LEVELS = [
 	preload("res://levels/level_j1.tscn"),
 	preload("res://levels/level_j2.tscn"),
 	preload("res://levels/level_j3.tscn"),
-	preload("res://levels/level_j4.tscn")
+	preload("res://levels/level_j4.tscn"),
+	preload("res://levels/level_w1.tscn")
 ]
 
 const CUTSCENES = [
@@ -52,7 +53,7 @@ var mob_status = STATUS.NORMAL
 var world_status = STATUS.NORMAL
 
 #Sers a définir le niveau actuel/si ingame ou pas
-var level_index = 0
+var level_index = 12
 var level_unlocked = 0
 var in_game = false
 
@@ -64,6 +65,7 @@ func _ready() -> void:
 	GameUi.draw_tarot_label.show()
 	load_state()
 	update_volume()
+	start_level()
 
 
 func _process(delta: float) -> void:

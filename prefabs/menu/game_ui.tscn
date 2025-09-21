@@ -23,7 +23,7 @@ level_type = NodePath("level_type")
 level_index = NodePath("level_index")
 snow = NodePath("particles_view/snow")
 snow_particles = NodePath("snow_particles")
-objectives_hints = [NodePath("HintKing"), NodePath("HintQueen"), NodePath("HintJack")]
+objectives_hints = [NodePath("HintKing"), NodePath("HintQueen"), NodePath("HintJack"), NodePath("HintSeer")]
 
 [node name="snow_particles" type="Sprite2D" parent="."]
 visible = false
@@ -126,3 +126,10 @@ position = Vector2(80, 132)
 texture = ExtResource("2_k0yo7")
 region_enabled = true
 region_rect = Rect2(64, 34, 76, 17)
+
+[node name="HintSeer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(80, 132)
+texture = ExtResource("2_k0yo7")
+region_enabled = true
+region_rect = Rect2(68, 34, 76, 17)
