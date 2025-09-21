@@ -16,8 +16,8 @@ viewport_path = NodePath("view3")
 
 [node name="level4" type="Node2D" groups=["level"]]
 script = ExtResource("1_e5r0v")
-tarot_card_1 = ExtResource("2_0go86")
-tarot_card_2 = ExtResource("3_0go86")
+tarot_card_1 = ExtResource("3_0go86")
+tarot_card_2 = ExtResource("2_0go86")
 tarot_card_3 = ExtResource("3_egn15")
 
 [node name="view_sprite" type="Sprite2D" parent="."]

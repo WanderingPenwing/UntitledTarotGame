@@ -51,6 +51,8 @@ func reset_ui() -> void :
 		hint.hide()
 
 func show_start() -> void :
+	if not TarotSelect.ContinueLabel.visible :
+		return
 	for hint in objectives_hints :
 		hint.hide()
 	start_label.show()
