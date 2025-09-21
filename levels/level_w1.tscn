@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dnn6cxgbb37kj" path="res://prefabs/cards/2-priestess_inv.tscn" id="3_j5ht3"]
 [ext_resource type="PackedScene" uid="uid://e672g5utt51r" path="res://prefabs/cards/13-death.tscn" id="4_232b1"]
 [ext_resource type="PackedScene" uid="uid://drwl6ubk1bt2e" path="res://prefabs/entities/world.tscn" id="5_nvwk1"]
-[ext_resource type="Script" path="res://scripts/system/camera.gd" id="8_8ctjj"]
+[ext_resource type="Script" uid="uid://dih4a6m8n3wii" path="res://scripts/system/camera.gd" id="8_8ctjj"]
 [ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="8_n2cq2"]
 [ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="9_7libw"]
 [ext_resource type="PackedScene" uid="uid://brh1ungyth2n1" path="res://prefabs/entities/player.tscn" id="10_7gw2r"]

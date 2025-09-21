@@ -53,7 +53,7 @@ var mob_status = STATUS.NORMAL
 var world_status = STATUS.NORMAL
 
 #Sers a définir le niveau actuel/si ingame ou pas
-var level_index = 12
+var level_index = 0
 var level_unlocked = 0
 var in_game = false
 

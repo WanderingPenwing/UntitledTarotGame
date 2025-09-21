@@ -32,10 +32,12 @@ func _ready() -> void:
 		tween.parallel().tween_property(player, "position", mob_pos, 0.1)
 
 func freeze() -> void :
-	for x in range(0, 9) :
-		for y in range(0, 8) :
+	for x in range(0, 10) :
+		for y in range(0, 9) :
 			if get_cell_source_id(Vector2i(x,y)) == 2 :
 				set_cell(Vector2i(x,y), 3, get_cell_atlas_coords(Vector2i(x,y))+Vector2i(11,11))
+				continue
+			set_cell(Vector2i(x,y), 3, get_cell_atlas_coords(Vector2i(x,y))+Vector2i(11,0))
 	GameUi.snow_particles.show()
 	GameUi.snow.emitting = true
 

@@ -43,8 +43,12 @@ func _process(_delta: float) -> void:
 		move(anims[selected], true)
 	
 	if Input.is_action_just_pressed("A") :
-		Menus[selected].open()
 		SoundManager.play_sound(PICK_UP_SOUND, true)
+		if selected == 0 :
+			GameState.start_cutscene()
+			return
+		Menus[selected-1].open()
+		
 
 func ready() -> void :
 	move(anims[0], true)

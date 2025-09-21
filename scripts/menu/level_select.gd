@@ -2,6 +2,7 @@ extends Node2D
 
 const BIP_SOUND: Resource = preload("res://audio/sfx/tarot_check.wav")
 const LEVEL_PLACEHOLDER: Resource = preload("res://prefabs/menu/level_placeholder.tscn")
+const PICK_UP_SOUND: Resource = preload("res://audio/sfx/place.wav")
 
 var lines = [4, 4, 4, 1]
 var selected = Vector2i(0, 0)
@@ -25,15 +26,38 @@ func _process(_delta: float) -> void:
 	dir.y += 1 if Input.is_action_just_pressed("ui_down") else 0
 	
 	selected.x = (selected.x + dir.x)
-	selected.y = (selected.y + dir.y + len(lines)) % len(lines)
+	selected.y = (selected.y + dir.y)
+	if selected.y >= len(lines) :
+		selected.y = -1
+	if selected.y < -1 :
+		selected.y = len(lines) - 1
 	
-	selected.x = (selected.x + lines[selected.y]) % lines[selected.y] if dir.x != 0 else min(lines[selected.y]-1, selected.x)
+	if selected.y != -1 :
+		selected.x = (selected.x + lines[selected.y]) % lines[selected.y] if dir.x != 0 else min(lines[selected.y]-1, selected.x)
 	
 	$selector.position = get_pos(selected)
+	$selector.visible = (selected.y != -1)
+	$Back.visible = (selected.y == -1)
+	
+	if Input.is_action_just_pressed("B") and not just_visible :
+		close()
+		GameState.save_state()
+		SoundManager.play_sound(PICK_UP_SOUND, true)
 	
 	if Input.is_action_just_pressed("A") and not just_visible :
+		if selected.y == -1 :
+			close()
+			GameState.save_state()
+			SoundManager.play_sound(PICK_UP_SOUND, true)
+			return
+		
+		if selected.y == 3 :
+			GameState.level_index = 12
+			GameState.start_level()
+			SoundManager.play_sound(BIP_SOUND, true)
+			return
 		GameState.level_index = selected.y*4+selected.x
-		GameState.cutscene_index = GameState.level_index - 1 % len(GameState.CUTSCENES)
+		GameState.cutscene_index = (GameState.level_index) % len(GameState.CUTSCENES)
 		GameState.start_cutscene()
 		SoundManager.play_sound(BIP_SOUND, true)
 	

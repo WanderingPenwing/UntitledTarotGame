@@ -16,7 +16,7 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_p57ef"]
 viewport_path = NodePath("view3")
 
-[node name="level3" type="Node2D" groups=["level"]]
+[node name="level4" type="Node2D" groups=["level"]]
 script = ExtResource("1_2oh03")
 tarot_card_1 = ExtResource("2_5x86v")
 tarot_card_2 = ExtResource("3_5x86v")

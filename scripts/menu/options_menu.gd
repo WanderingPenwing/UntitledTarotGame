@@ -33,6 +33,11 @@ func _process(_delta: float) -> void:
 		selected.y = (selected.y + 1 + len(buttons)) % len(buttons)
 		selected.x = selected.x % len(buttons[selected.y])
 	
+	if Input.is_action_just_pressed("B") and not just_visible:
+		close()
+		GameState.save_state()
+		SoundManager.play_sound(PICK_UP_SOUND, true)
+	
 	if Input.is_action_just_pressed("A") and not just_visible:
 		GameState.update_volume()
 		if buttons[selected.y][selected.x] == $MusicDec :

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drd5ok8ck07qa"
+path="res://.godot/imported/tarot P4.mp3-d53c3f3711a74e6fd40468e55b57cf43.mp3str"
+
+[deps]
+
+source_file="res://audio/music/tarot P4.mp3"
+dest_files=["res://.godot/imported/tarot P4.mp3-d53c3f3711a74e6fd40468e55b57cf43.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

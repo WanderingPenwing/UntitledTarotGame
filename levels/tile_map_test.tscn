@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://ci8honnhhcanp"]
 
 [ext_resource type="Texture2D" uid="uid://df8vkqerjyd1k" path="res://images/env/map.png" id="1_yu041"]
-[ext_resource type="Texture2D" uid="uid://cgvuqv444v7ho" path="res://images/env/Tileset_Full.png" id="2_25qtv"]
+[ext_resource type="Texture2D" uid="uid://ql433c1yhw3a" path="res://images/env/Tileset_Full.png" id="2_25qtv"]
 [ext_resource type="Texture2D" uid="uid://dh82c73jpxcsp" path="res://images/env/Tileset_Grass.png" id="2_dw8go"]
 [ext_resource type="PackedScene" uid="uid://cs2xtrp8r1c5h" path="res://prefabs/entities/mob.tscn" id="3_25qtv"]
 [ext_resource type="PackedScene" uid="uid://cpu21bx276evw" path="res://prefabs/entities/flag.tscn" id="4_5vsa3"]

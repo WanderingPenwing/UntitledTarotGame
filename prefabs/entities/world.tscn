@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dh82c73jpxcsp" path="res://images/env/Tileset_Grass.png" id="2_6g6ls"]
 [ext_resource type="Script" uid="uid://c42nn8tguuhle" path="res://scripts/entities/world.gd" id="2_nyyv6"]
 [ext_resource type="Texture2D" uid="uid://bhpo1lo37copy" path="res://images/env/Tileset_Water.png" id="3_6g6ls"]
-[ext_resource type="Texture2D" uid="uid://cgvuqv444v7ho" path="res://images/env/Tileset_Full.png" id="4_1camh"]
+[ext_resource type="Texture2D" uid="uid://ql433c1yhw3a" path="res://images/env/Tileset_Full.png" id="4_1camh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
 texture = ExtResource("1_qmup5")

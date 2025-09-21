@@ -68,7 +68,8 @@ func _process(_delta: float) -> void:
 					SoundManager.play_sound(TALK_SOUND, true)
 		State.CHOOSING:
 			if Input.is_action_just_pressed("A"):
-				pass #envoie vers le niveau 13
+				GameState.level_index = 12
+				GameState.start_level()
 			elif Input.is_action_just_pressed("B"):
 				badend()
 		State.FINISHED:

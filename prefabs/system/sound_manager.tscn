@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://ywgrjpiitbdy"]
 
 [ext_resource type="Script" uid="uid://dxiwqg7pwj02t" path="res://scripts/system/sound_manager.gd" id="1_ehc1w"]
-[ext_resource type="AudioStream" uid="uid://c8g3chyslnjqv" path="res://audio/music/Tarot P1.wav" id="2_ihmda"]
+[ext_resource type="AudioStream" uid="uid://bihv5xgxvisx7" path="res://audio/music/tarot P1.mp3" id="2_ihmda"]
 [ext_resource type="Script" uid="uid://cfplj28ks60yg" path="res://scripts/system/sound_player.gd" id="3_ihmda"]
-[ext_resource type="AudioStream" uid="uid://dd2utwyxwomui" path="res://audio/music/Tarot P2.wav" id="4_1w3i5"]
-[ext_resource type="AudioStream" uid="uid://c5tcgofvw3fxw" path="res://audio/music/Tarot P3.wav" id="5_14h1u"]
-[ext_resource type="AudioStream" uid="uid://dv1y40rn1hkju" path="res://audio/music/Tarot P4.wav" id="6_cxoen"]
-[ext_resource type="AudioStream" uid="uid://b55tuu22u32ts" path="res://audio/music/Tarot P5.wav" id="7_wfmn2"]
-[ext_resource type="AudioStream" uid="uid://caeen1suwp8lr" path="res://audio/music/Tarot P6.wav" id="8_iravg"]
+[ext_resource type="AudioStream" uid="uid://khtbaa4e8afx" path="res://audio/music/tarot P2.mp3" id="4_1w3i5"]
+[ext_resource type="AudioStream" uid="uid://qdkdth2ba8ij" path="res://audio/music/tarot P3.mp3" id="5_14h1u"]
+[ext_resource type="AudioStream" uid="uid://drd5ok8ck07qa" path="res://audio/music/tarot P4.mp3" id="6_cxoen"]
+[ext_resource type="AudioStream" uid="uid://dljs4fq1slvhe" path="res://audio/music/tarot P5.mp3" id="7_wfmn2"]
+[ext_resource type="AudioStream" uid="uid://n3ualn7fett8" path="res://audio/music/tarot P6.mp3" id="8_iravg"]
 
 [node name="SoundManager" type="Node"]
 process_mode = 3
