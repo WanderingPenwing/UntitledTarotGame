@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://e672g5utt51r"]
+
+[ext_resource type="Texture2D" uid="uid://dprsqv662t7wh" path="res://images/cards/death.png" id="1_76fga"]
+[ext_resource type="Script" uid="uid://do2kye288obtn" path="res://scripts/menu/tarot_card.gd" id="2_kntj4"]
+
+[node name="card" type="Sprite2D" groups=["card"]]
+texture = ExtResource("1_76fga")
+script = ExtResource("2_kntj4")
+status_index = 12

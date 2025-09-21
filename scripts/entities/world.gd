@@ -16,6 +16,8 @@ func _ready() -> void:
 		tween.tween_callback(freeze)
 	if GameState.world_status == GameState.STATUS.CHAOS :
 		tween.tween_callback(collapse)
+	if GameState.world_status == GameState.STATUS.DEATH :
+		tween.tween_callback(destroy_spikes)
 	$Blind.hide()
 	if GameState.world_status == GameState.STATUS.BLIND :
 		tween.tween_callback($Blind.show)
@@ -49,6 +51,12 @@ func collapse() -> void :
 		if prop.is_in_group("door") :
 			var door_pos = local_to_map(prop.position)
 			set_cell(door_pos, 0, Vector2(1,0))
+		prop.queue_free()
+		explode(prop.position)
+	SoundManager.play_sound(EXPLOSION_SOUND)
+
+func destroy_spikes() -> void :
+	for prop in get_tree().get_nodes_in_group("spikes") :
 		prop.queue_free()
 		explode(prop.position)
 	SoundManager.play_sound(EXPLOSION_SOUND)
