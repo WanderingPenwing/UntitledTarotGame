@@ -7,7 +7,7 @@
 script = ExtResource("1_ve7r5")
 line = "The Moon. By itself, it's quite a bad omen."
 char = "Seer"
-visual = ""
+visual = "Queen"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_ve7r5"]
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_6e830"]
 script = ExtResource("1_ve7r5")
-line = "It may represent danger and mistakes, but a card but me read in context."
+line = "It may represent danger and mistakes, but a card must be read in context."
 char = "Seer"
 visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"

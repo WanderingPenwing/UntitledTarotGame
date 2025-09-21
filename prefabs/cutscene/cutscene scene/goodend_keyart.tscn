@@ -55,7 +55,9 @@ The m3x6 font was created by Daniel Linssen
 
 Made for GBJam 13
 
-Thank you for playing !"
+Thank you for playing !
+
+Press B to return to the main menu."
 label_settings = SubResource("LabelSettings_d308j")
 horizontal_alignment = 1
 autowrap_mode = 3
