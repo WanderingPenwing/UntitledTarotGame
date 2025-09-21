@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="CutsceneScript" load_steps=8 format=3 uid="uid://pmbkx0k4ricl"]
+
+[ext_resource type="Script" uid="uid://dyvci44ttm3i1" path="res://scripts/cutscene/cutscenedialogue.gd" id="1_id1um"]
+[ext_resource type="Script" uid="uid://dir0e5spbtkgm" path="res://scripts/cutscene/cutscenescript.gd" id="2_vhxkn"]
+
+[sub_resource type="Resource" id="Resource_la3ge"]
+script = ExtResource("1_id1um")
+line = "Justice. You will be a just king."
+char = "Seer"
+visual = "King"
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_jfx44"]
+script = ExtResource("1_id1um")
+line = "Of course. I will be. I am wise and fair. And if someone argue, I will get rid of him."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_uiw0q"]
+script = ExtResource("1_id1um")
+line = "I don't really care about what I already know. Tell me about the heir."
+char = "King"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_hhp26"]
+script = ExtResource("1_id1um")
+line = "..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[sub_resource type="Resource" id="Resource_ij3p5"]
+script = ExtResource("1_id1um")
+line = "Fine. Let me read the cards all together..."
+char = "Seer"
+visual = ""
+metadata/_custom_type_script = "uid://dyvci44ttm3i1"
+
+[resource]
+script = ExtResource("2_vhxkn")
+dialogue = Array[ExtResource("1_id1um")]([SubResource("Resource_la3ge"), SubResource("Resource_jfx44"), SubResource("Resource_uiw0q"), SubResource("Resource_hhp26"), SubResource("Resource_ij3p5")])
+metadata/_custom_type_script = "uid://dir0e5spbtkgm"

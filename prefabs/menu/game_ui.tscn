@@ -121,11 +121,10 @@ region_enabled = true
 region_rect = Rect2(64, 17, 92, 17)
 
 [node name="HintJack" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(80, 132)
 texture = ExtResource("2_k0yo7")
 region_enabled = true
-region_rect = Rect2(64, 34, 76, 17)
+region_rect = Rect2(64, 34, 71, 17)
 
 [node name="HintSeer" type="Sprite2D" parent="."]
 visible = false
