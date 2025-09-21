@@ -70,7 +70,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 script = ExtResource("1_p43ei")
 line = "NOOOOO !!!"
 char = "Seer"
-visual = ""
+visual = "badend"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_coa5b"]
