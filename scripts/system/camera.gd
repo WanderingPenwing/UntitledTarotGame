@@ -1,7 +1,7 @@
 extends Camera2D
 
-const keyartbadend = preload("res://prefabs/cutscene/cutscene scene/badend_keyart.tscn")
-const keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/goodend_keyart.tscn")
+const keyartbadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badend.tscn")
+const keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/cutscene_goodend.tscn")
 
 @onready var Player = get_tree().get_first_node_in_group("player")
 

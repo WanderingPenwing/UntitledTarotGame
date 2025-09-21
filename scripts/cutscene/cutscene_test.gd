@@ -186,6 +186,8 @@ func sprite_change():
 			query()
 		elif next_sprite == "badend":
 			get_tree().change_scene_to_packed(keyartbadend)
+		elif next_sprite == "goodend":
+			get_tree().change_scene_to_packed(keyartgoodend)
 
 func on_tween_finished():
 	change_state(State.FINISHED)
