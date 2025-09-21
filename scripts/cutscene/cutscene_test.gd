@@ -9,9 +9,9 @@ const CHAR_READ_RATE  = 0.05
 @onready var charbox = $SubViewport/Char
 @onready var view = $Sprite2D
 @onready var charSprite = $SubViewport/CharacterSprite
-@onready var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badendkimarch.tscn")
-@onready var keyartbadend = preload("res://prefabs/cutscene/cutscene scene/badend_keyart.tscn")
-@onready var keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/goodend_keyart.tscn")
+var cutscenebadend = preload("res://prefabs/cutscene/cutscene scene/cutscene_badendkimarch.tscn")
+var keyartbadend = preload("res://prefabs/cutscene/cutscene scene/badend_keyart.tscn")
+var keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/goodend_keyart.tscn")
 @export var dialogue : CutsceneScript
 @export var KingSprite = preload("res://images/cutscene/King.png")
 @export var QueenSprite = preload("res://images/cutscene/Queen.png")

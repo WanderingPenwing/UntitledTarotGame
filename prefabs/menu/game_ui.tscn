@@ -132,4 +132,4 @@ visible = false
 position = Vector2(80, 132)
 texture = ExtResource("2_k0yo7")
 region_enabled = true
-region_rect = Rect2(68, 34, 76, 17)
+region_rect = Rect2(64, 51, 67, 17)

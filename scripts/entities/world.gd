@@ -62,10 +62,11 @@ func collapse() -> void :
 	SoundManager.play_sound(EXPLOSION_SOUND)
 
 func destroy_spikes() -> void :
-	for prop in get_tree().get_nodes_in_group("spikes") :
-		prop.queue_free()
-		explode(prop.position)
-	SoundManager.play_sound(EXPLOSION_SOUND)
+	pass
+	#for prop in get_tree().get_nodes_in_group("spikes") :
+		#prop.queue_free()
+		#explode(prop.position)
+	#SoundManager.play_sound(EXPLOSION_SOUND)
 
 func explode(pos: Vector2) -> void :
 	var explosion = EXPLOSION.instantiate()
