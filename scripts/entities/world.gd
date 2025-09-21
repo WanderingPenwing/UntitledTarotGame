@@ -1,6 +1,7 @@
 extends TileMapLayer
 
-const WATER = Vector2i(3, 0)
+const WATER_H = Vector2i(3, 1)
+const WATER_V = Vector2i(1, 3)
 const ICE = Vector2i(3, 1)
 const BRIDGE_V = Vector2i(2, 3)
 const BRIDGE_H = Vector2i(3, 3)
@@ -33,24 +34,27 @@ func _ready() -> void:
 func freeze() -> void :
 	for x in range(0, 9) :
 		for y in range(0, 8) :
-			if get_cell_atlas_coords(Vector2i(x,y)) == WATER or get_cell_source_id(Vector2i(x,y)) == 2 :
-				set_cell(Vector2i(x,y), 0, ICE)
+			if get_cell_source_id(Vector2i(x,y)) == 2 :
+				set_cell(Vector2i(x,y), 3, get_cell_atlas_coords(Vector2i(x,y))+Vector2i(11,11))
 	GameUi.snow_particles.show()
 	GameUi.snow.emitting = true
 
 func collapse() -> void :
 	for x in range(0, 9) :
 		for y in range(0, 8) :
-			var cell = get_cell_atlas_coords(Vector2i(x,y))
-			if not(cell == BRIDGE_V or cell == BRIDGE_H) :
+			if not get_cell_source_id(Vector2i(x,y)) == 0 :
 				continue
-			set_cell(Vector2i(x,y), 0, WATER)
-			explode(map_to_local(Vector2i(x,y)))
+			var cell = get_cell_atlas_coords(Vector2i(x,y))
+			if cell == BRIDGE_V :
+				set_cell(Vector2i(x,y), 2, WATER_V)
+				explode(map_to_local(Vector2i(x,y)))
+			if cell == BRIDGE_H :
+				set_cell(Vector2i(x,y), 2, WATER_H)
+				explode(map_to_local(Vector2i(x,y)))
 	
 	for prop in get_tree().get_nodes_in_group("prop") :
 		if prop.is_in_group("door") :
 			var door_pos = local_to_map(prop.position)
-			set_cell(door_pos, 0, Vector2(1,0))
 		prop.queue_free()
 		explode(prop.position)
 	SoundManager.play_sound(EXPLOSION_SOUND)

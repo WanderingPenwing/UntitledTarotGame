@@ -65,7 +65,7 @@ func _ready() -> void:
 	GameUi.draw_tarot_label.show()
 	load_state()
 	update_volume()
-	start_level()
+	#start_level()
 
 
 func _process(delta: float) -> void:
