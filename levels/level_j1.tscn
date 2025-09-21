@@ -60,5 +60,5 @@ position = Vector2(40, 88)
 position = Vector2(-31, 75)
 
 [node name="player" parent="view3" instance=ExtResource("10_nodnc")]
-position = Vector2(40, 104)
+position = Vector2(56, 104)
 type = 2
