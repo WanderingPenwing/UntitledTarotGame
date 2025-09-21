@@ -68,7 +68,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_1siue"]
 script = ExtResource("1_ve7r5")
-line = "I must give him a son !"
+line = "I must give him a son ! You said it yourself !"
 char = "Queen"
 visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"

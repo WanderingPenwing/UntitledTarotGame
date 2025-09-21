@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_hgqcr"]
 script = ExtResource("1_xkkb3")
-line = "Because a Fool of a Priestess who is in love with her own astronomical ego is sitting right here."
+line = "Because a Fool of a Priestess who is in love with her own astronomical ego is sitting right here"
 char = "Jack?"
 visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
