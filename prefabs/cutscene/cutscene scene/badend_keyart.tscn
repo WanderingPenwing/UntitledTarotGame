@@ -21,9 +21,9 @@ texture = SubResource("ViewportTexture_6gy54")
 
 [node name="Line" type="Label" parent="."]
 process_mode = 3
-offset_top = 114.645
+offset_top = 141.645
 offset_right = 158.0
-offset_bottom = 570.645
+offset_bottom = 597.645
 text = "Crossing Fate
 
 A \"Pinguins Have Wings\" Production

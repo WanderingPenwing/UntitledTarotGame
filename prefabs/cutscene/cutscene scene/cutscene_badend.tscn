@@ -1,18 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://of6c8b55ktri"]
+[gd_scene load_steps=9 format=3 uid="uid://b4q1yx107jume"]
 
 [ext_resource type="Script" uid="uid://cr15x6oc1kokb" path="res://scripts/cutscene/cutscene_test.gd" id="1_tthid"]
 [ext_resource type="Resource" uid="uid://tjw6dnf7vsta" path="res://prefabs/cutscene/cutscene scripts/cutsceneBAD.tres" id="2_tthid"]
-[ext_resource type="Texture2D" uid="uid://n4ltr1avterl" path="res://images/cutscene/king placeholder.png" id="3_ho1ni"]
-[ext_resource type="Texture2D" uid="uid://isksm77n3jck" path="res://images/cutscene/queen placeholder.png" id="4_prnnm"]
-[ext_resource type="Texture2D" uid="uid://dr0epy5tt2b5c" path="res://images/cutscene/tableplaceholder.png" id="5_o8jnc"]
+[ext_resource type="Texture2D" uid="uid://bimvk0g0wtqij" path="res://images/cutscene/Tente.png" id="3_ily5y"]
+[ext_resource type="Texture2D" uid="uid://dg8gycc84vg7g" path="res://images/cutscene/Table.png" id="4_tthid"]
 [ext_resource type="Texture2D" uid="uid://ycf83mrq5eg3" path="res://images/cutscene/Tarot_Window.png" id="6_cb55v"]
 [ext_resource type="FontFile" uid="uid://be0lx5y3fhsnr" path="res://images/font/m3x6.ttf" id="7_lhasm"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6gy54"]
 viewport_path = NodePath("SubViewport")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gdv8h"]
-size = Vector2(160, 144)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d308j"]
 line_spacing = 0.0
@@ -23,8 +19,6 @@ process_mode = 3
 script = ExtResource("1_tthid")
 TextBox = [NodePath("SubViewport/Line1"), NodePath("SubViewport/Line2"), NodePath("SubViewport/Line3")]
 dialogue = ExtResource("2_tthid")
-KingSprite = ExtResource("3_ho1ni")
-QueenSprite = ExtResource("4_prnnm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
@@ -36,17 +30,14 @@ size = Vector2i(160, 144)
 
 [node name="Background" type="Sprite2D" parent="SubViewport"]
 position = Vector2(79, 72)
-texture = SubResource("PlaceholderTexture2D_gdv8h")
+texture = ExtResource("3_ily5y")
 
 [node name="CharacterSprite" type="Sprite2D" parent="SubViewport"]
-position = Vector2(79, 63)
-scale = Vector2(0.317143, 0.317143)
-texture = ExtResource("3_ho1ni")
+position = Vector2(79, 72)
 
 [node name="Table" type="Sprite2D" parent="SubViewport"]
-position = Vector2(80, 73.1731)
-scale = Vector2(0.25817, 0.25817)
-texture = ExtResource("5_o8jnc")
+position = Vector2(80, 66)
+texture = ExtResource("4_tthid")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="SubViewport"]
 offset_left = 5.22
