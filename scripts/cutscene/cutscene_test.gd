@@ -43,6 +43,9 @@ var visible_count = []
 
 func _ready() -> void:
 	queue_text()
+	# to set the first character sprite
+	# parce que sinon il est set que quand on fini une ligne de dialogue
+	sprite_change()
 
 
 func _process(_delta: float) -> void:
@@ -94,7 +97,7 @@ func _process(_delta: float) -> void:
 			charSprite.texture = QueenSprite
 		Sprite.JACK:
 			charSprite.texture = JackSprite
-
+	
 func queue_text():
 	for i in dialogue.dialogue:
 		text_queue.append(i.line)

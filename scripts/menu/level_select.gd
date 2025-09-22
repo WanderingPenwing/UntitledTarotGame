@@ -53,7 +53,8 @@ func _process(_delta: float) -> void:
 		
 		if selected.y == 3 :
 			GameState.level_index = 12
-			GameState.start_level()
+			GameState.cutscene_index = 12
+			GameState.start_cutscene()
 			SoundManager.play_sound(BIP_SOUND, true)
 			return
 		GameState.level_index = selected.y*4+selected.x

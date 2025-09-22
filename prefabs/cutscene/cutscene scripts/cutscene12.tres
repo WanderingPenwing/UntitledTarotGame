@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_lkme5"]
 script = ExtResource("1_xej4k")
-line = "You're lying. This is a stupid trick"
+line = "You're lying. This is a stupid trick."
 char = "Seer"
 visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
@@ -147,14 +147,14 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 script = ExtResource("1_xej4k")
 line = "Is he... she... right ?"
 char = "Seer"
-visual = "query"
+visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_ayqvn"]
 script = ExtResource("1_xej4k")
 line = "Maybe... Maybe I could..."
 char = "Seer"
-visual = ""
+visual = "query"
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [resource]

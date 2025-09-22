@@ -5,7 +5,7 @@ const keyartgoodend = preload("res://prefabs/cutscene/cutscene scene/cutscene_go
 
 @onready var Player = get_tree().get_first_node_in_group("player")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Player :
 		return
 	position = Player.position

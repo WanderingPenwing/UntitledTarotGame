@@ -55,8 +55,6 @@ func collapse() -> void :
 				explode(map_to_local(Vector2i(x,y)))
 	
 	for prop in get_tree().get_nodes_in_group("prop") :
-		if prop.is_in_group("door") :
-			var door_pos = local_to_map(prop.position)
 		prop.queue_free()
 		explode(prop.position)
 	SoundManager.play_sound(EXPLOSION_SOUND)

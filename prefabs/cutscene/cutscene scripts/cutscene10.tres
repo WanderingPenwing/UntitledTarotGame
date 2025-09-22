@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://dyvci44ttm3i1"
 
 [sub_resource type="Resource" id="Resource_8uye8"]
 script = ExtResource("1_t4sqd")
-line = "Your own cards are telling you the truth"
+line = "Your own cards are telling you the truth."
 char = "Jack?"
 visual = ""
 metadata/_custom_type_script = "uid://dyvci44ttm3i1"
