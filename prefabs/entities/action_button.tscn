@@ -7,6 +7,7 @@
 radius = 5.0
 
 [node name="action_button" type="Area2D" groups=["prop"]]
+z_index = -1
 collision_layer = 119
 collision_mask = 119
 script = ExtResource("1_ccima")

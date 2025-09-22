@@ -63,12 +63,15 @@ ActionButton = NodePath("../dummy_button2")
 [node name="dummy_button2" parent="view3/faith" instance=ExtResource("10_rl658")]
 position = Vector2(136, 120)
 
-[node name="flag" parent="view3" instance=ExtResource("8_gvgy5")]
+[node name="y_sorting" type="Node2D" parent="view3"]
+y_sort_enabled = true
+
+[node name="flag" parent="view3/y_sorting" instance=ExtResource("8_gvgy5")]
 position = Vector2(40, 104)
 
-[node name="mob" parent="view3" instance=ExtResource("9_ciawh")]
+[node name="mob" parent="view3/y_sorting" instance=ExtResource("9_ciawh")]
 position = Vector2(40, 40)
 
-[node name="player" parent="view3" instance=ExtResource("11_5ll0i")]
+[node name="player" parent="view3/y_sorting" instance=ExtResource("11_5ll0i")]
 position = Vector2(120, 56)
 type = 2

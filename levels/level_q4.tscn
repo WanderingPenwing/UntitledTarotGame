@@ -70,12 +70,15 @@ ActionButton = NodePath("../action_button")
 [node name="action_button" parent="view3" instance=ExtResource("7_8es7k")]
 position = Vector2(120, 80)
 
-[node name="flag" parent="view3" instance=ExtResource("6_42wcb")]
+[node name="y_sorting" type="Node2D" parent="view3"]
+y_sort_enabled = true
+
+[node name="flag" parent="view3/y_sorting" instance=ExtResource("6_42wcb")]
 position = Vector2(120, 39)
 
-[node name="mob" parent="view3" instance=ExtResource("7_au365")]
+[node name="mob" parent="view3/y_sorting" instance=ExtResource("7_au365")]
 position = Vector2(120, 104)
 
-[node name="player" parent="view3" instance=ExtResource("8_tyxbq")]
+[node name="player" parent="view3/y_sorting" instance=ExtResource("8_tyxbq")]
 position = Vector2(40, 104)
 type = 1

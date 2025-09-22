@@ -48,6 +48,9 @@ ActionButton = NodePath("../action_button")
 position = Vector2(136, 56)
 ActionButton = NodePath("../action_button")
 
+[node name="action_button" parent="view3" instance=ExtResource("9_7dc4w")]
+position = Vector2(40, 104)
+
 [node name="faith" type="Node2D" parent="view3" node_paths=PackedStringArray("NormalWorld", "FaithWorld")]
 script = ExtResource("7_2ab0y")
 NormalWorld = NodePath("../world_normal")
@@ -60,15 +63,15 @@ ActionButton = NodePath("../dummy_button2")
 [node name="dummy_button2" parent="view3/faith" instance=ExtResource("9_7dc4w")]
 position = Vector2(88, 104)
 
-[node name="action_button" parent="view3" instance=ExtResource("9_7dc4w")]
-position = Vector2(40, 104)
+[node name="y_sorting" type="Node2D" parent="view3"]
+y_sort_enabled = true
 
-[node name="flag" parent="view3" instance=ExtResource("7_l7rwn")]
+[node name="flag" parent="view3/y_sorting" instance=ExtResource("7_l7rwn")]
 position = Vector2(120, 40)
 
-[node name="mob" parent="view3" instance=ExtResource("8_tibba")]
+[node name="mob" parent="view3/y_sorting" instance=ExtResource("8_tibba")]
 position = Vector2(120, 104)
 
-[node name="player" parent="view3" instance=ExtResource("10_nodnc")]
+[node name="player" parent="view3/y_sorting" instance=ExtResource("10_nodnc")]
 position = Vector2(56, 104)
 type = 2

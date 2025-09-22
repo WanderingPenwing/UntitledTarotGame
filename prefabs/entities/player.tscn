@@ -20,6 +20,7 @@ shader_parameter/blind = false
 radius = 7.5
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_n42l2")
